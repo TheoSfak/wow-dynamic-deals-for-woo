@@ -36,9 +36,9 @@ defined('ABSPATH') || exit;
                         if ($tier['discount_type'] === 'percentage') {
                             echo esc_html($tier['discount_value']) . '%';
                         } elseif ($tier['discount_type'] === 'fixed') {
-                            echo wc_price($tier['discount_value']) . ' ' . esc_html__('off', 'wow-dynamic-deals-for-woo');
+                            echo wc_price($tier['discount_value']) . ' ' . esc_html__('off', 'wow-dynamic-deals-for-woo'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         } else {
-                            echo wc_price($tier['discount_value']) . ' ' . esc_html__('each', 'wow-dynamic-deals-for-woo');
+                            echo wc_price($tier['discount_value']) . ' ' . esc_html__('each', 'wow-dynamic-deals-for-woo'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         }
                         ?>
                     </td>

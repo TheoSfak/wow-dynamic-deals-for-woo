@@ -112,6 +112,7 @@ class ImportExport {
 
                 if (empty($rule['title'])) {
                     $result['errors']++;
+                    /* translators: %s: Rule type */
                     $result['messages'][] = sprintf(__('Skipped rule without title in %s', 'wow-dynamic-deals-for-woo'), $type);
                     continue;
                 }
@@ -142,13 +143,13 @@ class ImportExport {
      */
     public static function download_export($rule_type = 'all') {
         $json = self::export_rules($rule_type);
-        $filename = 'wdd-rules-' . $rule_type . '-' . date('Y-m-d-His') . '.json';
+        $filename = 'wdd-rules-' . $rule_type . '-' . gmdate('Y-m-d-His') . '.json';
 
         header('Content-Type: application/json');
         header('Content-Disposition: attachment; filename="' . $filename . '"');
         header('Content-Length: ' . strlen($json));
         
-        echo $json;
+        echo $json; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         exit;
     }
 }

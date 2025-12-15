@@ -12,7 +12,7 @@ defined('ABSPATH') || exit;
 
 <div class="wdd-savings-summary">
     <strong><?php esc_html_e('You saved:', 'wow-dynamic-deals-for-woo'); ?></strong>
-    <span class="wdd-savings-amount"><?php echo wc_price($total_savings); ?></span>
+    <span class="wdd-savings-amount"><?php echo wc_price($total_savings); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
     
     <?php if (!empty($applied_rules)): ?>
         <div class="wdd-applied-rules">

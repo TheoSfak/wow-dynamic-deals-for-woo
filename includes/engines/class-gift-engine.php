@@ -418,6 +418,7 @@ class GiftEngine extends RuleEngine {
 						}
 					}
 					if ( ! empty( $product_names ) ) {
+						/* translators: %s: Product names */
 						$reason = sprintf( __( 'purchasing: %s', 'wow-dynamic-deals-for-woo' ), implode( ', ', $product_names ) );
 						if ( count( $trigger_products ) > 2 ) {
 							$reason .= ' ' . __( 'and more', 'wow-dynamic-deals-for-woo' );
@@ -440,6 +441,7 @@ class GiftEngine extends RuleEngine {
 						}
 					}
 					if ( ! empty( $category_names ) ) {
+						/* translators: %s: Category names */
 						$reason = sprintf( __( 'purchasing from: %s', 'wow-dynamic-deals-for-woo' ), implode( ', ', $category_names ) );
 						if ( count( $trigger_categories ) > 2 ) {
 							$reason .= ' ' . __( 'and more', 'wow-dynamic-deals-for-woo' );
@@ -451,6 +453,7 @@ class GiftEngine extends RuleEngine {
 			case 'cart_total':
 				$trigger_amount = floatval( $data['trigger_amount'] ?? $data['amount'] ?? 0 );
 				if ( $trigger_amount > 0 ) {
+					/* translators: %s: Cart total amount */
 					$reason = sprintf( __( 'cart total over %s', 'wow-dynamic-deals-for-woo' ), wc_price( $trigger_amount ) );
 				}
 				break;
@@ -458,6 +461,7 @@ class GiftEngine extends RuleEngine {
 			case 'cart_quantity':
 				$trigger_quantity = intval( $data['trigger_quantity'] ?? $data['quantity'] ?? 0 );
 				if ( $trigger_quantity > 0 ) {
+					/* translators: %d: Item quantity threshold */
 					$reason = sprintf( __( 'buying %d or more items', 'wow-dynamic-deals-for-woo' ), $trigger_quantity );
 				}
 				break;

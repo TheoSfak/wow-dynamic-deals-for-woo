@@ -102,7 +102,8 @@ class FrontendDisplay {
 			echo '<tr>';
 			echo '<td>' . esc_html( $quantity_text ) . '</td>';
 			echo '<td>' . wc_price( $tier_price ) . '</td>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			echo '<td>' . sprintf( esc_html__( '%s (%s%%)', 'wow-dynamic-deals-for-woo' ), wc_price( $savings ), number_format( $savings_percent, 1 ) ) . '</td>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			/* translators: 1: Price amount, 2: Percentage */
+			echo '<td>' . sprintf( esc_html__( '%1$s (%2$s%%)', 'wow-dynamic-deals-for-woo' ), wc_price( $savings ), number_format( $savings_percent, 1 ) ) . '</td>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo '</tr>';
 		}
 
@@ -211,12 +212,13 @@ class FrontendDisplay {
 				echo '<td style="padding: 10px; font-size: 13px; color: #495057;">';
 				echo '<div style="font-weight: 600; margin-bottom: 3px;">' . esc_html( $item['product_name'] ) . '</div>';
 				echo '<div style="font-size: 12px; color: #6c757d;">';
+				/* translators: 1: Quantity, 2: Original price, 3: Discounted price */
 				echo sprintf( 
-					esc_html__( 'Qty: %d × %s → %s', 'wow-dynamic-deals-for-woo' ),
-					$item['quantity'],
+					esc_html__( 'Qty: %1$d × %2$s → %3$s', 'wow-dynamic-deals-for-woo' ),
+					absint( $item['quantity'] ),
 					wc_price( $item['original_price'] ),
 					wc_price( $item['discounted_price'] )
-				);
+				); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo '</div>';
 				echo '</td>';
 				echo '<td style="padding: 10px; text-align: right;">';
@@ -240,6 +242,7 @@ class FrontendDisplay {
 			$label = ! empty( $settings['cart_discount_label'] ) ? $settings['cart_discount_label'] : __( 'Discount', 'wow-dynamic-deals-for-woo' );
 
 			echo '<tr class="wdd-savings-summary" style="color: #10b981; font-weight: 600; background: #d1fae5; border-top: 2px solid #10b981;">';
+			/* translators: %s: Discount label */
 			echo '<th style="padding: 12px 10px; font-size: 15px;">' . sprintf( esc_html__( '💰 Total Saved (%s)!', 'wow-dynamic-deals-for-woo' ), esc_html( $label ) ) . '</th>';
 			echo '<td style="padding: 12px 10px; text-align: right;"><strong style="font-size: 16px;">-' . wc_price( $total_savings ) . '</strong></td>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo '</tr>';

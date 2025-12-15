@@ -47,16 +47,8 @@ class Plugin {
 	 * Constructor
 	 */
 	private function __construct() {
-		$this->load_textdomain();
 		$this->init_hooks();
 		$this->init_components();
-	}
-
-	/**
-	 * Load plugin textdomain
-	 */
-	private function load_textdomain() {
-		load_plugin_textdomain( 'wow-dynamic-deals-for-woo', false, dirname( WDD_PLUGIN_BASENAME ) . '/languages' );
 	}
 
 	/**
@@ -168,16 +160,14 @@ class Plugin {
 
 		wp_enqueue_style(
 			'select2',
-			'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css',
-			array(),
-			'4.1.0'
-		);
+		plugin_dir_url( dirname( __FILE__ ) ) . 'assets/vendor/select2.min.css',
+		array(),
+		'4.1.0'
+	);
 
-		wp_enqueue_script(
-			'select2',
-			'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
-			array( 'jquery' ),
-			'4.1.0',
+	wp_enqueue_script(
+		'select2',
+		plugin_dir_url( dirname( __FILE__ ) ) . 'assets/vendor/select2.min.js',
 			true
 		);
 

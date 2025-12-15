@@ -212,13 +212,15 @@ class FrontendDisplay {
 				echo '<td style="padding: 10px; font-size: 13px; color: #495057;">';
 				echo '<div style="font-weight: 600; margin-bottom: 3px;">' . esc_html( $item['product_name'] ) . '</div>';
 				echo '<div style="font-size: 12px; color: #6c757d;">';
-				echo sprintf( 
+			echo wp_kses_post(
+				sprintf( 
 					/* translators: 1: Quantity, 2: Original price, 3: Discounted price */
-					esc_html__( 'Qty: %1$d × %2$s → %3$s', 'wow-dynamic-deals-for-woo' ),
+					__( 'Qty: %1$d × %2$s → %3$s', 'wow-dynamic-deals-for-woo' ),
 					absint( $item['quantity'] ),
 					wc_price( $item['original_price'] ),
 					wc_price( $item['discounted_price'] )
-				); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				)
+			);
 				echo '</div>';
 				echo '</td>';
 				echo '<td style="padding: 10px; text-align: right;">';

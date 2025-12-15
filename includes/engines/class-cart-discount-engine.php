@@ -99,9 +99,13 @@ class CartDiscountEngine extends RuleEngine {
 				
 				
 				if ( $total_shipping > 0 ) {
-					/* translators: 1: Free shipping text, 2: Discount rule title */
 					$free_shipping_label = '<span style="color: ' . esc_attr( $free_shipping_color ) . ';">' . 
-						sprintf( __( '%1$s (%2$s discount)', 'wow-dynamic-deals-for-woo' ), esc_html( $free_shipping_text ), esc_html( $rule['title'] ) ) . 
+						sprintf(
+							/* translators: 1: Free shipping text, 2: Discount rule title */
+							__( '%1$s (%2$s discount)', 'wow-dynamic-deals-for-woo' ),
+							esc_html( $free_shipping_text ),
+							esc_html( $rule['title'] )
+						) . 
 						'</span>';
 					
 					$cart->add_fee(

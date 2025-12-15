@@ -1,4 +1,4 @@
-=== Woo Dynamic Deals ===
+=== Wow Dynamic Deals for Woo ===
 Contributors: theodoresfakianakis
 Donate link: https://www.paypal.com/paypalme/TheodoreSfakianakis
 Tags: woocommerce, dynamic pricing, discounts, tiered pricing, free gifts
@@ -13,7 +13,7 @@ Advanced dynamic pricing and deals plugin for WooCommerce with 4 powerful rule t
 
 == Description ==
 
-Woo Dynamic Deals is a comprehensive dynamic pricing solution for WooCommerce that gives you complete control over your pricing strategy. Create sophisticated price rules, quantity-based tiered pricing, cart discounts, and free gift promotions—all with an intuitive admin interface.
+Wow Dynamic Deals for Woo is a comprehensive dynamic pricing solution for WooCommerce that gives you complete control over your pricing strategy. Create sophisticated price rules, quantity-based tiered pricing, cart discounts, and free gift promotions—all with an intuitive admin interface.
 
 = Key Features =
 

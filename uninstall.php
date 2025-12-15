@@ -1,6 +1,6 @@
 <?php
 /**
- * Uninstall script for Woo Dynamic Deals
+ * Uninstall script for Wow Dynamic Deals for Woo
  *
  * @package WooDynamicDeals
  * @since 1.0.0

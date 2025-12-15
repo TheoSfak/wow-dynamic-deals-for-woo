@@ -1,10 +1,10 @@
-# Woo Dynamic Deals
+# Wow Dynamic Deals for Woo
 
 [![WordPress Plugin](https://img.shields.io/badge/WordPress-5.8%2B-blue.svg)](https://wordpress.org/)
 [![WooCommerce](https://img.shields.io/badge/WooCommerce-6.0%2B-purple.svg)](https://woocommerce.com/)
 [![PHP Version](https://img.shields.io/badge/PHP-8.0%2B-777BB4.svg)](https://php.net/)
 [![License](https://img.shields.io/badge/license-GPL--2.0%2B-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
-[![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)](https://github.com/TheoSfak/woo-dynamic-deals/releases)
+[![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)](https://github.com/TheoSfak/wow-dynamic-deals-for-woo/releases)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/paypalme/TheodoreSfakianakis)
 
 > Advanced dynamic pricing, tiered discounts, cart-level promotions, and free gift management for WooCommerce.

@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to Woo Dynamic Deals will be documented in this file.
+All notable changes to Wow Dynamic Deals for Woo will be documented in this file.
 
 ## [1.0.0] - 2024-12-10
 

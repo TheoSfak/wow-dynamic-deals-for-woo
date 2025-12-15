@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: Woo Dynamic Deals
- * Plugin URI: https://github.com/TheoSfak/woo-dynamic-deals
+ * Plugin Name: Wow Dynamic Deals for Woo
+ * Plugin URI: https://github.com/TheoSfak/wow-dynamic-deals-for-woo
  * Description: Advanced dynamic pricing, tiered discounts, cart-level promotions, and free gift management for WooCommerce
  * Version: 1.0.0
  * Author: Theodore Sfakianakis

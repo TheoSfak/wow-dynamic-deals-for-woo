@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	
 	<!-- Welcome Section -->
 	<div class="wdd-welcome-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 50px 40px; border-radius: 12px; text-align: center; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-		<h1 style="font-size: 42px; margin: 0 0 15px 0; font-weight: 700;">🎁 Woo Dynamic Deals</h1>
+		<h1 style="font-size: 42px; margin: 0 0 15px 0; font-weight: 700;">🎁 Wow Dynamic Deals for Woo</h1>
 		<p style="font-size: 20px; margin: 0; opacity: 0.95;">Powerful pricing engine for WooCommerce</p>
 	</div>
 
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<h2 style="font-size: 28px; color: #2c3e50; margin: 0 0 25px 0; font-weight: 600;">📖 How It Works</h2>
 		
 		<div style="line-height: 1.8; color: #34495e; font-size: 16px;">
-			<p style="margin-bottom: 15px;"><strong style="color: #667eea;">Woo Dynamic Deals (WDD)</strong> gives you complete control over your WooCommerce store pricing with four powerful features:</p>
+			<p style="margin-bottom: 15px;"><strong style="color: #667eea;">Wow Dynamic Deals for Woo (WDD)</strong> gives you complete control over your WooCommerce store pricing with four powerful features:</p>
 			
 			<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 25px 0;">
 				<div style="padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #3498db;">
@@ -114,7 +114,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.2);">
 			<p style="font-size: 42px; margin: 0 0 15px 0; font-weight: 700;">THANK YOU!</p>
 			<p style="font-size: 18px; margin: 0; opacity: 0.9;">
-				For using Woo Dynamic Deals. Your success is my success! 🚀
+				For using Wow Dynamic Deals for Woo. Your success is my success! 🚀
 			</p>
 		</div>
 	</div>

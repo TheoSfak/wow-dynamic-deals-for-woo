@@ -39,7 +39,7 @@ class AdminMenu {
 		
 		// Main menu page
 		add_menu_page(
-			__( 'Woo Dynamic Deals', 'woo-dynamic-deals' ),
+			__( 'Wow Dynamic Deals for Woo', 'woo-dynamic-deals' ),
 			__( 'Dynamic Deals', 'woo-dynamic-deals' ),
 			'manage_woocommerce',
 			'woo-dynamic-deals',

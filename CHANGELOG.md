@@ -2,7 +2,7 @@
 
 All notable changes to Wow Dynamic Deals for Woo will be documented in this file.
 
-## [1.0.0] - 2024-12-10
+## [1.0.0] - 2025-12-15
 
 ### Added
 - **Price Rules Engine**

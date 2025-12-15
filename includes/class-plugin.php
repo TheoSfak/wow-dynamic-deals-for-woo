@@ -56,7 +56,7 @@ class Plugin {
 	 * Load plugin textdomain
 	 */
 	private function load_textdomain() {
-		load_plugin_textdomain( 'woo-dynamic-deals', false, dirname( WDD_PLUGIN_BASENAME ) . '/languages' );
+		load_plugin_textdomain( 'wow-dynamic-deals-for-woo', false, dirname( WDD_PLUGIN_BASENAME ) . '/languages' );
 	}
 
 	/**
@@ -162,7 +162,7 @@ class Plugin {
 	 * @param string $hook Current admin page hook.
 	 */
 	public function enqueue_admin_scripts( $hook ) {
-		if ( strpos( $hook, 'woo-dynamic-deals' ) === false ) {
+		if ( strpos( $hook, 'wow-dynamic-deals-for-woo' ) === false ) {
 			return;
 		}
 
@@ -236,35 +236,35 @@ class Plugin {
 				'restUrl'  => rest_url( 'wdd/v1/' ),
 				'restNonce' => wp_create_nonce( 'wp_rest' ),
 				'i18n'     => array(
-					'confirmDelete'      => __( 'Are you sure you want to delete this rule?', 'woo-dynamic-deals' ),
-					'deleting'           => __( 'Deleting...', 'woo-dynamic-deals' ),
-					'delete'             => __( 'Delete', 'woo-dynamic-deals' ),
-					'deleteError'        => __( 'Failed to delete rule.', 'woo-dynamic-deals' ),
-					'duplicating'      => __( 'Duplicating...', 'woo-dynamic-deals' ),
-					'duplicate'           => __( 'Duplicate', 'woo-dynamic-deals' ),
-					'duplicateError'      => __( 'Failed to duplicate rule.', 'woo-dynamic-deals' ),
-					'ajaxError'           => __( 'An error occurred. Please try again.', 'woo-dynamic-deals' ),
-					'noRules'             => __( 'No rules found.', 'woo-dynamic-deals' ),
-					'saving'              => __( 'Saving...', 'woo-dynamic-deals' ),
-					'saveRule'            => __( 'Save Rule', 'woo-dynamic-deals' ),
-					'saveError'           => __( 'Failed to save rule.', 'woo-dynamic-deals' ),
-					'saved'               => __( 'Rule saved successfully', 'woo-dynamic-deals' ),
-					'loadError'           => __( 'Failed to load rule.', 'woo-dynamic-deals' ),
-					'addRule'             => __( 'Add Price Rule', 'woo-dynamic-deals' ),
-					'editRule'            => __( 'Edit Price Rule', 'woo-dynamic-deals' ),
-					'addTieredPricing'    => __( 'Add Tiered Pricing', 'woo-dynamic-deals' ),
-					'editTieredPricing'   => __( 'Edit Tiered Pricing', 'woo-dynamic-deals' ),
-					'saveTieredPricing'   => __( 'Save Tiered Pricing', 'woo-dynamic-deals' ),
-					'addCartDiscount'     => __( 'Add Cart Discount', 'woo-dynamic-deals' ),
-					'editCartDiscount'    => __( 'Edit Cart Discount', 'woo-dynamic-deals' ),
-					'saveCartDiscount'    => __( 'Save Cart Discount', 'woo-dynamic-deals' ),
-					'addGiftRule'         => __( 'Add Gift Rule', 'woo-dynamic-deals' ),
-					'editGiftRule'        => __( 'Edit Gift Rule', 'woo-dynamic-deals' ),
-					'saveGiftRule'        => __( 'Save Gift Rule', 'woo-dynamic-deals' ),
-					'searchProducts'      => __( 'Search for products...', 'woo-dynamic-deals' ),
-					'searchUsers'         => __( 'Search for users...', 'woo-dynamic-deals' ),
-					'selectCategories'    => __( 'Select categories...', 'woo-dynamic-deals' ),
-					'error'               => __( 'An error occurred', 'woo-dynamic-deals' ),
+					'confirmDelete'      => __( 'Are you sure you want to delete this rule?', 'wow-dynamic-deals-for-woo' ),
+					'deleting'           => __( 'Deleting...', 'wow-dynamic-deals-for-woo' ),
+					'delete'             => __( 'Delete', 'wow-dynamic-deals-for-woo' ),
+					'deleteError'        => __( 'Failed to delete rule.', 'wow-dynamic-deals-for-woo' ),
+					'duplicating'      => __( 'Duplicating...', 'wow-dynamic-deals-for-woo' ),
+					'duplicate'           => __( 'Duplicate', 'wow-dynamic-deals-for-woo' ),
+					'duplicateError'      => __( 'Failed to duplicate rule.', 'wow-dynamic-deals-for-woo' ),
+					'ajaxError'           => __( 'An error occurred. Please try again.', 'wow-dynamic-deals-for-woo' ),
+					'noRules'             => __( 'No rules found.', 'wow-dynamic-deals-for-woo' ),
+					'saving'              => __( 'Saving...', 'wow-dynamic-deals-for-woo' ),
+					'saveRule'            => __( 'Save Rule', 'wow-dynamic-deals-for-woo' ),
+					'saveError'           => __( 'Failed to save rule.', 'wow-dynamic-deals-for-woo' ),
+					'saved'               => __( 'Rule saved successfully', 'wow-dynamic-deals-for-woo' ),
+					'loadError'           => __( 'Failed to load rule.', 'wow-dynamic-deals-for-woo' ),
+					'addRule'             => __( 'Add Price Rule', 'wow-dynamic-deals-for-woo' ),
+					'editRule'            => __( 'Edit Price Rule', 'wow-dynamic-deals-for-woo' ),
+					'addTieredPricing'    => __( 'Add Tiered Pricing', 'wow-dynamic-deals-for-woo' ),
+					'editTieredPricing'   => __( 'Edit Tiered Pricing', 'wow-dynamic-deals-for-woo' ),
+					'saveTieredPricing'   => __( 'Save Tiered Pricing', 'wow-dynamic-deals-for-woo' ),
+					'addCartDiscount'     => __( 'Add Cart Discount', 'wow-dynamic-deals-for-woo' ),
+					'editCartDiscount'    => __( 'Edit Cart Discount', 'wow-dynamic-deals-for-woo' ),
+					'saveCartDiscount'    => __( 'Save Cart Discount', 'wow-dynamic-deals-for-woo' ),
+					'addGiftRule'         => __( 'Add Gift Rule', 'wow-dynamic-deals-for-woo' ),
+					'editGiftRule'        => __( 'Edit Gift Rule', 'wow-dynamic-deals-for-woo' ),
+					'saveGiftRule'        => __( 'Save Gift Rule', 'wow-dynamic-deals-for-woo' ),
+					'searchProducts'      => __( 'Search for products...', 'wow-dynamic-deals-for-woo' ),
+					'searchUsers'         => __( 'Search for users...', 'wow-dynamic-deals-for-woo' ),
+					'selectCategories'    => __( 'Select categories...', 'wow-dynamic-deals-for-woo' ),
+					'error'               => __( 'An error occurred', 'wow-dynamic-deals-for-woo' ),
 				),
 			)
 		);

@@ -11,12 +11,12 @@ defined('ABSPATH') || exit;
 ?>
 
 <div class="wdd-tiered-pricing-table">
-    <h4><?php esc_html_e('Quantity Discounts Available', 'woo-dynamic-deals'); ?></h4>
+    <h4><?php esc_html_e('Quantity Discounts Available', 'wow-dynamic-deals-for-woo'); ?></h4>
     <table>
         <thead>
             <tr>
-                <th><?php esc_html_e('Quantity', 'woo-dynamic-deals'); ?></th>
-                <th><?php esc_html_e('Discount', 'woo-dynamic-deals'); ?></th>
+                <th><?php esc_html_e('Quantity', 'wow-dynamic-deals-for-woo'); ?></th>
+                <th><?php esc_html_e('Discount', 'wow-dynamic-deals-for-woo'); ?></th>
             </tr>
         </thead>
         <tbody>
@@ -36,9 +36,9 @@ defined('ABSPATH') || exit;
                         if ($tier['discount_type'] === 'percentage') {
                             echo esc_html($tier['discount_value']) . '%';
                         } elseif ($tier['discount_type'] === 'fixed') {
-                            echo wc_price($tier['discount_value']) . ' ' . esc_html__('off', 'woo-dynamic-deals');
+                            echo wc_price($tier['discount_value']) . ' ' . esc_html__('off', 'wow-dynamic-deals-for-woo');
                         } else {
-                            echo wc_price($tier['discount_value']) . ' ' . esc_html__('each', 'woo-dynamic-deals');
+                            echo wc_price($tier['discount_value']) . ' ' . esc_html__('each', 'wow-dynamic-deals-for-woo');
                         }
                         ?>
                     </td>
@@ -48,7 +48,7 @@ defined('ABSPATH') || exit;
     </table>
     <?php if ($mode === 'combined'): ?>
         <p class="wdd-tiered-note">
-            <?php esc_html_e('*Discount applies to entire cart quantity', 'woo-dynamic-deals'); ?>
+            <?php esc_html_e('*Discount applies to entire cart quantity', 'wow-dynamic-deals-for-woo'); ?>
         </p>
     <?php endif; ?>
 </div>

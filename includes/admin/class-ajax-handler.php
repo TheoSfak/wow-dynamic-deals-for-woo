@@ -286,11 +286,11 @@ class AjaxHandler {
 		}
 
 		if ( false === $result ) {
-			wp_send_json_error( array( 'message' => __( 'Failed to save rule', 'woo-dynamic-deals' ) . ' - ' . $wpdb->last_error ) );
+			wp_send_json_error( array( 'message' => __( 'Failed to save rule', 'wow-dynamic-deals-for-woo' ) . ' - ' . $wpdb->last_error ) );
 		}
 
 		wp_send_json_success( array(
-			'message' => __( 'Rule saved successfully', 'woo-dynamic-deals' ),
+			'message' => __( 'Rule saved successfully', 'wow-dynamic-deals-for-woo' ),
 			'rule_id' => $rule_id,
 		) );
 	}
@@ -300,14 +300,14 @@ class AjaxHandler {
 	 */
 	public function delete_rule() {
 		if ( ! $this->get_security() || ! $this->get_security()->verify_ajax_request() ) {
-			wp_send_json_error( array( 'message' => __( 'Security check failed', 'woo-dynamic-deals' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Security check failed', 'wow-dynamic-deals-for-woo' ) ) );
 		}
 
 		$rule_id = isset( $_POST['rule_id'] ) ? intval( $_POST['rule_id'] ) : 0;
 		$rule_type = isset( $_POST['rule_type'] ) ? sanitize_text_field( wp_unslash( $_POST['rule_type'] ) ) : '';
 
 		if ( ! $rule_id || ! $rule_type ) {
-			wp_send_json_error( array( 'message' => __( 'Invalid parameters', 'woo-dynamic-deals' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Invalid parameters', 'wow-dynamic-deals-for-woo' ) ) );
 		}
 
 		global $wpdb;
@@ -316,12 +316,12 @@ class AjaxHandler {
 		$result = $wpdb->delete( $table_name, array( 'id' => $rule_id ) );
 
 		if ( false === $result ) {
-			wp_send_json_error( array( 'message' => __( 'Failed to delete rule', 'woo-dynamic-deals' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Failed to delete rule', 'wow-dynamic-deals-for-woo' ) ) );
 		}
 
 		do_action( 'wdd_rule_deleted', $rule_type );
 
-		wp_send_json_success( array( 'message' => __( 'Rule deleted successfully', 'woo-dynamic-deals' ) ) );
+		wp_send_json_success( array( 'message' => __( 'Rule deleted successfully', 'wow-dynamic-deals-for-woo' ) ) );
 	}
 
 	/**
@@ -329,14 +329,14 @@ class AjaxHandler {
 	 */
 	public function duplicate_rule() {
 		if ( ! $this->get_security() || ! $this->get_security()->verify_ajax_request() ) {
-			wp_send_json_error( array( 'message' => __( 'Security check failed', 'woo-dynamic-deals' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Security check failed', 'wow-dynamic-deals-for-woo' ) ) );
 		}
 
 		$rule_id = isset( $_POST['rule_id'] ) ? intval( $_POST['rule_id'] ) : 0;
 		$rule_type = isset( $_POST['rule_type'] ) ? sanitize_text_field( wp_unslash( $_POST['rule_type'] ) ) : '';
 
 		if ( ! $rule_id || ! $rule_type ) {
-			wp_send_json_error( array( 'message' => __( 'Invalid parameters', 'woo-dynamic-deals' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Invalid parameters', 'wow-dynamic-deals-for-woo' ) ) );
 		}
 
 		global $wpdb;
@@ -345,7 +345,7 @@ class AjaxHandler {
 		$rule = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$table_name} WHERE id = %d", $rule_id ), ARRAY_A ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 
 		if ( ! $rule ) {
-			wp_send_json_error( array( 'message' => __( 'Rule not found', 'woo-dynamic-deals' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Rule not found', 'wow-dynamic-deals-for-woo' ) ) );
 		}
 
 		unset( $rule['id'] );
@@ -355,13 +355,13 @@ class AjaxHandler {
 		$result = $wpdb->insert( $table_name, $rule );
 
 		if ( false === $result ) {
-			wp_send_json_error( array( 'message' => __( 'Failed to duplicate rule', 'woo-dynamic-deals' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Failed to duplicate rule', 'wow-dynamic-deals-for-woo' ) ) );
 		}
 
 		do_action( 'wdd_rule_created', $rule_type );
 
 		wp_send_json_success( array(
-			'message' => __( 'Rule duplicated successfully', 'woo-dynamic-deals' ),
+			'message' => __( 'Rule duplicated successfully', 'wow-dynamic-deals-for-woo' ),
 			'rule_id' => $wpdb->insert_id,
 		) );
 	}

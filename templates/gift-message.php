@@ -14,7 +14,7 @@ defined('ABSPATH') || exit;
     <span class="dashicons dashicons-heart"></span>
     <?php 
     printf(
-        esc_html__('Free gift: %s × %d', 'woo-dynamic-deals'),
+        esc_html__('Free gift: %s × %d', 'wow-dynamic-deals-for-woo'),
         esc_html($gift_name),
         absint($quantity)
     ); 

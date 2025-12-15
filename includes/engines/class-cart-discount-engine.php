@@ -100,7 +100,7 @@ class CartDiscountEngine extends RuleEngine {
 				
 				if ( $total_shipping > 0 ) {
 					$free_shipping_label = '<span style="color: ' . esc_attr( $free_shipping_color ) . ';">' . 
-						sprintf( __( '%s (%s discount)', 'woo-dynamic-deals' ), esc_html( $free_shipping_text ), esc_html( $rule['title'] ) ) . 
+						sprintf( __( '%s (%s discount)', 'wow-dynamic-deals-for-woo' ), esc_html( $free_shipping_text ), esc_html( $rule['title'] ) ) . 
 						'</span>';
 					
 					$cart->add_fee(
@@ -156,7 +156,7 @@ class CartDiscountEngine extends RuleEngine {
 			
 			$free_shipping_rate = new \WC_Shipping_Rate(
 				'wdd_free_shipping',
-				__( 'Free Shipping (Discount Applied)', 'woo-dynamic-deals' ),
+				__( 'Free Shipping (Discount Applied)', 'wow-dynamic-deals-for-woo' ),
 				0,
 				array(),
 				'wdd_free_shipping'

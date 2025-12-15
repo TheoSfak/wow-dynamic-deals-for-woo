@@ -365,7 +365,7 @@ class GiftEngine extends RuleEngine {
 	private function generate_gift_reason( $rule ) {
 		$reasons = array();
 		$trigger_logic = $rule['trigger_logic'] ?? 'and';
-		$logic_text = ( $trigger_logic === 'or' ) ? __( ' OR ', 'woo-dynamic-deals' ) : __( ' AND ', 'woo-dynamic-deals' );
+		$logic_text = ( $trigger_logic === 'or' ) ? __( ' OR ', 'wow-dynamic-deals-for-woo' ) : __( ' AND ', 'wow-dynamic-deals-for-woo' );
 		
 		$main_reason = $this->generate_single_trigger_reason( $rule['trigger_type'] ?? '', $rule );
 		if ( ! empty( $main_reason ) ) {
@@ -418,9 +418,9 @@ class GiftEngine extends RuleEngine {
 						}
 					}
 					if ( ! empty( $product_names ) ) {
-						$reason = sprintf( __( 'purchasing: %s', 'woo-dynamic-deals' ), implode( ', ', $product_names ) );
+						$reason = sprintf( __( 'purchasing: %s', 'wow-dynamic-deals-for-woo' ), implode( ', ', $product_names ) );
 						if ( count( $trigger_products ) > 2 ) {
-							$reason .= ' ' . __( 'and more', 'woo-dynamic-deals' );
+							$reason .= ' ' . __( 'and more', 'wow-dynamic-deals-for-woo' );
 						}
 					}
 				}
@@ -440,9 +440,9 @@ class GiftEngine extends RuleEngine {
 						}
 					}
 					if ( ! empty( $category_names ) ) {
-						$reason = sprintf( __( 'purchasing from: %s', 'woo-dynamic-deals' ), implode( ', ', $category_names ) );
+						$reason = sprintf( __( 'purchasing from: %s', 'wow-dynamic-deals-for-woo' ), implode( ', ', $category_names ) );
 						if ( count( $trigger_categories ) > 2 ) {
-							$reason .= ' ' . __( 'and more', 'woo-dynamic-deals' );
+							$reason .= ' ' . __( 'and more', 'wow-dynamic-deals-for-woo' );
 						}
 					}
 				}
@@ -451,14 +451,14 @@ class GiftEngine extends RuleEngine {
 			case 'cart_total':
 				$trigger_amount = floatval( $data['trigger_amount'] ?? $data['amount'] ?? 0 );
 				if ( $trigger_amount > 0 ) {
-					$reason = sprintf( __( 'cart total over %s', 'woo-dynamic-deals' ), wc_price( $trigger_amount ) );
+					$reason = sprintf( __( 'cart total over %s', 'wow-dynamic-deals-for-woo' ), wc_price( $trigger_amount ) );
 				}
 				break;
 				
 			case 'cart_quantity':
 				$trigger_quantity = intval( $data['trigger_quantity'] ?? $data['quantity'] ?? 0 );
 				if ( $trigger_quantity > 0 ) {
-					$reason = sprintf( __( 'buying %d or more items', 'woo-dynamic-deals' ), $trigger_quantity );
+					$reason = sprintf( __( 'buying %d or more items', 'wow-dynamic-deals-for-woo' ), $trigger_quantity );
 				}
 				break;
 		}
@@ -489,7 +489,7 @@ class GiftEngine extends RuleEngine {
 	 */
 	public function display_gift_price( $price, $cart_item, $cart_item_key ) {
 		if ( ! empty( $cart_item[ self::GIFT_META_KEY ] ) ) {
-			return '<span class="wdd-gift-price">' . __( 'FREE', 'woo-dynamic-deals' ) . '</span>';
+			return '<span class="wdd-gift-price">' . __( 'FREE', 'wow-dynamic-deals-for-woo' ) . '</span>';
 		}
 
 		return $price;

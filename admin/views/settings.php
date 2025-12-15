@@ -45,13 +45,13 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 	update_option( 'wdd_settings', $new_settings );
 	$settings = $new_settings;
 	
-	echo '<div class="wdd-info-box wdd-info-box-success wdd-fade-in"><strong>✓ Success!</strong> ' . esc_html__( 'Settings saved successfully!', 'woo-dynamic-deals' ) . '</div>';
+	echo '<div class="wdd-info-box wdd-info-box-success wdd-fade-in"><strong>✓ Success!</strong> ' . esc_html__( 'Settings saved successfully!', 'wow-dynamic-deals-for-woo' ) . '</div>';
 }
 ?>
 
 <div class="wdd-page-header">
-	<h2>⚙️ <?php esc_html_e( 'Plugin Settings', 'woo-dynamic-deals' ); ?></h2>
-	<p><?php esc_html_e( 'Configure plugin behavior and enable/disable modules', 'woo-dynamic-deals' ); ?></p>
+	<h2>⚙️ <?php esc_html_e( 'Plugin Settings', 'wow-dynamic-deals-for-woo' ); ?></h2>
+	<p><?php esc_html_e( 'Configure plugin behavior and enable/disable modules', 'wow-dynamic-deals-for-woo' ); ?></p>
 </div>
 
 <form method="post" action="" class="wdd-settings-form">
@@ -60,35 +60,35 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 	<!-- Module Controls -->
 	<div class="wdd-card wdd-fade-in">
 		<div class="wdd-card-header">
-			🎯 <?php esc_html_e( 'Module Controls', 'woo-dynamic-deals' ); ?>
+			🎯 <?php esc_html_e( 'Module Controls', 'wow-dynamic-deals-for-woo' ); ?>
 		</div>
 		<div class="wdd-card-body">
 			<p style="color: #6c757d; margin-bottom: 20px;">
-				<?php esc_html_e( 'Enable or disable specific modules. Disabled modules will be hidden from navigation and will not process on the frontend, improving performance.', 'woo-dynamic-deals' ); ?>
+				<?php esc_html_e( 'Enable or disable specific modules. Disabled modules will be hidden from navigation and will not process on the frontend, improving performance.', 'wow-dynamic-deals-for-woo' ); ?>
 			</p>
 			<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
 				<div class="wdd-checkbox-wrapper" style="padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea;">
 					<input type="checkbox" name="enable_price_rules" value="1" class="wdd-checkbox" id="enable_price_rules" <?php checked( ! empty( $settings['enable_price_rules'] ) ); ?>>
 					<label for="enable_price_rules" style="font-weight: 600; cursor: pointer;">
-						💰 <?php esc_html_e( 'Price Rules', 'woo-dynamic-deals' ); ?>
+						💰 <?php esc_html_e( 'Price Rules', 'wow-dynamic-deals-for-woo' ); ?>
 					</label>
 				</div>
 				<div class="wdd-checkbox-wrapper" style="padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #10b981;">
 					<input type="checkbox" name="enable_tiered_pricing" value="1" class="wdd-checkbox" id="enable_tiered_pricing" <?php checked( ! empty( $settings['enable_tiered_pricing'] ) ); ?>>
 					<label for="enable_tiered_pricing" style="font-weight: 600; cursor: pointer;">
-						📊 <?php esc_html_e( 'Tiered Pricing', 'woo-dynamic-deals' ); ?>
+						📊 <?php esc_html_e( 'Tiered Pricing', 'wow-dynamic-deals-for-woo' ); ?>
 					</label>
 				</div>
 				<div class="wdd-checkbox-wrapper" style="padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #3b82f6;">
 					<input type="checkbox" name="enable_cart_discounts" value="1" class="wdd-checkbox" id="enable_cart_discounts" <?php checked( ! empty( $settings['enable_cart_discounts'] ) ); ?>>
 					<label for="enable_cart_discounts" style="font-weight: 600; cursor: pointer;">
-						🛒 <?php esc_html_e( 'Cart Discounts', 'woo-dynamic-deals' ); ?>
+						🛒 <?php esc_html_e( 'Cart Discounts', 'wow-dynamic-deals-for-woo' ); ?>
 					</label>
 				</div>
 				<div class="wdd-checkbox-wrapper" style="padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #f59e0b;">
 					<input type="checkbox" name="enable_gift_rules" value="1" class="wdd-checkbox" id="enable_gift_rules" <?php checked( ! empty( $settings['enable_gift_rules'] ) ); ?>>
 					<label for="enable_gift_rules" style="font-weight: 600; cursor: pointer;">
-						🎁 <?php esc_html_e( 'Free Gifts', 'woo-dynamic-deals' ); ?>
+						🎁 <?php esc_html_e( 'Free Gifts', 'wow-dynamic-deals-for-woo' ); ?>
 					</label>
 				</div>
 			</div>
@@ -98,11 +98,11 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 	<!-- Display & Frontend Settings -->
 	<div class="wdd-card wdd-fade-in">
 		<div class="wdd-card-header">
-			🎨 <?php esc_html_e( 'Display & Frontend Settings', 'woo-dynamic-deals' ); ?>
+			🎨 <?php esc_html_e( 'Display & Frontend Settings', 'wow-dynamic-deals-for-woo' ); ?>
 		</div>
 		<div class="wdd-card-body">
 			<p style="color: #6c757d; margin-bottom: 20px;">
-				<?php esc_html_e( 'Customize how discounts and promotions are displayed to customers on the frontend.', 'woo-dynamic-deals' ); ?>
+				<?php esc_html_e( 'Customize how discounts and promotions are displayed to customers on the frontend.', 'wow-dynamic-deals-for-woo' ); ?>
 			</p>
 			
 			<!-- Show Sale Badge -->
@@ -110,43 +110,43 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 				<div class="wdd-checkbox-wrapper">
 					<input type="checkbox" name="show_sale_badge" value="1" class="wdd-checkbox" id="show_sale_badge" <?php checked( ! empty( $settings['show_sale_badge'] ) ); ?>>
 					<label for="show_sale_badge" style="font-weight: 600; cursor: pointer;">
-						🏷️ <?php esc_html_e( 'Show Sale Badge on Discounted Products', 'woo-dynamic-deals' ); ?>
+						🏷️ <?php esc_html_e( 'Show Sale Badge on Discounted Products', 'wow-dynamic-deals-for-woo' ); ?>
 					</label>
 				</div>
 				<p class="wdd-form-help">
-					<?php esc_html_e( 'Display a customizable badge on products with active discount rules.', 'woo-dynamic-deals' ); ?>
+					<?php esc_html_e( 'Display a customizable badge on products with active discount rules.', 'wow-dynamic-deals-for-woo' ); ?>
 				</p>
 			</div>
 			
 			<!-- Badge Text -->
 			<div class="wdd-form-group" style="margin-left: 30px;">
 				<label for="sale_badge_text" style="font-weight: 600; display: block; margin-bottom: 8px;">
-					<?php esc_html_e( 'Badge Text', 'woo-dynamic-deals' ); ?>
+					<?php esc_html_e( 'Badge Text', 'wow-dynamic-deals-for-woo' ); ?>
 				</label>
 				<input type="text" name="sale_badge_text" id="sale_badge_text" value="<?php echo esc_attr( ! empty( $settings['sale_badge_text'] ) ? $settings['sale_badge_text'] : 'SALE!' ); ?>" class="regular-text" placeholder="SALE!">
 				<p class="wdd-form-help">
-					<?php esc_html_e( 'Customize the text displayed on the sale badge (e.g., "SALE!", "DEAL", "Limited Time", "🔥 Hot").', 'woo-dynamic-deals' ); ?>
+					<?php esc_html_e( 'Customize the text displayed on the sale badge (e.g., "SALE!", "DEAL", "Limited Time", "🔥 Hot").', 'wow-dynamic-deals-for-woo' ); ?>
 				</p>
 			</div>
 			
 			<!-- Pricing Display Format -->
 			<div class="wdd-form-group">
 				<label for="pricing_display_format" style="font-weight: 600; display: block; margin-bottom: 8px;">
-					💲 <?php esc_html_e( 'Pricing Display Format', 'woo-dynamic-deals' ); ?>
+					💲 <?php esc_html_e( 'Pricing Display Format', 'wow-dynamic-deals-for-woo' ); ?>
 				</label>
 				<select name="pricing_display_format" id="pricing_display_format" class="regular-text">
 					<option value="both" <?php selected( ! empty( $settings['pricing_display_format'] ) ? $settings['pricing_display_format'] : 'both', 'both' ); ?>>
-						<?php esc_html_e( 'Show Both (Strikethrough + Sale Price)', 'woo-dynamic-deals' ); ?>
+						<?php esc_html_e( 'Show Both (Strikethrough + Sale Price)', 'wow-dynamic-deals-for-woo' ); ?>
 					</option>
 					<option value="sale_only" <?php selected( ! empty( $settings['pricing_display_format'] ) ? $settings['pricing_display_format'] : '', 'sale_only' ); ?>>
-						<?php esc_html_e( 'Sale Price Only', 'woo-dynamic-deals' ); ?>
+						<?php esc_html_e( 'Sale Price Only', 'wow-dynamic-deals-for-woo' ); ?>
 					</option>
 					<option value="strikethrough" <?php selected( ! empty( $settings['pricing_display_format'] ) ? $settings['pricing_display_format'] : '', 'strikethrough' ); ?>>
-						<?php esc_html_e( 'Strikethrough Original Price', 'woo-dynamic-deals' ); ?>
+						<?php esc_html_e( 'Strikethrough Original Price', 'wow-dynamic-deals-for-woo' ); ?>
 					</option>
 				</select>
 				<p class="wdd-form-help">
-					<?php esc_html_e( 'Choose how to display original vs discounted prices on product pages.', 'woo-dynamic-deals' ); ?>
+					<?php esc_html_e( 'Choose how to display original vs discounted prices on product pages.', 'wow-dynamic-deals-for-woo' ); ?>
 				</p>
 			</div>
 			
@@ -155,37 +155,37 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 				<div class="wdd-checkbox-wrapper">
 					<input type="checkbox" name="show_cart_savings" value="1" class="wdd-checkbox" id="show_cart_savings" <?php checked( ! empty( $settings['show_cart_savings'] ) ); ?>>
 					<label for="show_cart_savings" style="font-weight: 600; cursor: pointer;">
-						💰 <?php esc_html_e( 'Show Total Savings in Cart', 'woo-dynamic-deals' ); ?>
+						💰 <?php esc_html_e( 'Show Total Savings in Cart', 'wow-dynamic-deals-for-woo' ); ?>
 					</label>
 				</div>
 				<p class="wdd-form-help">
-					<?php esc_html_e( 'Display "You saved $X!" message in cart and checkout to highlight customer savings.', 'woo-dynamic-deals' ); ?>
+					<?php esc_html_e( 'Display "You saved $X!" message in cart and checkout to highlight customer savings.', 'wow-dynamic-deals-for-woo' ); ?>
 				</p>
 			</div>
 			
 			<!-- Price Display Colors & Text -->
 			<div class="wdd-form-group">
 				<h4 style="margin-top: 20px; margin-bottom: 15px; color: #333;">
-					🎨 <?php esc_html_e( 'Price Display Customization', 'woo-dynamic-deals' ); ?>
+					🎨 <?php esc_html_e( 'Price Display Customization', 'wow-dynamic-deals-for-woo' ); ?>
 				</h4>
 				
 				<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
 					<!-- Sale Price Color -->
 					<div>
 						<label for="sale_price_color" style="font-weight: 600; display: block; margin-bottom: 5px;">
-							<?php esc_html_e( 'Sale Price Color', 'woo-dynamic-deals' ); ?>
+							<?php esc_html_e( 'Sale Price Color', 'wow-dynamic-deals-for-woo' ); ?>
 						</label>
 						<input type="color" name="sale_price_color" id="sale_price_color" value="<?php echo esc_attr( ! empty( $settings['sale_price_color'] ) ? $settings['sale_price_color'] : '#d32f2f' ); ?>" style="width: 100%; height: 40px; cursor: pointer;">
-						<small style="color: #666;"><?php esc_html_e( 'Color for discounted price', 'woo-dynamic-deals' ); ?></small>
+						<small style="color: #666;"><?php esc_html_e( 'Color for discounted price', 'wow-dynamic-deals-for-woo' ); ?></small>
 					</div>
 					
 					<!-- Original Price Color -->
 					<div>
 						<label for="original_price_color" style="font-weight: 600; display: block; margin-bottom: 5px;">
-							<?php esc_html_e( 'Original Price Color', 'woo-dynamic-deals' ); ?>
+							<?php esc_html_e( 'Original Price Color', 'wow-dynamic-deals-for-woo' ); ?>
 						</label>
 						<input type="color" name="original_price_color" id="original_price_color" value="<?php echo esc_attr( ! empty( $settings['original_price_color'] ) ? $settings['original_price_color'] : '#999999' ); ?>" style="width: 100%; height: 40px; cursor: pointer;">
-						<small style="color: #666;"><?php esc_html_e( 'Color for strikethrough price', 'woo-dynamic-deals' ); ?></small>
+						<small style="color: #666;"><?php esc_html_e( 'Color for strikethrough price', 'wow-dynamic-deals-for-woo' ); ?></small>
 					</div>
 				</div>
 				
@@ -193,19 +193,19 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 					<!-- Savings Text -->
 					<div>
 						<label for="savings_text" style="font-weight: 600; display: block; margin-bottom: 5px;">
-							<?php esc_html_e( 'Savings Text', 'woo-dynamic-deals' ); ?>
+							<?php esc_html_e( 'Savings Text', 'wow-dynamic-deals-for-woo' ); ?>
 						</label>
 						<input type="text" name="savings_text" id="savings_text" value="<?php echo esc_attr( ! empty( $settings['savings_text'] ) ? $settings['savings_text'] : 'You save:' ); ?>" class="regular-text">
-						<small style="color: #666;"><?php esc_html_e( 'Text before savings amount (e.g., "You save:", "Save", "Discount")', 'woo-dynamic-deals' ); ?></small>
+						<small style="color: #666;"><?php esc_html_e( 'Text before savings amount (e.g., "You save:", "Save", "Discount")', 'wow-dynamic-deals-for-woo' ); ?></small>
 					</div>
 					
 					<!-- Savings Text Color -->
 					<div>
 						<label for="savings_text_color" style="font-weight: 600; display: block; margin-bottom: 5px;">
-							<?php esc_html_e( 'Savings Text Color', 'woo-dynamic-deals' ); ?>
+							<?php esc_html_e( 'Savings Text Color', 'wow-dynamic-deals-for-woo' ); ?>
 						</label>
 						<input type="color" name="savings_text_color" id="savings_text_color" value="<?php echo esc_attr( ! empty( $settings['savings_text_color'] ) ? $settings['savings_text_color'] : '#4caf50' ); ?>" style="width: 100%; height: 40px; cursor: pointer;">
-						<small style="color: #666;"><?php esc_html_e( 'Color for savings message', 'woo-dynamic-deals' ); ?></small>
+						<small style="color: #666;"><?php esc_html_e( 'Color for savings message', 'wow-dynamic-deals-for-woo' ); ?></small>
 					</div>
 				</div>
 			</div>
@@ -215,11 +215,11 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 	<!-- Cart Discount Display Customization -->
 	<div class="wdd-card wdd-fade-in">
 		<div class="wdd-card-header">
-			🛒 <?php esc_html_e( 'Cart Discount Display Customization', 'woo-dynamic-deals' ); ?>
+			🛒 <?php esc_html_e( 'Cart Discount Display Customization', 'wow-dynamic-deals-for-woo' ); ?>
 		</div>
 		<div class="wdd-card-body">
 			<p style="color: #6c757d; margin-bottom: 20px;">
-				<?php esc_html_e( 'Customize how cart discount fees and free shipping appear in the cart totals section.', 'woo-dynamic-deals' ); ?>
+				<?php esc_html_e( 'Customize how cart discount fees and free shipping appear in the cart totals section.', 'wow-dynamic-deals-for-woo' ); ?>
 			</p>
 			
 			<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
@@ -227,19 +227,19 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 					<!-- Cart Discount Color -->
 					<div>
 						<label for="cart_discount_color" style="font-weight: 600; display: block; margin-bottom: 5px;">
-							<?php esc_html_e( 'Cart Discount Fee Color', 'woo-dynamic-deals' ); ?>
+							<?php esc_html_e( 'Cart Discount Fee Color', 'wow-dynamic-deals-for-woo' ); ?>
 						</label>
 						<input type="color" name="cart_discount_color" id="cart_discount_color" value="<?php echo esc_attr( ! empty( $settings['cart_discount_color'] ) ? $settings['cart_discount_color'] : '#10b981' ); ?>" style="width: 100%; height: 40px; cursor: pointer;">
-						<small style="color: #666;"><?php esc_html_e( 'Color for cart discount fee labels in cart totals', 'woo-dynamic-deals' ); ?></small>
+						<small style="color: #666;"><?php esc_html_e( 'Color for cart discount fee labels in cart totals', 'wow-dynamic-deals-for-woo' ); ?></small>
 					</div>
 					
 					<!-- Free Shipping Text -->
 					<div>
 						<label for="free_shipping_text" style="font-weight: 600; display: block; margin-bottom: 5px;">
-							<?php esc_html_e( 'Free Shipping Label', 'woo-dynamic-deals' ); ?>
+							<?php esc_html_e( 'Free Shipping Label', 'wow-dynamic-deals-for-woo' ); ?>
 						</label>
 						<input type="text" name="free_shipping_text" id="free_shipping_text" value="<?php echo esc_attr( ! empty( $settings['free_shipping_text'] ) ? $settings['free_shipping_text'] : 'Free Shipping' ); ?>" class="regular-text">
-						<small style="color: #666;"><?php esc_html_e( 'Text for free shipping discount in cart totals', 'woo-dynamic-deals' ); ?></small>
+						<small style="color: #666;"><?php esc_html_e( 'Text for free shipping discount in cart totals', 'wow-dynamic-deals-for-woo' ); ?></small>
 					</div>
 				</div>
 				
@@ -247,15 +247,15 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 					<!-- Free Shipping Color -->
 					<div>
 						<label for="free_shipping_color" style="font-weight: 600; display: block; margin-bottom: 5px;">
-							<?php esc_html_e( 'Free Shipping Color', 'woo-dynamic-deals' ); ?>
+							<?php esc_html_e( 'Free Shipping Color', 'wow-dynamic-deals-for-woo' ); ?>
 						</label>
 						<input type="color" name="free_shipping_color" id="free_shipping_color" value="<?php echo esc_attr( ! empty( $settings['free_shipping_color'] ) ? $settings['free_shipping_color'] : '#4caf50' ); ?>" style="width: 100%; height: 40px; cursor: pointer;">
-						<small style="color: #666;"><?php esc_html_e( 'Color for free shipping fee label', 'woo-dynamic-deals' ); ?></small>
+						<small style="color: #666;"><?php esc_html_e( 'Color for free shipping fee label', 'wow-dynamic-deals-for-woo' ); ?></small>
 					</div>
 					
 					<!-- Preview -->
 					<div style="background: #f9fafb; padding: 15px; border-radius: 8px; border: 1px solid #e5e7eb;">
-						<strong style="display: block; margin-bottom: 10px;"><?php esc_html_e( 'Preview:', 'woo-dynamic-deals' ); ?></strong>
+						<strong style="display: block; margin-bottom: 10px;"><?php esc_html_e( 'Preview:', 'wow-dynamic-deals-for-woo' ); ?></strong>
 						<div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
 							<span id="preview_cart_discount" style="color: <?php echo esc_attr( ! empty( $settings['cart_discount_color'] ) ? $settings['cart_discount_color'] : '#10b981' ); ?>;">30% Cart Discount</span>
 							<span style="color: <?php echo esc_attr( ! empty( $settings['cart_discount_color'] ) ? $settings['cart_discount_color'] : '#10b981' ); ?>;">-20€</span>
@@ -306,11 +306,11 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 	<!-- Discount Stacking & Priority -->
 	<div class="wdd-card wdd-fade-in">
 		<div class="wdd-card-header">
-			🔄 <?php esc_html_e( 'Discount Stacking & Priority', 'woo-dynamic-deals' ); ?>
+			🔄 <?php esc_html_e( 'Discount Stacking & Priority', 'wow-dynamic-deals-for-woo' ); ?>
 		</div>
 		<div class="wdd-card-body">
 			<p style="color: #6c757d; margin-bottom: 20px;">
-				<?php esc_html_e( 'Control how multiple discounts interact and set safety limits.', 'woo-dynamic-deals' ); ?>
+				<?php esc_html_e( 'Control how multiple discounts interact and set safety limits.', 'wow-dynamic-deals-for-woo' ); ?>
 			</p>
 			
 			<!-- Allow Stacking -->
@@ -318,23 +318,23 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 				<div class="wdd-checkbox-wrapper">
 					<input type="checkbox" name="allow_discount_stacking" value="1" class="wdd-checkbox" id="allow_discount_stacking" <?php checked( ! empty( $settings['allow_discount_stacking'] ) ); ?>>
 					<label for="allow_discount_stacking" style="font-weight: 600; cursor: pointer;">
-						<?php esc_html_e( 'Allow Multiple Discounts to Stack', 'woo-dynamic-deals' ); ?>
+						<?php esc_html_e( 'Allow Multiple Discounts to Stack', 'wow-dynamic-deals-for-woo' ); ?>
 					</label>
 				</div>
 				<p class="wdd-form-help">
-					<?php esc_html_e( 'When enabled, multiple discount rules can apply to the same product/cart. When disabled, only the best discount applies.', 'woo-dynamic-deals' ); ?>
+					<?php esc_html_e( 'When enabled, multiple discount rules can apply to the same product/cart. When disabled, only the best discount applies.', 'wow-dynamic-deals-for-woo' ); ?>
 				</p>
 			</div>
 			
 			<!-- Max Discount Limit -->
 			<div class="wdd-form-group">
 				<label for="max_discount_percent" style="font-weight: 600; display: block; margin-bottom: 8px;">
-					🛡️ <?php esc_html_e( 'Maximum Total Discount (%)', 'woo-dynamic-deals' ); ?>
+					🛡️ <?php esc_html_e( 'Maximum Total Discount (%)', 'wow-dynamic-deals-for-woo' ); ?>
 				</label>
 				<input type="number" name="max_discount_percent" id="max_discount_percent" value="<?php echo esc_attr( ! empty( $settings['max_discount_percent'] ) ? $settings['max_discount_percent'] : 0 ); ?>" class="small-text" min="0" max="100" step="1">
 				<span style="margin-left: 5px;">%</span>
 				<p class="wdd-form-help">
-					<?php esc_html_e( 'Set a safety cap on the maximum discount percentage. Enter 0 for no limit. Example: 50 = no product can be discounted more than 50%.', 'woo-dynamic-deals' ); ?>
+					<?php esc_html_e( 'Set a safety cap on the maximum discount percentage. Enter 0 for no limit. Example: 50 = no product can be discounted more than 50%.', 'wow-dynamic-deals-for-woo' ); ?>
 				</p>
 			</div>
 			
@@ -343,11 +343,11 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 				<div class="wdd-checkbox-wrapper">
 					<input type="checkbox" name="stack_with_coupons" value="1" class="wdd-checkbox" id="stack_with_coupons" <?php checked( ! empty( $settings['stack_with_coupons'] ) ); ?>>
 					<label for="stack_with_coupons" style="font-weight: 600; cursor: pointer;">
-						🎟️ <?php esc_html_e( 'Allow Stacking with WooCommerce Coupons', 'woo-dynamic-deals' ); ?>
+						🎟️ <?php esc_html_e( 'Allow Stacking with WooCommerce Coupons', 'wow-dynamic-deals-for-woo' ); ?>
 					</label>
 				</div>
 				<p class="wdd-form-help">
-					<?php esc_html_e( 'When enabled, customers can use coupon codes in addition to automatic dynamic discounts.', 'woo-dynamic-deals' ); ?>
+					<?php esc_html_e( 'When enabled, customers can use coupon codes in addition to automatic dynamic discounts.', 'wow-dynamic-deals-for-woo' ); ?>
 				</p>
 			</div>
 		</div>
@@ -356,11 +356,11 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 	<!-- Cart & Checkout Display -->
 	<div class="wdd-card wdd-fade-in">
 		<div class="wdd-card-header">
-			🛒 <?php esc_html_e( 'Cart & Checkout Display', 'woo-dynamic-deals' ); ?>
+			🛒 <?php esc_html_e( 'Cart & Checkout Display', 'wow-dynamic-deals-for-woo' ); ?>
 		</div>
 		<div class="wdd-card-body">
 			<p style="color: #6c757d; margin-bottom: 20px;">
-				<?php esc_html_e( 'Customize how discounts appear in the shopping cart and checkout.', 'woo-dynamic-deals' ); ?>
+				<?php esc_html_e( 'Customize how discounts appear in the shopping cart and checkout.', 'wow-dynamic-deals-for-woo' ); ?>
 			</p>
 			
 			<!-- Show Quantity Table -->
@@ -368,11 +368,11 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 				<div class="wdd-checkbox-wrapper">
 					<input type="checkbox" name="show_quantity_table" value="1" class="wdd-checkbox" id="show_quantity_table" <?php checked( ! empty( $settings['show_quantity_table'] ) ); ?>>
 					<label for="show_quantity_table" style="font-weight: 600; cursor: pointer;">
-						📊 <?php esc_html_e( 'Show Quantity Pricing Table on Products', 'woo-dynamic-deals' ); ?>
+						📊 <?php esc_html_e( 'Show Quantity Pricing Table on Products', 'wow-dynamic-deals-for-woo' ); ?>
 					</label>
 				</div>
 				<p class="wdd-form-help">
-					<?php esc_html_e( 'Display a table showing tiered pricing breaks on product pages (e.g., "Buy 5-9: $10 each, Buy 10+: $8 each").', 'woo-dynamic-deals' ); ?>
+					<?php esc_html_e( 'Display a table showing tiered pricing breaks on product pages (e.g., "Buy 5-9: $10 each, Buy 10+: $8 each").', 'wow-dynamic-deals-for-woo' ); ?>
 				</p>
 			</div>
 			
@@ -381,17 +381,17 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 				<div class="wdd-checkbox-wrapper">
 					<input type="checkbox" name="show_percentage_in_cart" value="1" class="wdd-checkbox" id="show_percentage_in_cart" <?php checked( ! empty( $settings['show_percentage_in_cart'] ) ); ?>>
 					<label for="show_percentage_in_cart" style="font-weight: 600; cursor: pointer;">
-						📈 <?php esc_html_e( 'Show Discount Percentage in Cart/Checkout', 'woo-dynamic-deals' ); ?>
+						📈 <?php esc_html_e( 'Show Discount Percentage in Cart/Checkout', 'wow-dynamic-deals-for-woo' ); ?>
 					</label>
 				</div>
 				<p class="wdd-form-help">
-					<?php esc_html_e( 'Display the discount percentage alongside savings (e.g., "You save: 20€ (30%)").', 'woo-dynamic-deals' ); ?>
+					<?php esc_html_e( 'Display the discount percentage alongside savings (e.g., "You save: 20€ (30%)").', 'wow-dynamic-deals-for-woo' ); ?>
 				</p>
 			</div>
 			
 			<hr style="margin: 30px 0; border: none; border-top: 1px solid #e5e7eb;">
 			
-			<h3 style="margin-bottom: 20px; font-size: 16px; color: #1f2937;">🎨 <?php esc_html_e( 'Text & Font Customization', 'woo-dynamic-deals' ); ?></h3>
+			<h3 style="margin-bottom: 20px; font-size: 16px; color: #1f2937;">🎨 <?php esc_html_e( 'Text & Font Customization', 'wow-dynamic-deals-for-woo' ); ?></h3>
 			
 			<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
 				<!-- Left Column -->
@@ -399,43 +399,43 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 					<!-- Cart Discount Label -->
 					<div>
 						<label for="cart_discount_label" style="font-weight: 600; display: block; margin-bottom: 8px;">
-							🏷️ <?php esc_html_e( 'Cart Discount Label', 'woo-dynamic-deals' ); ?>
+							🏷️ <?php esc_html_e( 'Cart Discount Label', 'wow-dynamic-deals-for-woo' ); ?>
 						</label>
 						<input type="text" name="cart_discount_label" id="cart_discount_label" value="<?php echo esc_attr( ! empty( $settings['cart_discount_label'] ) ? $settings['cart_discount_label'] : 'Discount' ); ?>" class="regular-text" placeholder="Discount">
-						<small style="color: #666;"><?php esc_html_e( 'Label for discounts in cart totals', 'woo-dynamic-deals' ); ?></small>
+						<small style="color: #666;"><?php esc_html_e( 'Label for discounts in cart totals', 'wow-dynamic-deals-for-woo' ); ?></small>
 					</div>
 					
 					<!-- Cart Discount Label Color -->
 					<div>
 						<label for="cart_discount_label_color" style="font-weight: 600; display: block; margin-bottom: 8px;">
-							<?php esc_html_e( 'Discount Label Color', 'woo-dynamic-deals' ); ?>
+							<?php esc_html_e( 'Discount Label Color', 'wow-dynamic-deals-for-woo' ); ?>
 						</label>
 						<input type="color" name="cart_discount_label_color" id="cart_discount_label_color" value="<?php echo esc_attr( ! empty( $settings['cart_discount_label_color'] ) ? $settings['cart_discount_label_color'] : '#333333' ); ?>" style="width: 100%; height: 40px; cursor: pointer;">
-						<small style="color: #666;"><?php esc_html_e( 'Text color for discount labels', 'woo-dynamic-deals' ); ?></small>
+						<small style="color: #666;"><?php esc_html_e( 'Text color for discount labels', 'wow-dynamic-deals-for-woo' ); ?></small>
 					</div>
 					
 					<!-- Font Size -->
 					<div>
 						<label for="cart_discount_font_size" style="font-weight: 600; display: block; margin-bottom: 8px;">
-							📏 <?php esc_html_e( 'Font Size (px)', 'woo-dynamic-deals' ); ?>
+							📏 <?php esc_html_e( 'Font Size (px)', 'wow-dynamic-deals-for-woo' ); ?>
 						</label>
 						<input type="number" name="cart_discount_font_size" id="cart_discount_font_size" value="<?php echo esc_attr( ! empty( $settings['cart_discount_font_size'] ) ? $settings['cart_discount_font_size'] : 14 ); ?>" min="10" max="24" step="1" class="small-text">
 						<span style="margin-left: 5px;">px</span>
-						<small style="color: #666; display: block; margin-top: 5px;"><?php esc_html_e( 'Font size for discount text (10-24px)', 'woo-dynamic-deals' ); ?></small>
+						<small style="color: #666; display: block; margin-top: 5px;"><?php esc_html_e( 'Font size for discount text (10-24px)', 'wow-dynamic-deals-for-woo' ); ?></small>
 					</div>
 					
 					<!-- Font Weight -->
 					<div>
 						<label for="cart_discount_font_weight" style="font-weight: 600; display: block; margin-bottom: 8px;">
-							💪 <?php esc_html_e( 'Font Weight', 'woo-dynamic-deals' ); ?>
+							💪 <?php esc_html_e( 'Font Weight', 'wow-dynamic-deals-for-woo' ); ?>
 						</label>
 						<select name="cart_discount_font_weight" id="cart_discount_font_weight" class="regular-text">
-							<option value="normal" <?php selected( ! empty( $settings['cart_discount_font_weight'] ) ? $settings['cart_discount_font_weight'] : 'normal', 'normal' ); ?>><?php esc_html_e( 'Normal', 'woo-dynamic-deals' ); ?></option>
-							<option value="500" <?php selected( ! empty( $settings['cart_discount_font_weight'] ) ? $settings['cart_discount_font_weight'] : 'normal', '500' ); ?>><?php esc_html_e( 'Medium', 'woo-dynamic-deals' ); ?></option>
-							<option value="600" <?php selected( ! empty( $settings['cart_discount_font_weight'] ) ? $settings['cart_discount_font_weight'] : 'normal', '600' ); ?>><?php esc_html_e( 'Semi-Bold', 'woo-dynamic-deals' ); ?></option>
-							<option value="bold" <?php selected( ! empty( $settings['cart_discount_font_weight'] ) ? $settings['cart_discount_font_weight'] : 'normal', 'bold' ); ?>><?php esc_html_e( 'Bold', 'woo-dynamic-deals' ); ?></option>
+							<option value="normal" <?php selected( ! empty( $settings['cart_discount_font_weight'] ) ? $settings['cart_discount_font_weight'] : 'normal', 'normal' ); ?>><?php esc_html_e( 'Normal', 'wow-dynamic-deals-for-woo' ); ?></option>
+							<option value="500" <?php selected( ! empty( $settings['cart_discount_font_weight'] ) ? $settings['cart_discount_font_weight'] : 'normal', '500' ); ?>><?php esc_html_e( 'Medium', 'wow-dynamic-deals-for-woo' ); ?></option>
+							<option value="600" <?php selected( ! empty( $settings['cart_discount_font_weight'] ) ? $settings['cart_discount_font_weight'] : 'normal', '600' ); ?>><?php esc_html_e( 'Semi-Bold', 'wow-dynamic-deals-for-woo' ); ?></option>
+							<option value="bold" <?php selected( ! empty( $settings['cart_discount_font_weight'] ) ? $settings['cart_discount_font_weight'] : 'normal', 'bold' ); ?>><?php esc_html_e( 'Bold', 'wow-dynamic-deals-for-woo' ); ?></option>
 						</select>
-						<small style="color: #666;"><?php esc_html_e( 'Font weight for discount text', 'woo-dynamic-deals' ); ?></small>
+						<small style="color: #666;"><?php esc_html_e( 'Font weight for discount text', 'wow-dynamic-deals-for-woo' ); ?></small>
 					</div>
 				</div>
 				
@@ -444,24 +444,24 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 					<!-- Savings Text -->
 					<div>
 						<label for="cart_savings_text" style="font-weight: 600; display: block; margin-bottom: 8px;">
-							💰 <?php esc_html_e( 'Savings Text', 'woo-dynamic-deals' ); ?>
+							💰 <?php esc_html_e( 'Savings Text', 'wow-dynamic-deals-for-woo' ); ?>
 						</label>
 						<input type="text" name="cart_savings_text" id="cart_savings_text" value="<?php echo esc_attr( ! empty( $settings['cart_savings_text'] ) ? $settings['cart_savings_text'] : 'You save' ); ?>" class="regular-text" placeholder="You save">
-						<small style="color: #666;"><?php esc_html_e( 'Text before savings amount in cart/checkout', 'woo-dynamic-deals' ); ?></small>
+						<small style="color: #666;"><?php esc_html_e( 'Text before savings amount in cart/checkout', 'wow-dynamic-deals-for-woo' ); ?></small>
 					</div>
 					
 					<!-- Savings Color -->
 					<div>
 						<label for="cart_savings_color" style="font-weight: 600; display: block; margin-bottom: 8px;">
-							<?php esc_html_e( 'Savings Text Color', 'woo-dynamic-deals' ); ?>
+							<?php esc_html_e( 'Savings Text Color', 'wow-dynamic-deals-for-woo' ); ?>
 						</label>
 						<input type="color" name="cart_savings_color" id="cart_savings_color" value="<?php echo esc_attr( ! empty( $settings['cart_savings_color'] ) ? $settings['cart_savings_color'] : '#4caf50' ); ?>" style="width: 100%; height: 40px; cursor: pointer;">
-						<small style="color: #666;"><?php esc_html_e( 'Color for savings message', 'woo-dynamic-deals' ); ?></small>
+						<small style="color: #666;"><?php esc_html_e( 'Color for savings message', 'wow-dynamic-deals-for-woo' ); ?></small>
 					</div>
 					
 					<!-- Preview -->
 					<div style="background: #f9fafb; padding: 20px; border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 20px;">
-						<strong style="display: block; margin-bottom: 15px; color: #1f2937;"><?php esc_html_e( 'Preview:', 'woo-dynamic-deals' ); ?></strong>
+						<strong style="display: block; margin-bottom: 15px; color: #1f2937;"><?php esc_html_e( 'Preview:', 'wow-dynamic-deals-for-woo' ); ?></strong>
 						
 						<!-- Original Price -->
 						<div style="margin-bottom: 10px;">
@@ -544,18 +544,18 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 	<!-- Debug & Developer Options -->
 	<div class="wdd-card wdd-fade-in">
 		<div class="wdd-card-header">
-			🐛 <?php esc_html_e( 'Debug & Developer Options', 'woo-dynamic-deals' ); ?>
+			🐛 <?php esc_html_e( 'Debug & Developer Options', 'wow-dynamic-deals-for-woo' ); ?>
 		</div>
 		<div class="wdd-card-body">
 			<div class="wdd-form-group">
 				<div class="wdd-checkbox-wrapper">
 					<input type="checkbox" name="debug_mode" value="1" class="wdd-checkbox" id="debug_mode" <?php checked( ! empty( $settings['debug_mode'] ) ); ?>>
 					<label for="debug_mode" style="font-weight: 600; cursor: pointer;">
-						<?php esc_html_e( 'Enable Debug Mode', 'woo-dynamic-deals' ); ?>
+						<?php esc_html_e( 'Enable Debug Mode', 'wow-dynamic-deals-for-woo' ); ?>
 					</label>
 				</div>
 				<p class="wdd-form-help">
-					<?php esc_html_e( 'Logs detailed rule evaluation information to wp-content/debug.log (requires WP_DEBUG_LOG to be enabled).', 'woo-dynamic-deals' ); ?>
+					<?php esc_html_e( 'Logs detailed rule evaluation information to wp-content/debug.log (requires WP_DEBUG_LOG to be enabled).', 'wow-dynamic-deals-for-woo' ); ?>
 				</p>
 			</div>
 		</div>
@@ -564,31 +564,31 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 	<!-- Data Management -->
 	<div class="wdd-card wdd-fade-in">
 		<div class="wdd-card-header">
-			🗄️ <?php esc_html_e( 'Data Management', 'woo-dynamic-deals' ); ?>
+			🗄️ <?php esc_html_e( 'Data Management', 'wow-dynamic-deals-for-woo' ); ?>
 		</div>
 		<div class="wdd-card-body">
 			<div class="wdd-form-group">
 				<div class="wdd-checkbox-wrapper">
 					<input type="checkbox" name="keep_data_on_uninstall" value="1" class="wdd-checkbox" id="keep_data_on_uninstall" <?php checked( ! empty( $settings['keep_data_on_uninstall'] ) ); ?>>
 					<label for="keep_data_on_uninstall" style="font-weight: 600; cursor: pointer;">
-						<?php esc_html_e( 'Keep Data on Uninstall', 'woo-dynamic-deals' ); ?>
+						<?php esc_html_e( 'Keep Data on Uninstall', 'wow-dynamic-deals-for-woo' ); ?>
 					</label>
 				</div>
 				<p class="wdd-form-help">
-					<?php esc_html_e( 'If unchecked, all rules, settings, and database tables will be permanently deleted when you uninstall the plugin.', 'woo-dynamic-deals' ); ?>
+					<?php esc_html_e( 'If unchecked, all rules, settings, and database tables will be permanently deleted when you uninstall the plugin.', 'wow-dynamic-deals-for-woo' ); ?>
 				</p>
 			</div>
 			
 			<div class="wdd-info-box wdd-info-box-warning">
-				<strong>⚠️ <?php esc_html_e( 'Important:', 'woo-dynamic-deals' ); ?></strong>
-				<?php esc_html_e( 'Uninstalling with data deletion is permanent and cannot be undone. Make sure to backup your rules before uninstalling if you plan to reinstall later.', 'woo-dynamic-deals' ); ?>
+				<strong>⚠️ <?php esc_html_e( 'Important:', 'wow-dynamic-deals-for-woo' ); ?></strong>
+				<?php esc_html_e( 'Uninstalling with data deletion is permanent and cannot be undone. Make sure to backup your rules before uninstalling if you plan to reinstall later.', 'wow-dynamic-deals-for-woo' ); ?>
 			</div>
 		</div>
 	</div>
 
 	<div style="text-align: right; margin-top: 30px;">
 		<button type="submit" name="wdd_save_settings" class="wdd-btn wdd-btn-primary wdd-btn-lg">
-			💾 <?php esc_html_e( 'Save Settings', 'woo-dynamic-deals' ); ?>
+			💾 <?php esc_html_e( 'Save Settings', 'wow-dynamic-deals-for-woo' ); ?>
 		</button>
 	</div>
 </form>

@@ -6,8 +6,7 @@
  * Version: 1.0.0
  * Author: Theodore Sfakianakis
  * Author URI: https://www.paypal.com/paypalme/TheodoreSfakianakis
- * Text Domain: woo-dynamic-deals
- * Domain Path: /languages
+ * Text Domain: wow-dynamic-deals-for-woo
  * Requires at least: 5.8
  * Requires PHP: 8.0
  * WC requires at least: 6.0
@@ -39,8 +38,8 @@ function wdd_check_woocommerce() {
 		add_action(
 			'admin_notices',
 			function() {
-				echo '<div class="error"><p><strong>' . esc_html__( 'Woo Dynamic Deals', 'woo-dynamic-deals' ) . '</strong> ' .
-					esc_html__( 'requires WooCommerce to be installed and activated.', 'woo-dynamic-deals' ) . '</p></div>';
+				echo '<div class="error"><p><strong>' . esc_html__( 'Woo Dynamic Deals', 'wow-dynamic-deals-for-woo' ) . '</strong> ' .
+					esc_html__( 'requires WooCommerce to be installed and activated.', 'wow-dynamic-deals-for-woo' ) . '</p></div>';
 			}
 		);
 		return false;
@@ -56,8 +55,8 @@ function wdd_check_php_version() {
 		add_action(
 			'admin_notices',
 			function() {
-				echo '<div class="error"><p><strong>' . esc_html__( 'Woo Dynamic Deals', 'woo-dynamic-deals' ) . '</strong> ' .
-					esc_html__( 'requires PHP 8.0 or higher. Your current PHP version is', 'woo-dynamic-deals' ) . ' ' . esc_html( PHP_VERSION ) . '</p></div>';
+				echo '<div class="error"><p><strong>' . esc_html__( 'Woo Dynamic Deals', 'wow-dynamic-deals-for-woo' ) . '</strong> ' .
+					esc_html__( 'requires PHP 8.0 or higher. Your current PHP version is', 'wow-dynamic-deals-for-woo' ) . ' ' . esc_html( PHP_VERSION ) . '</p></div>';
 			}
 		);
 		return false;
@@ -100,8 +99,8 @@ add_action(
 function wdd_activate() {
 	if ( ! wdd_check_php_version() || ! wdd_check_woocommerce() ) {
 		wp_die(
-			esc_html__( 'Plugin activation failed. Please check the requirements.', 'woo-dynamic-deals' ),
-			esc_html__( 'Plugin Activation Error', 'woo-dynamic-deals' ),
+			esc_html__( 'Plugin activation failed. Please check the requirements.', 'wow-dynamic-deals-for-woo' ),
+			esc_html__( 'Plugin Activation Error', 'wow-dynamic-deals-for-woo' ),
 			array( 'back_link' => true )
 		);
 	}

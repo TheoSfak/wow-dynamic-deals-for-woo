@@ -62,13 +62,13 @@ class FrontendDisplay {
 		}
 
 		echo '<div class="wdd-tiered-pricing-table">';
-		echo '<h4>' . esc_html__( 'Quantity Discounts', 'woo-dynamic-deals' ) . '</h4>';
+		echo '<h4>' . esc_html__( 'Quantity Discounts', 'wow-dynamic-deals-for-woo' ) . '</h4>';
 		echo '<table>';
 		echo '<thead>';
 		echo '<tr>';
-		echo '<th>' . esc_html__( 'Quantity', 'woo-dynamic-deals' ) . '</th>';
-		echo '<th>' . esc_html__( 'Price Per Unit', 'woo-dynamic-deals' ) . '</th>';
-		echo '<th>' . esc_html__( 'You Save', 'woo-dynamic-deals' ) . '</th>';
+		echo '<th>' . esc_html__( 'Quantity', 'wow-dynamic-deals-for-woo' ) . '</th>';
+		echo '<th>' . esc_html__( 'Price Per Unit', 'wow-dynamic-deals-for-woo' ) . '</th>';
+		echo '<th>' . esc_html__( 'You Save', 'wow-dynamic-deals-for-woo' ) . '</th>';
 		echo '</tr>';
 		echo '</thead>';
 		echo '<tbody>';
@@ -102,7 +102,7 @@ class FrontendDisplay {
 			echo '<tr>';
 			echo '<td>' . esc_html( $quantity_text ) . '</td>';
 			echo '<td>' . wc_price( $tier_price ) . '</td>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			echo '<td>' . sprintf( esc_html__( '%s (%s%%)', 'woo-dynamic-deals' ), wc_price( $savings ), number_format( $savings_percent, 1 ) ) . '</td>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<td>' . sprintf( esc_html__( '%s (%s%%)', 'wow-dynamic-deals-for-woo' ), wc_price( $savings ), number_format( $savings_percent, 1 ) ) . '</td>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo '</tr>';
 		}
 
@@ -137,7 +137,7 @@ class FrontendDisplay {
 			return;
 		}
 
-		$badge_text = ! empty( $settings['sale_badge_text'] ) ? $settings['sale_badge_text'] : __( 'SALE!', 'woo-dynamic-deals' );
+		$badge_text = ! empty( $settings['sale_badge_text'] ) ? $settings['sale_badge_text'] : __( 'SALE!', 'wow-dynamic-deals-for-woo' );
 
 		echo '<div class="wdd-discount-badge">';
 		echo esc_html( $badge_text );
@@ -202,7 +202,7 @@ class FrontendDisplay {
 		if ( ! empty( $tiered_breakdown ) ) {
 			echo '<tr class="wdd-tiered-breakdown-header">';
 			echo '<th colspan="2" style="background: #f8f9fa; padding: 12px 10px; font-size: 14px; color: #667eea; border-top: 2px solid #667eea;">';
-			echo '<strong>📊 ' . esc_html__( 'Quantity Discount Breakdown', 'woo-dynamic-deals' ) . '</strong>';
+			echo '<strong>📊 ' . esc_html__( 'Quantity Discount Breakdown', 'wow-dynamic-deals-for-woo' ) . '</strong>';
 			echo '</th>';
 			echo '</tr>';
 
@@ -212,7 +212,7 @@ class FrontendDisplay {
 				echo '<div style="font-weight: 600; margin-bottom: 3px;">' . esc_html( $item['product_name'] ) . '</div>';
 				echo '<div style="font-size: 12px; color: #6c757d;">';
 				echo sprintf( 
-					esc_html__( 'Qty: %d × %s → %s', 'woo-dynamic-deals' ),
+					esc_html__( 'Qty: %d × %s → %s', 'wow-dynamic-deals-for-woo' ),
 					$item['quantity'],
 					wc_price( $item['original_price'] ),
 					wc_price( $item['discounted_price'] )
@@ -221,7 +221,7 @@ class FrontendDisplay {
 				echo '</td>';
 				echo '<td style="padding: 10px; text-align: right;">';
 				echo '<div style="color: #10b981; font-weight: 600; font-size: 14px;">-' . wc_price( $item['savings'] ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				echo '<div style="font-size: 11px; color: #6c757d;">(' . number_format( $item['percent'], 1 ) . '% ' . esc_html__( 'off', 'woo-dynamic-deals' ) . ')</div>';
+				echo '<div style="font-size: 11px; color: #6c757d;">(' . number_format( $item['percent'], 1 ) . '% ' . esc_html__( 'off', 'wow-dynamic-deals-for-woo' ) . ')</div>';
 				echo '</td>';
 				echo '</tr>';
 			}
@@ -230,17 +230,17 @@ class FrontendDisplay {
 		if ( $cart_discount_total > 0 ) {
 			echo '<tr class="wdd-cart-discount-row" style="background: #fff3cd;">';
 			echo '<th style="padding: 10px; font-size: 13px; color: #856404;">';
-			echo '🛒 ' . esc_html__( 'Cart Discount', 'woo-dynamic-deals' );
+			echo '🛒 ' . esc_html__( 'Cart Discount', 'wow-dynamic-deals-for-woo' );
 			echo '</th>';
 			echo '<td style="padding: 10px; text-align: right; color: #856404; font-weight: 600;">-' . wc_price( $cart_discount_total ) . '</td>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo '</tr>';
 		}
 
 		if ( ! empty( $settings['show_cart_savings'] ) && $total_savings > 0 ) {
-			$label = ! empty( $settings['cart_discount_label'] ) ? $settings['cart_discount_label'] : __( 'Discount', 'woo-dynamic-deals' );
+			$label = ! empty( $settings['cart_discount_label'] ) ? $settings['cart_discount_label'] : __( 'Discount', 'wow-dynamic-deals-for-woo' );
 
 			echo '<tr class="wdd-savings-summary" style="color: #10b981; font-weight: 600; background: #d1fae5; border-top: 2px solid #10b981;">';
-			echo '<th style="padding: 12px 10px; font-size: 15px;">' . sprintf( esc_html__( '💰 Total Saved (%s)!', 'woo-dynamic-deals' ), esc_html( $label ) ) . '</th>';
+			echo '<th style="padding: 12px 10px; font-size: 15px;">' . sprintf( esc_html__( '💰 Total Saved (%s)!', 'wow-dynamic-deals-for-woo' ), esc_html( $label ) ) . '</th>';
 			echo '<td style="padding: 12px 10px; text-align: right;"><strong style="font-size: 16px;">-' . wc_price( $total_savings ) . '</strong></td>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo '</tr>';
 		}

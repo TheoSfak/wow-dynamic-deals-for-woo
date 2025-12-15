@@ -14,8 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wdd-examples-page">
 	<div class="wdd-page-header">
 		<div>
-			<h2>📚 <?php esc_html_e( 'Rules Examples & Use Cases', 'woo-dynamic-deals' ); ?></h2>
-			<p><?php esc_html_e( 'Click any example below to see detailed setup instructions for common promotional scenarios', 'woo-dynamic-deals' ); ?></p>
+			<h2>📚 <?php esc_html_e( 'Rules Examples & Use Cases', 'wow-dynamic-deals-for-woo' ); ?></h2>
+			<p><?php esc_html_e( 'Click any example below to see detailed setup instructions for common promotional scenarios', 'wow-dynamic-deals-for-woo' ); ?></p>
 		</div>
 	</div>
 
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-purple">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">⚡</span>
-				<h3><?php esc_html_e( 'Flash Sale - 24 Hour Deal', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Flash Sale - 24 Hour Deal', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -56,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-green">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">🎯</span>
-				<h3><?php esc_html_e( 'Buy 2 Get 1 Free', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Buy 2 Get 1 Free', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -84,7 +84,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-gold">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">👑</span>
-				<h3><?php esc_html_e( 'VIP Customer 20% Discount', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'VIP Customer 20% Discount', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -114,7 +114,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-blue">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">📅</span>
-				<h3><?php esc_html_e( 'Weekend Sale - Saturday & Sunday', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Weekend Sale - Saturday & Sunday', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -144,7 +144,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-teal">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">🚚</span>
-				<h3><?php esc_html_e( 'Free Shipping Over $100', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Free Shipping Over $100', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -173,7 +173,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-orange">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">📦</span>
-				<h3><?php esc_html_e( 'Bulk Discount - Buy More, Save More', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Bulk Discount - Buy More, Save More', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -202,7 +202,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-pink">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">🎂</span>
-				<h3><?php esc_html_e( 'Birthday Month Special Gift', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Birthday Month Special Gift', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -232,7 +232,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-red">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">🏷️</span>
-				<h3><?php esc_html_e( 'Clearance - Fixed Price $9.99', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Clearance - Fixed Price $9.99', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -261,7 +261,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-indigo">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">🎓</span>
-				<h3><?php esc_html_e( 'Student Discount - 10% Off', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Student Discount - 10% Off', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -291,7 +291,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-yellow">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">🕐</span>
-				<h3><?php esc_html_e( 'Happy Hour - 3PM to 6PM Daily', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Happy Hour - 3PM to 6PM Daily', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -322,7 +322,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-cyan">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">🎊</span>
-				<h3><?php esc_html_e( 'First Order - 15% Welcome Discount', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'First Order - 15% Welcome Discount', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -351,7 +351,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-green">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">❄️</span>
-				<h3><?php esc_html_e( 'Winter Collection - 40% Off', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Winter Collection - 40% Off', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -381,7 +381,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-purple">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">🎁</span>
-				<h3><?php esc_html_e( 'Buy Laptop, Get Free Mouse', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Buy Laptop, Get Free Mouse', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -410,7 +410,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-blue">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">💵</span>
-				<h3><?php esc_html_e( 'Spend $200, Save $20', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Spend $200, Save $20', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -439,7 +439,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-orange">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">📚</span>
-				<h3><?php esc_html_e( 'Buy 3 Books, Get 50% Off', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Buy 3 Books, Get 50% Off', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -467,7 +467,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-teal">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">🔥</span>
-				<h3><?php esc_html_e( 'BOGO - Buy One Get One 50% Off', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'BOGO - Buy One Get One 50% Off', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -495,7 +495,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-gold">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">⭐</span>
-				<h3><?php esc_html_e( 'Members Only - Special Pricing', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Members Only - Special Pricing', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -525,7 +525,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-pink">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">🐦</span>
-				<h3><?php esc_html_e( 'Early Bird - 6AM to 10AM', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Early Bird - 6AM to 10AM', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -555,7 +555,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-red">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">🎄</span>
-				<h3><?php esc_html_e( 'Christmas Sale - December Special', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Christmas Sale - December Special', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -585,7 +585,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-indigo">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">🎁</span>
-				<h3><?php esc_html_e( 'Free Sample with Every Order', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Free Sample with Every Order', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -614,7 +614,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-purple">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">💎</span>
-				<h3><?php esc_html_e( 'Loyalty Tiers - Spend More, Save More', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Loyalty Tiers - Spend More, Save More', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">
@@ -642,7 +642,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="wdd-example-card wdd-example-card-cyan">
 			<div class="wdd-example-header">
 				<span class="wdd-example-icon">🍔</span>
-				<h3><?php esc_html_e( 'Combo Deal - Phone + Case = 20% Off', 'woo-dynamic-deals' ); ?></h3>
+				<h3><?php esc_html_e( 'Combo Deal - Phone + Case = 20% Off', 'wow-dynamic-deals-for-woo' ); ?></h3>
 				<span class="wdd-example-toggle">+</span>
 			</div>
 			<div class="wdd-example-content">

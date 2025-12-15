@@ -173,7 +173,7 @@ class Hooks {
 	 * @return array
 	 */
 	public function add_settings_link( $links ) {
-		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=woo-dynamic-deals' ) ) . '">' . __( 'Settings', 'woo-dynamic-deals' ) . '</a>';
+		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=woo-dynamic-deals' ) ) . '">' . __( 'Settings', 'wow-dynamic-deals-for-woo' ) . '</a>';
 		array_unshift( $links, $settings_link );
 
 		return $links;

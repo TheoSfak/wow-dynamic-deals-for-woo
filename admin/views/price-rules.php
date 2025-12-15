@@ -17,11 +17,11 @@ $rules = $wpdb->get_results( "SELECT * FROM {$table_name} ORDER BY priority ASC,
 
 <div class="wdd-page-header wdd-flex-between">
 	<div>
-		<h2>💰 <?php esc_html_e( 'Price Rules', 'woo-dynamic-deals' ); ?></h2>
-		<p><?php esc_html_e( 'Create dynamic pricing rules to adjust product prices based on conditions', 'woo-dynamic-deals' ); ?></p>
+		<h2>💰 <?php esc_html_e( 'Price Rules', 'wow-dynamic-deals-for-woo' ); ?></h2>
+		<p><?php esc_html_e( 'Create dynamic pricing rules to adjust product prices based on conditions', 'wow-dynamic-deals-for-woo' ); ?></p>
 	</div>
 	<button class="wdd-btn wdd-btn-primary wdd-add-rule" data-type="price">
-		<span style="font-size: 18px;">➕</span> <?php esc_html_e( 'Add Price Rule', 'woo-dynamic-deals' ); ?>
+		<span style="font-size: 18px;">➕</span> <?php esc_html_e( 'Add Price Rule', 'wow-dynamic-deals-for-woo' ); ?>
 	</button>
 </div>
 
@@ -29,10 +29,10 @@ $rules = $wpdb->get_results( "SELECT * FROM {$table_name} ORDER BY priority ASC,
 	<?php if ( empty( $rules ) ) : ?>
 		<div class="wdd-empty-state wdd-fade-in">
 			<div class="wdd-empty-state-icon">📊</div>
-			<h3><?php esc_html_e( 'No Price Rules Yet', 'woo-dynamic-deals' ); ?></h3>
-			<p><?php esc_html_e( 'Create your first price rule to start offering dynamic pricing to your customers!', 'woo-dynamic-deals' ); ?></p>
+			<h3><?php esc_html_e( 'No Price Rules Yet', 'wow-dynamic-deals-for-woo' ); ?></h3>
+			<p><?php esc_html_e( 'Create your first price rule to start offering dynamic pricing to your customers!', 'wow-dynamic-deals-for-woo' ); ?></p>
 			<button class="wdd-btn wdd-btn-primary wdd-btn-lg wdd-add-rule" data-type="price">
-				<span style="font-size: 20px;">➕</span> <?php esc_html_e( 'Create Your First Rule', 'woo-dynamic-deals' ); ?>
+				<span style="font-size: 20px;">➕</span> <?php esc_html_e( 'Create Your First Rule', 'wow-dynamic-deals-for-woo' ); ?>
 			</button>
 		</div>
 	<?php else : ?>
@@ -40,13 +40,13 @@ $rules = $wpdb->get_results( "SELECT * FROM {$table_name} ORDER BY priority ASC,
 			<table class="wdd-table">
 				<thead>
 					<tr>
-						<th><?php esc_html_e( 'Priority', 'woo-dynamic-deals' ); ?></th>
-						<th><?php esc_html_e( 'Title', 'woo-dynamic-deals' ); ?></th>
-						<th><?php esc_html_e( 'Type', 'woo-dynamic-deals' ); ?></th>
-						<th><?php esc_html_e( 'Value', 'woo-dynamic-deals' ); ?></th>
-						<th><?php esc_html_e( 'Status', 'woo-dynamic-deals' ); ?></th>
-						<th><?php esc_html_e( 'Schedule', 'woo-dynamic-deals' ); ?></th>
-						<th><?php esc_html_e( 'Actions', 'woo-dynamic-deals' ); ?></th>
+						<th><?php esc_html_e( 'Priority', 'wow-dynamic-deals-for-woo' ); ?></th>
+						<th><?php esc_html_e( 'Title', 'wow-dynamic-deals-for-woo' ); ?></th>
+						<th><?php esc_html_e( 'Type', 'wow-dynamic-deals-for-woo' ); ?></th>
+						<th><?php esc_html_e( 'Value', 'wow-dynamic-deals-for-woo' ); ?></th>
+						<th><?php esc_html_e( 'Status', 'wow-dynamic-deals-for-woo' ); ?></th>
+						<th><?php esc_html_e( 'Schedule', 'wow-dynamic-deals-for-woo' ); ?></th>
+						<th><?php esc_html_e( 'Actions', 'wow-dynamic-deals-for-woo' ); ?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -70,9 +70,9 @@ $rules = $wpdb->get_results( "SELECT * FROM {$table_name} ORDER BY priority ASC,
 							</td>
 							<td>
 								<?php if ( 'active' === $rule->status ) : ?>
-									<span class="wdd-badge wdd-badge-active">✓ <?php esc_html_e( 'Active', 'woo-dynamic-deals' ); ?></span>
+									<span class="wdd-badge wdd-badge-active">✓ <?php esc_html_e( 'Active', 'wow-dynamic-deals-for-woo' ); ?></span>
 								<?php else : ?>
-									<span class="wdd-badge wdd-badge-inactive">✗ <?php esc_html_e( 'Inactive', 'woo-dynamic-deals' ); ?></span>
+									<span class="wdd-badge wdd-badge-inactive">✗ <?php esc_html_e( 'Inactive', 'wow-dynamic-deals-for-woo' ); ?></span>
 								<?php endif; ?>
 							</td>
 							<td>
@@ -87,20 +87,20 @@ $rules = $wpdb->get_results( "SELECT * FROM {$table_name} ORDER BY priority ASC,
 									echo esc_html( $has_valid_date_to ? date_i18n( 'M j, Y', strtotime( $rule->date_to ) ) : '—' );
 									echo '</span>';
 								} else {
-									echo '<span style="color: #10b981; font-weight: 600;">♾️ ' . esc_html__( 'Always Active', 'woo-dynamic-deals' ) . '</span>';
+									echo '<span style="color: #10b981; font-weight: 600;">♾️ ' . esc_html__( 'Always Active', 'wow-dynamic-deals-for-woo' ) . '</span>';
 								}
 								?>
 							</td>
 							<td>
 								<div class="wdd-table-actions">
 									<button class="wdd-edit-btn wdd-edit-rule" data-rule-id="<?php echo esc_attr( $rule->id ); ?>">
-										✏️ <?php esc_html_e( 'Edit', 'woo-dynamic-deals' ); ?>
+										✏️ <?php esc_html_e( 'Edit', 'wow-dynamic-deals-for-woo' ); ?>
 									</button>
 									<button class="wdd-duplicate-btn wdd-duplicate-rule" data-rule-id="<?php echo esc_attr( $rule->id ); ?>">
-										📋 <?php esc_html_e( 'Copy', 'woo-dynamic-deals' ); ?>
+										📋 <?php esc_html_e( 'Copy', 'wow-dynamic-deals-for-woo' ); ?>
 									</button>
 									<button class="wdd-delete-btn wdd-delete-rule" data-rule-id="<?php echo esc_attr( $rule->id ); ?>">
-										🗑️ <?php esc_html_e( 'Delete', 'woo-dynamic-deals' ); ?>
+										🗑️ <?php esc_html_e( 'Delete', 'wow-dynamic-deals-for-woo' ); ?>
 									</button>
 								</div>
 							</td>

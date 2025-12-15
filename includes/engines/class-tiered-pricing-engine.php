@@ -343,7 +343,7 @@ class TieredPricingEngine extends RuleEngine {
 			'<div class="wdd-cart-price"><del>%s</del> %s</div><small class="wdd-discount-info"><strong>%s:</strong> %s<br>Save %s (%s%% off)</small>',
 			$original,
 			$price_html,
-			__( 'Quantity Discount Applied', 'woo-dynamic-deals' ),
+			__( 'Quantity Discount Applied', 'wow-dynamic-deals-for-woo' ),
 			$rule,
 			$discount,
 			$percent

@@ -71,13 +71,13 @@ class ImportExport {
         $data = json_decode($json_data, true);
         
         if (json_last_error() !== JSON_ERROR_NONE) {
-            $result['messages'][] = __('Invalid JSON format', 'woo-dynamic-deals');
+            $result['messages'][] = __('Invalid JSON format', 'wow-dynamic-deals-for-woo');
             $result['errors']++;
             return $result;
         }
 
         if (!isset($data['rules']) || !is_array($data['rules'])) {
-            $result['messages'][] = __('Invalid data structure', 'woo-dynamic-deals');
+            $result['messages'][] = __('Invalid data structure', 'wow-dynamic-deals-for-woo');
             $result['errors']++;
             return $result;
         }
@@ -112,7 +112,7 @@ class ImportExport {
 
                 if (empty($rule['title'])) {
                     $result['errors']++;
-                    $result['messages'][] = sprintf(__('Skipped rule without title in %s', 'woo-dynamic-deals'), $type);
+                    $result['messages'][] = sprintf(__('Skipped rule without title in %s', 'wow-dynamic-deals-for-woo'), $type);
                     continue;
                 }
 

@@ -334,12 +334,6 @@ class TieredPricingEngine extends RuleEngine {
 			return $price_html;
 		}
 
-			'original' => $cart_item['wdd_original_price'] ?? 'missing',
-			'discount_amount' => $cart_item['wdd_discount_amount'] ?? 'missing',
-			'discount_percent' => $cart_item['wdd_discount_percent'] ?? 'missing',
-			'rule_name' => $cart_item['wdd_rule_name'] ?? 'missing',
-		), true ) );
-
 		$original = wc_price( $cart_item['wdd_original_price'] ?? 0 );
 		$discount = wc_price( $cart_item['wdd_discount_amount'] ?? 0 );
 		$percent = number_format( $cart_item['wdd_discount_percent'] ?? 0, 0 );

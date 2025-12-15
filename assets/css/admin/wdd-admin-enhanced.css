@@ -1,0 +1,764 @@
+/**
+ * Woo Dynamic Deals - Enhanced Admin Styles
+ * Modern, beautiful design for all admin pages
+ * Author: Theodore Sfakianakis
+ */
+
+/* ===========================
+   Global Admin Wrapper
+   =========================== */
+.wdd-admin-wrap {
+    background: #f8f9fa;
+    padding: 20px;
+    margin: 20px 0 0 -20px;
+}
+
+.wdd-admin-wrap h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* ===========================
+   Navigation Tabs Enhancement
+   =========================== */
+.nav-tab-wrapper {
+    border-bottom: 3px solid #667eea;
+    margin-bottom: 30px;
+    background: white;
+    padding: 10px 20px 0;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav-tab {
+    border: none;
+    background: transparent;
+    color: #7f8c8d;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 24px;
+    margin: 0 5px -3px 0;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.3s ease;
+}
+
+.nav-tab:hover {
+    background: #f8f9ff;
+    color: #667eea;
+    transform: translateY(-2px);
+}
+
+.nav-tab-active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.nav-tab-active:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   Tab Content Wrapper
+   =========================== */
+.wdd-tab-content {
+    background: white;
+    padding: 40px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    min-height: 500px;
+}
+
+/* ===========================
+   Page Headers
+   =========================== */
+.wdd-page-header {
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.wdd-page-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+}
+
+.wdd-page-header p {
+    font-size: 15px;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ===========================
+   Buttons - Modern Design
+   =========================== */
+.wdd-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.wdd-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.wdd-btn:active {
+    transform: translateY(0);
+}
+
+/* Button Variants */
+.wdd-btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.wdd-btn-primary:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #65408b 100%);
+    color: white;
+}
+
+.wdd-btn-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.wdd-btn-success:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    color: white;
+}
+
+.wdd-btn-danger {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+}
+
+.wdd-btn-danger:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: white;
+}
+
+.wdd-btn-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+    color: white;
+}
+
+.wdd-btn-secondary:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #4e555b 100%);
+    color: white;
+}
+
+.wdd-btn-info {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+}
+
+.wdd-btn-warning {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+}
+
+/* Button Sizes */
+.wdd-btn-sm {
+    padding: 8px 18px;
+    font-size: 13px;
+}
+
+.wdd-btn-lg {
+    padding: 16px 36px;
+    font-size: 17px;
+}
+
+/* ===========================
+   Tables - Enhanced Design
+   =========================== */
+.wdd-table-wrapper {
+    overflow-x: auto;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+.wdd-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+}
+
+.wdd-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.wdd-table thead th {
+    color: white;
+    font-weight: 600;
+    padding: 18px 15px;
+    text-align: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wdd-table thead th:first-child {
+    border-radius: 12px 0 0 0;
+}
+
+.wdd-table thead th:last-child {
+    border-radius: 0 12px 0 0;
+}
+
+.wdd-table tbody tr {
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.wdd-table tbody tr:hover {
+    background: #f8f9ff;
+    transform: scale(1.01);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+.wdd-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.wdd-table tbody td {
+    padding: 16px 15px;
+    color: #495057;
+    font-size: 14px;
+}
+
+.wdd-table tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 12px;
+}
+
+.wdd-table tbody tr:last-child td:last-child {
+    border-radius: 0 0 12px 0;
+}
+
+/* Table Actions */
+.wdd-table-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.wdd-table-actions a,
+.wdd-table-actions button {
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s ease;
+}
+
+.wdd-edit-btn {
+    background: #3b82f6;
+    color: white;
+}
+
+.wdd-edit-btn:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.wdd-delete-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.wdd-delete-btn:hover {
+    background: #dc2626;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.wdd-duplicate-btn {
+    background: #f59e0b;
+    color: white;
+}
+
+.wdd-duplicate-btn:hover {
+    background: #d97706;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* Empty State */
+.wdd-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.wdd-empty-state-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.wdd-empty-state h3 {
+    font-size: 22px;
+    color: #6c757d;
+    margin: 0 0 10px 0;
+}
+
+.wdd-empty-state p {
+    font-size: 15px;
+    color: #adb5bd;
+    margin: 0 0 25px 0;
+}
+
+/* ===========================
+   Forms - Beautiful Styling
+   =========================== */
+.wdd-form-group {
+    margin-bottom: 25px;
+}
+
+.wdd-form-label {
+    display: block;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.wdd-form-label span.required {
+    color: #ef4444;
+    margin-left: 3px;
+}
+
+.wdd-form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.wdd-form-control:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.wdd-form-control:hover {
+    border-color: #cbd5e0;
+}
+
+.wdd-form-help {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Select Styling */
+select.wdd-form-control {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23667eea' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+}
+
+/* Checkbox & Radio */
+.wdd-checkbox-wrapper,
+.wdd-radio-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.wdd-checkbox,
+.wdd-radio {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #667eea;
+}
+
+/* ===========================
+   Cards & Panels
+   =========================== */
+.wdd-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.wdd-card-header {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.wdd-card-body {
+    color: #495057;
+    line-height: 1.6;
+}
+
+/* Info Boxes */
+.wdd-info-box {
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: start;
+    gap: 12px;
+}
+
+.wdd-info-box-info {
+    background: #e0e7ff;
+    border-left: 4px solid #667eea;
+    color: #4338ca;
+}
+
+.wdd-info-box-success {
+    background: #d1fae5;
+    border-left: 4px solid #10b981;
+    color: #065f46;
+}
+
+.wdd-info-box-warning {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    color: #92400e;
+}
+
+.wdd-info-box-danger {
+    background: #fee2e2;
+    border-left: 4px solid #ef4444;
+    color: #991b1b;
+}
+
+/* ===========================
+   MODALS (Enhanced - Override Legacy Styles)
+   =========================== */
+.wdd-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    /* DO NOT force display here - let JavaScript control visibility */
+    z-index: 99999 !important;
+}
+
+/* When modal is visible (controlled by JavaScript fadeIn), apply flexbox centering */
+.wdd-modal[style*="display: block"],
+.wdd-modal[style*="display:block"] {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.wdd-modal-backdrop {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(4px);
+    z-index: 1 !important;
+}
+
+.wdd-modal-content {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    background: white;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3) !important;
+    max-width: 1000px;
+    width: 95%;
+    max-height: 90vh;
+    overflow: hidden;
+    z-index: 2 !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.wdd-modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    padding: 25px 30px !important;
+    border-radius: 16px 16px 0 0 !important;
+    border-bottom: none !important;
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* X button in modal header only */
+.wdd-modal-header .wdd-modal-close {
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    background: none !important;
+    border: none !important;
+    color: white !important;
+    font-size: 32px !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    padding: 0 !important;
+    width: 32px !important;
+    height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.wdd-modal-header .wdd-modal-close:hover {
+    opacity: 1 !important;
+    color: white !important;
+    transform: scale(1.1);
+}
+
+/* Cancel button in modal footer - normal button styling */
+.wdd-modal-footer .wdd-modal-close {
+    position: relative !important;
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1.4 !important;
+    vertical-align: middle !important;
+}
+
+.wdd-modal-footer .wdd-modal-close:hover {
+    background: #5a6268;
+}
+
+.wdd-modal-header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.wdd-modal-body {
+    padding: 30px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.wdd-modal-footer {
+    padding: 20px 30px;
+    background: #f8f9fa;
+    border-radius: 0 0 16px 16px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* ===========================
+   Badges & Status
+   =========================== */
+.wdd-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wdd-badge-active {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.wdd-badge-inactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.wdd-badge-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+/* Toggle Switch */
+.wdd-toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+}
+
+.wdd-toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.wdd-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 28px;
+}
+
+.wdd-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .wdd-toggle-slider {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+input:checked + .wdd-toggle-slider:before {
+    transform: translateX(24px);
+}
+
+/* ===========================
+   Loading States
+   =========================== */
+.wdd-loading {
+    text-align: center;
+    padding: 40px;
+}
+
+.wdd-spinner {
+    border: 4px solid #f3f4f6;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: wdd-spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes wdd-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 768px) {
+    .wdd-tab-content {
+        padding: 20px;
+    }
+    
+    .nav-tab {
+        font-size: 13px;
+        padding: 10px 16px;
+    }
+    
+    .wdd-table {
+        font-size: 13px;
+    }
+    
+    .wdd-table thead th,
+    .wdd-table tbody td {
+        padding: 12px 10px;
+    }
+    
+    .wdd-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* ===========================
+   Animations
+   =========================== */
+@keyframes wdd-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wdd-fade-in {
+    animation: wdd-fade-in 0.3s ease;
+}
+
+/* ===========================
+   Utility Classes
+   =========================== */
+.wdd-text-center { text-align: center; }
+.wdd-text-right { text-align: right; }
+.wdd-text-left { text-align: left; }
+
+.wdd-mt-10 { margin-top: 10px; }
+.wdd-mt-20 { margin-top: 20px; }
+.wdd-mt-30 { margin-top: 30px; }
+
+.wdd-mb-10 { margin-bottom: 10px; }
+.wdd-mb-20 { margin-bottom: 20px; }
+.wdd-mb-30 { margin-bottom: 30px; }
+
+.wdd-flex { display: flex; }
+.wdd-flex-between { display: flex; justify-content: space-between; align-items: center; }
+.wdd-flex-center { display: flex; justify-content: center; align-items: center; }
+.wdd-gap-10 { gap: 10px; }
+.wdd-gap-20 { gap: 20px; }

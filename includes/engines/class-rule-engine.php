@@ -8,7 +8,6 @@
 
 namespace WDD\Engines;
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -42,17 +41,14 @@ class RuleEngine {
 	protected function get_rules( $table_name, $conditions = array() ) {
 		global $wpdb;
 
-		// Build cache key.
 		$cache_key = 'wdd_rules_' . $table_name . '_' . md5( wp_json_encode( $conditions ) );
 
-		// Try to get from cache.
 		$rules = wp_cache_get( $cache_key, 'wdd_rules' );
 
 		if ( false !== $rules ) {
 			return $rules;
 		}
 
-		// Build query.
 		$where = array( "status = 'active'" );
 
 		foreach ( $conditions as $key => $value ) {
@@ -67,13 +63,11 @@ class RuleEngine {
 		$where_clause = implode( ' AND ', $where );
 		$table_full_name = $wpdb->prefix . 'wdd_' . $table_name;
 
-		// Get rules.
 		$rules = $wpdb->get_results(
 			"SELECT * FROM {$table_full_name} WHERE {$where_clause} ORDER BY priority ASC, id ASC", // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 			ARRAY_A
 		);
 
-		// Cache the results.
 		wp_cache_set( $cache_key, $rules, 'wdd_rules', HOUR_IN_SECONDS );
 
 		return $rules;
@@ -109,61 +103,43 @@ class RuleEngine {
 		$now = current_time( 'timestamp' );
 		$rule_id = $rule['id'] ?? 'unknown';
 		
-		error_log( 'WDD is_valid_datetime: Checking rule ' . $rule_id . ' - Now timestamp: ' . $now . ' (' . date('Y-m-d H:i:s', $now) . ')' );
 
-		// Check date range - handle empty, NULL, and '0000-00-00' dates
 		if ( ! empty( $rule['date_from'] ) && $rule['date_from'] !== '0000-00-00' && $rule['date_from'] !== '0000-00-00 00:00:00' ) {
 			$date_from = strtotime( $rule['date_from'] );
-			error_log( 'WDD is_valid_datetime: Rule ' . $rule_id . ' date_from: ' . $rule['date_from'] . ' (timestamp: ' . $date_from . ')' );
 			if ( $date_from !== false && $now < $date_from ) {
-				error_log( 'WDD is_valid_datetime: Rule ' . $rule_id . ' FAILED - current time is before start date' );
 				return false;
 			}
 		} else {
-			error_log( 'WDD is_valid_datetime: Rule ' . $rule_id . ' has no start date - no restriction' );
 		}
 
 		if ( ! empty( $rule['date_to'] ) && $rule['date_to'] !== '0000-00-00' && $rule['date_to'] !== '0000-00-00 00:00:00' ) {
 			$date_to = strtotime( $rule['date_to'] );
-			error_log( 'WDD is_valid_datetime: Rule ' . $rule_id . ' date_to: ' . $rule['date_to'] . ' (timestamp: ' . $date_to . ')' );
 			if ( $date_to !== false && $now > $date_to ) {
-				error_log( 'WDD is_valid_datetime: Rule ' . $rule_id . ' FAILED - current time is after end date' );
 				return false;
 			}
 		} else {
-			error_log( 'WDD is_valid_datetime: Rule ' . $rule_id . ' has no end date - no restriction' );
 		}
 
-		// Check day of week.
 		if ( ! empty( $rule['days_of_week'] ) ) {
 			$days_of_week = maybe_unserialize( $rule['days_of_week'] );
-			error_log( 'WDD is_valid_datetime: Rule ' . $rule_id . ' days_of_week: ' . print_r($days_of_week, true) );
 			if ( is_array( $days_of_week ) ) {
 				$current_day = gmdate( 'N', $now ); // 1 (Monday) through 7 (Sunday).
-				error_log( 'WDD is_valid_datetime: Rule ' . $rule_id . ' current day: ' . $current_day );
 				if ( ! in_array( $current_day, $days_of_week, true ) ) {
-					error_log( 'WDD is_valid_datetime: Rule ' . $rule_id . ' FAILED - current day not in allowed days' );
 					return false;
 				}
 			}
 		}
 
-		// Check time range.
 		if ( ! empty( $rule['time_from'] ) && ! empty( $rule['time_to'] ) ) {
-			// Treat 00:00:00 to 00:00:00 as "all day" (no time restriction)
 			if ( $rule['time_from'] === '00:00:00' && $rule['time_to'] === '00:00:00' ) {
-				error_log( 'WDD is_valid_datetime: Rule ' . $rule_id . ' has 00:00:00 to 00:00:00 - treating as all day (no time restriction)' );
 			} else {
 				$current_time = gmdate( 'H:i:s', $now );
-				error_log( 'WDD is_valid_datetime: Rule ' . $rule_id . ' time_from: ' . $rule['time_from'] . ', time_to: ' . $rule['time_to'] . ', current: ' . $current_time );
 				if ( $current_time < $rule['time_from'] || $current_time > $rule['time_to'] ) {
-					error_log( 'WDD is_valid_datetime: Rule ' . $rule_id . ' FAILED - current time outside allowed range' );
 					return false;
 				}
 			}
 		}
 
-		error_log( 'WDD is_valid_datetime: Rule ' . $rule_id . ' PASSED all datetime checks' );
 		return true;
 	}
 
@@ -176,7 +152,6 @@ class RuleEngine {
 	protected function is_valid_user( $rule ) {
 		$current_user_id = get_current_user_id();
 
-		// Check specific user IDs.
 		if ( ! empty( $rule['user_ids'] ) ) {
 			$user_ids = maybe_unserialize( $rule['user_ids'] );
 			if ( is_array( $user_ids ) && ! empty( $user_ids ) ) {
@@ -186,7 +161,6 @@ class RuleEngine {
 			}
 		}
 
-		// Check user roles.
 		if ( ! empty( $rule['user_roles'] ) ) {
 			$user_roles = maybe_unserialize( $rule['user_roles'] );
 			if ( is_array( $user_roles ) && ! empty( $user_roles ) ) {
@@ -219,7 +193,6 @@ class RuleEngine {
 			$result = $this->evaluate_single_condition( $condition, $context );
 			$results[] = $result;
 
-			// Short-circuit evaluation.
 			if ( 'AND' === $logic && ! $result ) {
 				return false;
 			}
@@ -339,7 +312,6 @@ class RuleEngine {
 	 * @return bool
 	 */
 	protected function is_valid_product( $rule, $product_id ) {
-		// Check product IDs.
 		if ( ! empty( $rule['product_ids'] ) ) {
 			$product_ids = maybe_unserialize( $rule['product_ids'] );
 			if ( is_array( $product_ids ) && ! empty( $product_ids ) ) {
@@ -349,11 +321,9 @@ class RuleEngine {
 			}
 		}
 
-		// Check category IDs.
 		if ( ! empty( $rule['category_ids'] ) ) {
 			$category_ids = maybe_unserialize( $rule['category_ids'] );
 			if ( is_array( $category_ids ) && ! empty( $category_ids ) ) {
-				// Convert to integers for comparison
 				$category_ids = array_map( 'intval', $category_ids );
 				$product_categories = wp_get_post_terms( $product_id, 'product_cat', array( 'fields' => 'ids' ) );
 				
@@ -403,7 +373,6 @@ class RuleEngine {
 	protected function debug_log( $message, $data = array() ) {
 		$settings = get_option( 'wdd_settings', array() );
 		if ( ! empty( $settings['debug_mode'] ) ) {
-			error_log( 'WDD Debug: ' . $message . ' ' . wp_json_encode( $data ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 		}
 	}
 }

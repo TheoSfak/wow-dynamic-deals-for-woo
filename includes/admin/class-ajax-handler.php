@@ -8,7 +8,6 @@
 
 namespace WDD\Admin;
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -29,8 +28,6 @@ class AjaxHandler {
 	 * Constructor
 	 */
 	public function __construct() {
-		// Don't access security component in constructor
-		// $this->security = \WDD\Plugin::get_instance()->get_component( 'security' );
 		$this->init_hooks();
 	}
 
@@ -62,13 +59,11 @@ class AjaxHandler {
 	 * Get rule by ID
 	 */
 	public function get_rule() {
-		// Check nonce directly
 		if ( ! isset( $_POST['wdd_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wdd_nonce'] ) ), 'wdd_ajax_action' ) ) {
 			wp_send_json_error( array( 'message' => 'Security check failed' ) );
 			return;
 		}
 
-		// Check capability
 		if ( ! current_user_can( 'manage_woocommerce' ) ) {
 			wp_send_json_error( array( 'message' => 'Insufficient permissions' ) );
 			return;
@@ -92,17 +87,13 @@ class AjaxHandler {
 			return;
 		}
 
-		// Unserialize array fields - convert empty strings to empty arrays
 		$array_fields = array( 'product_ids', 'category_ids', 'user_roles', 'user_ids', 'days_of_week', 'tiers', 'conditions', 'trigger_products', 'trigger_categories', 'gift_products', 'purchase_history_conditions' );
 		foreach ( $array_fields as $field ) {
 			if ( isset( $rule[ $field ] ) ) {
 				if ( empty( $rule[ $field ] ) || $rule[ $field ] === '' ) {
-					// Empty string or null - convert to empty array
 					$rule[ $field ] = array();
 				} else {
-					// Has data - unserialize it
 					$rule[ $field ] = maybe_unserialize( $rule[ $field ] );
-					// Ensure it's an array
 					if ( ! is_array( $rule[ $field ] ) ) {
 						$rule[ $field ] = array();
 					}
@@ -112,7 +103,6 @@ class AjaxHandler {
 			}
 		}
 
-		// Add product/category names for Select2 population
 		if ( ! empty( $rule['product_ids'] ) && is_array( $rule['product_ids'] ) ) {
 			$rule['product_options'] = array();
 			foreach ( $rule['product_ids'] as $product_id ) {
@@ -152,7 +142,6 @@ class AjaxHandler {
 			}
 		}
 
-		// Same for trigger fields
 		if ( ! empty( $rule['trigger_products'] ) && is_array( $rule['trigger_products'] ) ) {
 			$rule['trigger_product_options'] = array();
 			foreach ( $rule['trigger_products'] as $product_id ) {
@@ -192,12 +181,10 @@ class AjaxHandler {
 			}
 		}
 
-		// Parse and enrich additional triggers with product/category names
 		if ( ! empty( $rule['additional_triggers'] ) ) {
 			$additional_triggers = json_decode( $rule['additional_triggers'], true );
 			if ( is_array( $additional_triggers ) ) {
 				foreach ( $additional_triggers as &$trigger ) {
-					// Add product names for product triggers
 					if ( $trigger['type'] === 'product' && ! empty( $trigger['products'] ) ) {
 						$trigger['product_options'] = array();
 						foreach ( $trigger['products'] as $product_id ) {
@@ -211,7 +198,6 @@ class AjaxHandler {
 						}
 					}
 					
-					// Add category names for category triggers
 					if ( $trigger['type'] === 'category' && ! empty( $trigger['categories'] ) ) {
 						$trigger['category_options'] = array();
 						foreach ( $trigger['categories'] as $cat_id ) {
@@ -225,7 +211,6 @@ class AjaxHandler {
 						}
 					}
 				}
-				// Re-encode the enriched data
 				$rule['additional_triggers'] = $additional_triggers;
 			}
 		}
@@ -237,13 +222,11 @@ class AjaxHandler {
 	 * Save rule
 	 */
 	public function save_rule() {
-		// Check nonce directly
 		if ( ! isset( $_POST['wdd_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wdd_nonce'] ) ), 'wdd_ajax_action' ) ) {
 			wp_send_json_error( array( 'message' => 'Security check failed' ) );
 			return;
 		}
 
-		// Check capability
 		if ( ! current_user_can( 'manage_woocommerce' ) ) {
 			wp_send_json_error( array( 'message' => 'Insufficient permissions' ) );
 			return;
@@ -257,18 +240,15 @@ class AjaxHandler {
 			return;
 		}
 
-		// Sanitize rule data - use security component if available, otherwise basic sanitization
 		$security = $this->get_security();
 		if ( $security ) {
 			$sanitized_data = $security->sanitize_rule_data( $rule_data );
 		} else {
-			// Basic sanitization if security component not available
 			$sanitized_data = array();
 			foreach ( $rule_data as $key => $value ) {
 				if ( is_array( $value ) ) {
 					$sanitized_data[ $key ] = $value; // Will be serialized later
 				} else {
-					// Preserve all values including empty strings
 					$sanitized_data[ $key ] = sanitize_text_field( $value );
 				}
 			}
@@ -277,7 +257,6 @@ class AjaxHandler {
 		global $wpdb;
 		$table_name = $this->get_table_name( $rule_type );
 
-		// Check for rule_id BEFORE serialization (must extract it first!)
 		$rule_id = 0;
 		if ( isset( $sanitized_data['rule_id'] ) && $sanitized_data['rule_id'] !== '' && $sanitized_data['rule_id'] !== null ) {
 			$rule_id = intval( $sanitized_data['rule_id'] );
@@ -285,12 +264,10 @@ class AjaxHandler {
 			$rule_id = intval( $sanitized_data['id'] );
 		}
 		
-		// Remove rule_id and id from data array (don't want them in the database columns)
 		unset( $sanitized_data['id'] );
 		unset( $sanitized_data['rule_id'] );
 		unset( $sanitized_data['rule_type'] ); // Also remove rule_type as it's not a column
 
-		// Serialize array fields.
 		$array_fields = array( 'product_ids', 'category_ids', 'user_roles', 'user_ids', 'days_of_week', 'tiers', 'conditions', 'trigger_products', 'trigger_categories', 'gift_products', 'purchase_history_conditions' );
 		foreach ( $array_fields as $field ) {
 			if ( isset( $sanitized_data[ $field ] ) ) {
@@ -298,23 +275,17 @@ class AjaxHandler {
 			}
 		}
 		
-		// Note: additional_triggers is already a JSON string from JavaScript, don't serialize it again
 
 		if ( $rule_id ) {
-			// Update existing rule.
 			$result = $wpdb->update( $table_name, $sanitized_data, array( 'id' => $rule_id ) );
 			do_action( 'wdd_rule_updated', $rule_type );
 		} else {
-			// Insert new rule.
 			$result = $wpdb->insert( $table_name, $sanitized_data );
 			$rule_id = $wpdb->insert_id;
 			do_action( 'wdd_rule_created', $rule_type );
 		}
 
 		if ( false === $result ) {
-			error_log( "WDD: Failed to save {$rule_type} rule. Error: " . $wpdb->last_error );
-			error_log( "WDD: Table: {$table_name}" );
-			error_log( "WDD: Data: " . print_r( $sanitized_data, true ) );
 			wp_send_json_error( array( 'message' => __( 'Failed to save rule', 'woo-dynamic-deals' ) . ' - ' . $wpdb->last_error ) );
 		}
 
@@ -377,7 +348,6 @@ class AjaxHandler {
 			wp_send_json_error( array( 'message' => __( 'Rule not found', 'woo-dynamic-deals' ) ) );
 		}
 
-		// Remove ID and update title.
 		unset( $rule['id'] );
 		$rule['title'] = $rule['title'] . ' (Copy)';
 		$rule['status'] = 'inactive';
@@ -400,7 +370,6 @@ class AjaxHandler {
 	 * Search products
 	 */
 	public function search_products() {
-		// Check nonce directly
 		$nonce_provided = isset( $_POST['wdd_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['wdd_nonce'] ) ) : '';
 		$nonce_verified = wp_verify_nonce( $nonce_provided, 'wdd_ajax_action' );
 		
@@ -415,7 +384,6 @@ class AjaxHandler {
 			return;
 		}
 
-		// Check capability
 		if ( ! current_user_can( 'manage_woocommerce' ) ) {
 			wp_send_json_error( array( 'message' => 'Insufficient permissions' ) );
 			return;
@@ -428,7 +396,6 @@ class AjaxHandler {
 			return;
 		}
 
-		// Simple product search
 		$products = array();
 		$args = array(
 			'post_type'      => 'product',
@@ -479,13 +446,11 @@ class AjaxHandler {
 	 * Search users
 	 */
 	public function search_users() {
-		// Check nonce directly
 		if ( ! isset( $_POST['wdd_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wdd_nonce'] ) ), 'wdd_ajax_action' ) ) {
 			wp_send_json_error( array( 'message' => 'Security check failed' ) );
 			return;
 		}
 
-		// Check capability
 		if ( ! current_user_can( 'manage_woocommerce' ) ) {
 			wp_send_json_error( array( 'message' => 'Insufficient permissions' ) );
 			return;

@@ -8,7 +8,6 @@
 
 namespace WDD;
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -36,7 +35,6 @@ class Security {
 	 * Constructor
 	 */
 	public function __construct() {
-		// Security hooks can be added here if needed.
 	}
 
 	/**
@@ -85,12 +83,10 @@ class Security {
 	 * @return bool
 	 */
 	public function verify_ajax_request( $capability = 'manage_woocommerce' ) {
-		// Check nonce.
 		if ( ! isset( $_POST[ self::NONCE_NAME ] ) || ! $this->verify_nonce( sanitize_text_field( wp_unslash( $_POST[ self::NONCE_NAME ] ) ) ) ) {
 			return false;
 		}
 
-		// Check capability.
 		if ( ! $this->check_capability( $capability ) ) {
 			return false;
 		}
@@ -107,7 +103,6 @@ class Security {
 	public function sanitize_rule_data( $data ) {
 		$sanitized = array();
 
-		// ID fields (important for updates!)
 		$id_fields = array( 'rule_id', 'id' );
 		foreach ( $id_fields as $field ) {
 			if ( isset( $data[ $field ] ) ) {
@@ -115,7 +110,6 @@ class Security {
 			}
 		}
 
-		// Text fields.
 		$text_fields = array( 'title', 'adjustment_type', 'discount_type', 'trigger_type', 'calculation_mode', 'apply_to', 'status', 'rule_type' );
 		foreach ( $text_fields as $field ) {
 			if ( isset( $data[ $field ] ) ) {
@@ -123,7 +117,6 @@ class Security {
 			}
 		}
 
-		// Numeric fields.
 		$numeric_fields = array( 'priority', 'adjustment_value', 'discount_value', 'trigger_amount', 'trigger_quantity', 'max_gifts_per_order', 'min_cart_total', 'max_cart_total', 'min_cart_quantity', 'max_cart_quantity', 'trigger_cart_total', 'trigger_cart_quantity' );
 		foreach ( $numeric_fields as $field ) {
 			if ( isset( $data[ $field ] ) ) {
@@ -131,7 +124,6 @@ class Security {
 			}
 		}
 
-		// Boolean fields.
 		$boolean_fields = array( 'stop_further_rules', 'apply_free_shipping' );
 		foreach ( $boolean_fields as $field ) {
 			if ( isset( $data[ $field ] ) ) {
@@ -139,7 +131,6 @@ class Security {
 			}
 		}
 
-		// Date/Time fields.
 		$datetime_fields = array( 'date_from', 'date_to', 'time_from', 'time_to' );
 		foreach ( $datetime_fields as $field ) {
 			if ( isset( $data[ $field ] ) ) {
@@ -147,14 +138,11 @@ class Security {
 			}
 		}
 
-		// Array fields - handle both flat and multi-dimensional arrays
 		$array_fields = array( 'product_ids', 'category_ids', 'user_roles', 'user_ids', 'days_of_week', 'tiers', 'conditions', 'trigger_products', 'trigger_categories', 'gift_products', 'purchase_history_conditions' );
 		foreach ( $array_fields as $field ) {
 			if ( isset( $data[ $field ] ) ) {
 				if ( is_array( $data[ $field ] ) ) {
-					// Check if it's a multi-dimensional array (like tiers)
 					if ( $field === 'tiers' && isset( $data[ $field ][0] ) && is_array( $data[ $field ][0] ) ) {
-						// Multi-dimensional array - sanitize each tier's fields
 						$sanitized[ $field ] = array();
 						foreach ( $data[ $field ] as $tier ) {
 							$sanitized_tier = array();
@@ -164,7 +152,6 @@ class Security {
 							$sanitized[ $field ][] = $sanitized_tier;
 						}
 					} else {
-						// Flat array - simple sanitization
 						$sanitized[ $field ] = array_map( 'sanitize_text_field', $data[ $field ] );
 					}
 				} else {

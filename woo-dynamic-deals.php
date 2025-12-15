@@ -18,21 +18,17 @@
  * @package WooDynamicDeals
  */
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-error_log( '=== WDD: Main plugin file loaded ===' );
 
-// Define plugin constants.
 define( 'WDD_VERSION', '1.0.0' );
 define( 'WDD_PLUGIN_FILE', __FILE__ );
 define( 'WDD_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WDD_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'WDD_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
-// Require the autoloader.
 require_once WDD_PLUGIN_DIR . 'includes/class-autoloader.php';
 
 /**
@@ -73,23 +69,16 @@ function wdd_check_php_version() {
  * Initialize the plugin
  */
 function wdd_init() {
-	error_log( 'WDD: wdd_init called' );
 	
-	// Check requirements.
 	if ( ! wdd_check_php_version() || ! wdd_check_woocommerce() ) {
-		error_log( 'WDD: Requirements check failed' );
 		return;
 	}
 
-	error_log( 'WDD: Requirements passed, initializing...' );
 
-	// Initialize autoloader.
 	WDD\Autoloader::register();
 
-	// Initialize main plugin class.
 	WDD\Plugin::get_instance();
 	
-	error_log( 'WDD: Plugin instance created' );
 }
 add_action( 'plugins_loaded', 'wdd_init', 10 );
 
@@ -109,7 +98,6 @@ add_action(
  * Plugin activation hook
  */
 function wdd_activate() {
-	// Check requirements before activation.
 	if ( ! wdd_check_php_version() || ! wdd_check_woocommerce() ) {
 		wp_die(
 			esc_html__( 'Plugin activation failed. Please check the requirements.', 'woo-dynamic-deals' ),
@@ -118,14 +106,11 @@ function wdd_activate() {
 		);
 	}
 
-	// Initialize autoloader.
 	require_once WDD_PLUGIN_DIR . 'includes/class-autoloader.php';
 	WDD\Autoloader::register();
 
-	// Run activation routine.
 	WDD\Database::activate();
 
-	// Set transient for activation redirect.
 	set_transient( 'wdd_activation_redirect', true, 30 );
 }
 register_activation_hook( __FILE__, 'wdd_activate' );
@@ -134,14 +119,11 @@ register_activation_hook( __FILE__, 'wdd_activate' );
  * Plugin deactivation hook
  */
 function wdd_deactivate() {
-	// Initialize autoloader.
 	require_once WDD_PLUGIN_DIR . 'includes/class-autoloader.php';
 	WDD\Autoloader::register();
 
-	// Run deactivation routine.
 	WDD\Database::deactivate();
 
-	// Clear scheduled events if any.
 	wp_clear_scheduled_hook( 'wdd_cleanup_expired_rules' );
 }
 register_deactivation_hook( __FILE__, 'wdd_deactivate' );

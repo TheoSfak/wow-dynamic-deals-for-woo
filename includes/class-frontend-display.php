@@ -8,7 +8,6 @@
 
 namespace WDD;
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -22,7 +21,6 @@ class FrontendDisplay {
 	 * Constructor
 	 */
 	public function __construct() {
-		// Frontend display is handled via Hooks class.
 	}
 
 	/**
@@ -33,38 +31,31 @@ class FrontendDisplay {
 	public function display_tiered_pricing( $product_id ) {
 		$settings = get_option( 'wdd_settings', array() );
 		
-		// Check if quantity table display is enabled
 		if ( empty( $settings['show_quantity_table'] ) ) {
 			return;
 		}
 		
-		error_log( "WDD Frontend: display_tiered_pricing called for product {$product_id}" );
 		
 		$tiered_engine = Plugin::get_instance()->get_component( 'tiered_pricing' );
 		if ( ! $tiered_engine ) {
-			error_log( "WDD Frontend: No tiered_engine found" );
 			return;
 		}
 
 		if ( ! $tiered_engine->has_tiered_pricing( $product_id ) ) {
-			error_log( "WDD Frontend: Product {$product_id} has no tiered pricing" );
 			return;
 		}
 
 		$tiers = $tiered_engine->get_product_tiers( $product_id );
 		if ( empty( $tiers ) ) {
-			error_log( "WDD Frontend: No tiers found for product {$product_id}" );
 			return;
 		}
 
-		error_log( "WDD Frontend: Found " . count( $tiers ) . " tiers, displaying table" );
 
 		$product = wc_get_product( $product_id );
 		if ( ! $product ) {
 			return;
 		}
 
-		// Always use regular price for tier calculations
 		$original_price = floatval( $product->get_regular_price() );
 		if ( empty( $original_price ) ) {
 			$original_price = floatval( $product->get_price() );
@@ -89,7 +80,6 @@ class FrontendDisplay {
 			$discount_type = $tier['discount_type'] ?? 'percentage';
 			$discount_value = floatval( $tier['discount_value'] ?? 0 );
 
-			// Calculate tier price.
 			$tier_price = $original_price;
 			switch ( $discount_type ) {
 				case 'fixed_price':
@@ -129,7 +119,6 @@ class FrontendDisplay {
 	public function display_discount_badge( $product_id ) {
 		$settings = get_option( 'wdd_settings', array() );
 		
-		// Check if sale badges are enabled
 		if ( empty( $settings['show_sale_badge'] ) ) {
 			return;
 		}
@@ -148,7 +137,6 @@ class FrontendDisplay {
 			return;
 		}
 
-		// Use custom badge text from settings
 		$badge_text = ! empty( $settings['sale_badge_text'] ) ? $settings['sale_badge_text'] : __( 'SALE!', 'woo-dynamic-deals' );
 
 		echo '<div class="wdd-discount-badge">';
@@ -169,7 +157,6 @@ class FrontendDisplay {
 		$tiered_breakdown = array();
 		$cart_discount_total = 0;
 
-		// Calculate savings from cart discounts.
 		$cart_discount_engine = Plugin::get_instance()->get_component( 'cart_discount' );
 		if ( $cart_discount_engine ) {
 			$active_discounts = $cart_discount_engine->get_active_discounts();
@@ -180,19 +167,13 @@ class FrontendDisplay {
 			}
 		}
 
-		// Calculate savings from tiered pricing with breakdown.
 		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 			$product = $cart_item['data'];
 			
-			// Debug log
-			error_log( 'WDD Breakdown: Checking cart item: ' . $product->get_name() );
-			error_log( 'WDD Breakdown: Has wdd_original_price? ' . ( isset( $cart_item['wdd_original_price'] ) ? 'YES' : 'NO' ) );
 			
 			if ( isset( $cart_item['wdd_original_price'] ) ) {
-				error_log( 'WDD Breakdown: Original=' . $cart_item['wdd_original_price'] . ', Current=' . $product->get_price() );
 			}
 			
-			// Check if WDD stored original price (tiered discount was applied)
 			if ( isset( $cart_item['wdd_original_price'] ) ) {
 				$original_price = floatval( $cart_item['wdd_original_price'] );
 				$sale_price = floatval( $product->get_price() );
@@ -204,9 +185,7 @@ class FrontendDisplay {
 					
 					$total_savings += $item_savings;
 					
-					error_log( 'WDD Breakdown: Adding to breakdown - Savings=' . $item_savings . ', Percent=' . $savings_percent );
 					
-					// Store breakdown info
 					$tiered_breakdown[] = array(
 						'product_name' => $product->get_name(),
 						'quantity' => $quantity,
@@ -219,9 +198,7 @@ class FrontendDisplay {
 			}
 		}
 		
-		error_log( 'WDD Breakdown: Total items with tiered discount: ' . count( $tiered_breakdown ) );
 
-		// Always display tiered discount breakdown if any (even if total savings display is off)
 		if ( ! empty( $tiered_breakdown ) ) {
 			echo '<tr class="wdd-tiered-breakdown-header">';
 			echo '<th colspan="2" style="background: #f8f9fa; padding: 12px 10px; font-size: 14px; color: #667eea; border-top: 2px solid #667eea;">';
@@ -250,7 +227,6 @@ class FrontendDisplay {
 			}
 		}
 
-		// Display cart discount if any
 		if ( $cart_discount_total > 0 ) {
 			echo '<tr class="wdd-cart-discount-row" style="background: #fff3cd;">';
 			echo '<th style="padding: 10px; font-size: 13px; color: #856404;">';
@@ -260,9 +236,7 @@ class FrontendDisplay {
 			echo '</tr>';
 		}
 
-		// Only show total savings row if setting is enabled and there are savings
 		if ( ! empty( $settings['show_cart_savings'] ) && $total_savings > 0 ) {
-			// Use custom label from settings
 			$label = ! empty( $settings['cart_discount_label'] ) ? $settings['cart_discount_label'] : __( 'Discount', 'woo-dynamic-deals' );
 
 			echo '<tr class="wdd-savings-summary" style="color: #10b981; font-weight: 600; background: #d1fae5; border-top: 2px solid #10b981;">';
@@ -318,30 +292,21 @@ class FrontendDisplay {
 		$settings = get_option( 'wdd_settings', array() );
 		$format = ! empty( $settings['pricing_display_format'] ) ? $settings['pricing_display_format'] : 'strikethrough';
 
-		error_log( 'WDD filter_price_html: Called for product ' . $product->get_id() . ', incoming price HTML: ' . $price );
 
-		// Check if Price Engine has applied a discount
 		$price_engine = Plugin::get_instance()->get_component( 'price_engine' );
 		if ( ! $price_engine ) {
-			error_log( 'WDD filter_price_html: No price engine found' );
 			return $price;
 		}
 
-		// Get the ACTUAL regular price from database meta, not from product object
-		// because Price Engine may have already modified it
 		$original_price = floatval( get_post_meta( $product->get_id(), '_regular_price', true ) );
 		$current_price = floatval( $product->get_price() );
 		
-		error_log( 'WDD filter_price_html: Product ' . $product->get_id() . ' - Original (from meta): ' . $original_price . ', Current: ' . $current_price );
 		
-		// Check if there's a price rule discount applied
 		if ( $original_price > $current_price && $current_price > 0 ) {
 			$savings = $original_price - $current_price;
 			$savings_percent = round( ( $savings / $original_price ) * 100 );
 			
-			error_log( 'WDD filter_price_html: Discount detected! Format: ' . $format . ', Savings: ' . $savings . ', Percent: ' . $savings_percent );
 			
-			// Get custom colors and text
 			$sale_color = ! empty( $settings['sale_price_color'] ) ? $settings['sale_price_color'] : '#d32f2f';
 			$original_color = ! empty( $settings['original_price_color'] ) ? $settings['original_price_color'] : '#999999';
 			$savings_text = ! empty( $settings['savings_text'] ) ? $settings['savings_text'] : 'You save:';
@@ -349,20 +314,15 @@ class FrontendDisplay {
 			
 			switch ( $format ) {
 				case 'sale_only':
-					// Show only the discounted price
 					$price = '<span style="color: ' . esc_attr( $sale_color ) . '; font-weight: bold;">' . wc_price( $current_price ) . '</span>';
-					error_log( 'WDD filter_price_html: Applied sale_only format' );
 					break;
 
 				case 'strikethrough':
 				case 'both':
-					// Show strikethrough original with discounted price and savings
 					$price = '<del aria-label="Original price" style="color: ' . esc_attr( $original_color ) . ';">' . wc_price( $original_price ) . '</del> ';
 					$price .= '<ins aria-label="Discounted price" style="color: ' . esc_attr( $sale_color ) . '; font-weight: bold; text-decoration: none;">' . wc_price( $current_price ) . '</ins>';
 					
-					// Always show savings with percentage for strikethrough format
 					$price .= ' <span class="wdd-you-save" style="color: ' . esc_attr( $savings_color ) . '; font-weight: bold;">' . esc_html( $savings_text ) . ' ' . wc_price( $savings ) . ' (' . $savings_percent . '%)</span>';
-					error_log( 'WDD filter_price_html: Applied strikethrough/both format, new price HTML: ' . $price );
 					break;
 			}
 		}
@@ -381,16 +341,13 @@ class FrontendDisplay {
 		$settings = get_option( 'wdd_settings', array() );
 		$format = ! empty( $settings['pricing_display_format'] ) ? $settings['pricing_display_format'] : 'strikethrough';
 
-		// Get the ACTUAL regular price from database meta
 		$original_price = floatval( get_post_meta( $product->get_id(), '_regular_price', true ) );
 		$current_price = floatval( $product->get_price() );
 		
-		// Check if there's a discount applied
 		if ( $original_price > $current_price && $current_price > 0 ) {
 			$savings = $original_price - $current_price;
 			$savings_percent = round( ( $savings / $original_price ) * 100 );
 			
-			// Get custom colors and settings
 			$sale_color = ! empty( $settings['sale_price_color'] ) ? $settings['sale_price_color'] : '#d32f2f';
 			$original_color = ! empty( $settings['original_price_color'] ) ? $settings['original_price_color'] : '#999999';
 			$cart_label_color = ! empty( $settings['cart_discount_label_color'] ) ? $settings['cart_discount_label_color'] : '#333333';
@@ -406,7 +363,6 @@ class FrontendDisplay {
 
 				case 'strikethrough':
 				case 'both':
-					// Show strikethrough original with discounted price and savings
 					$price = '<del class="wdd-cart-original" style="color: ' . esc_attr( $original_color ) . '; font-size: ' . esc_attr( $cart_font_size ) . 'px;">' . wc_price( $original_price ) . '</del><br>';
 					$price .= '<ins class="wdd-cart-discounted" style="color: ' . esc_attr( $sale_color ) . '; font-weight: ' . esc_attr( $cart_font_weight ) . '; text-decoration: none; font-size: ' . esc_attr( $cart_font_size ) . 'px;">' . wc_price( $current_price ) . '</ins><br>';
 					$price .= '<small class="wdd-cart-save" style="color: ' . esc_attr( $cart_savings_color ) . '; font-size: ' . esc_attr( $cart_font_size - 2 ) . 'px;">-' . $savings_percent . '%</small>';
@@ -429,18 +385,15 @@ class FrontendDisplay {
 		$settings = get_option( 'wdd_settings', array() );
 		$format = ! empty( $settings['pricing_display_format'] ) ? $settings['pricing_display_format'] : 'strikethrough';
 
-		// Get the ACTUAL regular price from database meta
 		$original_price = floatval( get_post_meta( $product->get_id(), '_regular_price', true ) );
 		$current_price = floatval( $product->get_price() );
 		
-		// Check if there's a discount applied
 		if ( $original_price > $current_price && $current_price > 0 ) {
 			$original_subtotal = $original_price * $quantity;
 			$current_subtotal = $current_price * $quantity;
 			$savings = $original_subtotal - $current_subtotal;
 			$savings_percent = round( ( $savings / $original_subtotal ) * 100 );
 			
-			// Get custom colors, text, and font settings
 			$sale_color = ! empty( $settings['sale_price_color'] ) ? $settings['sale_price_color'] : '#d32f2f';
 			$original_color = ! empty( $settings['original_price_color'] ) ? $settings['original_price_color'] : '#999999';
 			$cart_savings_text = ! empty( $settings['cart_savings_text'] ) ? $settings['cart_savings_text'] : 'You save';
@@ -456,11 +409,9 @@ class FrontendDisplay {
 
 				case 'strikethrough':
 				case 'both':
-					// Show strikethrough original with discounted subtotal and savings
 					$subtotal = '<del class="wdd-cart-original" style="color: ' . esc_attr( $original_color ) . '; font-size: ' . esc_attr( $cart_font_size ) . 'px;">' . wc_price( $original_subtotal ) . '</del><br>';
 					$subtotal .= '<ins class="wdd-cart-discounted" style="color: ' . esc_attr( $sale_color ) . '; font-weight: ' . esc_attr( $cart_font_weight ) . '; text-decoration: none; font-size: ' . esc_attr( $cart_font_size ) . 'px;">' . wc_price( $current_subtotal ) . '</ins><br>';
 					
-					// Build savings text with optional percentage
 					$savings_display = '<small class="wdd-cart-save" style="color: ' . esc_attr( $cart_savings_color ) . '; font-size: ' . esc_attr( $cart_font_size - 2 ) . 'px;">';
 					$savings_display .= esc_html( $cart_savings_text ) . ': ' . wc_price( $savings );
 					if ( $show_percentage ) {

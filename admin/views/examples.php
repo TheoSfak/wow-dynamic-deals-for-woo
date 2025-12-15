@@ -6,7 +6,6 @@
  * @since 1.0.0
  */
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -838,10 +837,8 @@ jQuery(document).ready(function($) {
 		const $card = $(this).closest('.wdd-example-card');
 		const isActive = $card.hasClass('active');
 		
-		// Close all other cards
 		$('.wdd-example-card').removeClass('active');
 		
-		// Toggle this card
 		if (!isActive) {
 			$card.addClass('active');
 		}

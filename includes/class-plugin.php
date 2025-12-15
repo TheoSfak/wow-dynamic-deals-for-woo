@@ -8,7 +8,6 @@
 
 namespace WDD;
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -69,10 +68,8 @@ class Plugin {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 
-		// Initialize engines after plugins loaded (WooCommerce should be available).
 		add_action( 'init', array( $this, 'init_engines' ), 20 );
 
-		// Activation redirect.
 		add_action( 'admin_init', array( $this, 'activation_redirect' ) );
 	}
 
@@ -80,23 +77,17 @@ class Plugin {
 	 * Initialize plugin components
 	 */
 	private function init_components() {
-		// Core components.
-		// Cache disabled
-		// $this->components['cache']    = new CacheManager();
 		$this->components['security'] = new Security();
 		$this->components['hooks']    = new Hooks();
 
-		// Frontend.
 		$this->components['frontend_display']     = new FrontendDisplay();
 		$this->components['template_loader']      = new TemplateLoader();
 
-		// Admin.
 		if ( is_admin() ) {
 			$this->components['admin_menu']       = new Admin\AdminMenu();
 			$this->components['ajax_handler']     = new Admin\AjaxHandler();
 		}
 
-		// Utilities.
 		$this->components['purchase_history']     = new PurchaseHistory();
 		$this->components['import_export']        = new ImportExport();
 	}
@@ -105,30 +96,23 @@ class Plugin {
 	 * Initialize engines after WooCommerce is loaded
 	 */
 	public function init_engines() {
-		error_log( 'WDD: init_engines called' );
 		
-		// Only initialize if WooCommerce is active.
 		if ( ! class_exists( 'WooCommerce' ) ) {
-			error_log( 'WDD: WooCommerce class not found!' );
 			return;
 		}
 
-		error_log( 'WDD: Initializing engines...' );
 
-		// Engines.
 		$this->components['price_engine']         = new Engines\PriceEngine();
 		$this->components['tiered_pricing']       = new Engines\TieredPricingEngine();
 		$this->components['cart_discount']        = new Engines\CartDiscountEngine();
 		$this->components['gift_engine']          = new Engines\GiftEngine();
 		
-		error_log( 'WDD: Engines initialized successfully' );
 	}
 
 	/**
 	 * Init callback
 	 */
 	public function init() {
-		// Register custom post types, taxonomies, etc.
 		do_action( 'wdd_init' );
 	}
 
@@ -136,7 +120,6 @@ class Plugin {
 	 * Admin init callback
 	 */
 	public function admin_init() {
-		// Admin-specific initialization.
 		do_action( 'wdd_admin_init' );
 	}
 
@@ -144,7 +127,6 @@ class Plugin {
 	 * Enqueue frontend scripts and styles
 	 */
 	public function enqueue_frontend_scripts() {
-		// Only load on product pages and cart.
 		if ( ! is_product() && ! is_cart() && ! is_checkout() ) {
 			return;
 		}
@@ -180,12 +162,10 @@ class Plugin {
 	 * @param string $hook Current admin page hook.
 	 */
 	public function enqueue_admin_scripts( $hook ) {
-		// Only load on our plugin pages.
 		if ( strpos( $hook, 'woo-dynamic-deals' ) === false ) {
 			return;
 		}
 
-		// Enqueue Select2 for better select inputs.
 		wp_enqueue_style(
 			'select2',
 			'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css',
@@ -208,7 +188,6 @@ class Plugin {
 			WDD_VERSION
 		);
 
-		// Enqueue enhanced admin styles
 		wp_enqueue_style(
 			'wdd-admin-enhanced',
 			WDD_PLUGIN_URL . 'assets/css/admin/wdd-admin-enhanced.css',
@@ -290,7 +269,6 @@ class Plugin {
 			)
 		);
 
-		// Enqueue WordPress media uploader for product images.
 		wp_enqueue_media();
 	}
 

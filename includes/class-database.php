@@ -8,7 +8,6 @@
 
 namespace WDD;
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -41,20 +40,17 @@ class Database {
 		$charset_collate = $wpdb->get_charset_collate();
 		$current_version = get_option( self::DB_VERSION_OPTION );
 
-		// Check if we need to create or update tables.
 		if ( $current_version === self::DB_VERSION ) {
 			return;
 		}
 
 		require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 
-		// Table names.
 		$pricing_rules_table      = $wpdb->prefix . 'wdd_pricing_rules';
 		$tiered_pricing_table     = $wpdb->prefix . 'wdd_tiered_pricing';
 		$cart_discount_rules_table = $wpdb->prefix . 'wdd_cart_discount_rules';
 		$gift_rules_table         = $wpdb->prefix . 'wdd_gift_rules';
 
-		// Pricing Rules Table.
 		$sql[] = "CREATE TABLE $pricing_rules_table (
 			id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
 			title varchar(255) NOT NULL,
@@ -80,7 +76,6 @@ class Database {
 			KEY priority (priority)
 		) $charset_collate;";
 
-		// Tiered Pricing Table.
 		$sql[] = "CREATE TABLE $tiered_pricing_table (
 			id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
 			title varchar(255) NOT NULL,
@@ -102,7 +97,6 @@ class Database {
 			KEY priority (priority)
 		) $charset_collate;";
 
-		// Cart Discount Rules Table.
 		$sql[] = "CREATE TABLE $cart_discount_rules_table (
 			id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
 			title varchar(255) NOT NULL,
@@ -132,7 +126,6 @@ class Database {
 			KEY priority (priority)
 		) $charset_collate;";
 
-		// Gift Rules Table.
 		$sql[] = "CREATE TABLE $gift_rules_table (
 			id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
 			title varchar(255) NOT NULL,
@@ -163,18 +156,14 @@ class Database {
 			KEY priority (priority)
 		) $charset_collate;";
 
-		// Execute SQL.
 		foreach ( $sql as $query ) {
 			dbDelta( $query );
 		}
 
-		// Manual column additions for existing installations.
 		self::upgrade_database( $current_version );
 
-		// Update database version.
 		update_option( self::DB_VERSION_OPTION, self::DB_VERSION );
 
-		// Set default options.
 		self::set_default_options();
 	}
 
@@ -186,11 +175,9 @@ class Database {
 	private static function upgrade_database( $current_version ) {
 		global $wpdb;
 
-		// Upgrade from 1.0.0 to 1.1.0 - Add first_order_only column.
 		if ( version_compare( $current_version, '1.1.0', '<' ) ) {
 			$cart_table = $wpdb->prefix . 'wdd_cart_discount_rules';
 			
-			// Check if column exists.
 			$column_exists = $wpdb->get_results(
 				$wpdb->prepare(
 					"SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = %s AND TABLE_NAME = %s AND COLUMN_NAME = %s",
@@ -200,7 +187,6 @@ class Database {
 				)
 			);
 
-			// Add column if it doesn't exist.
 			if ( empty( $column_exists ) ) {
 				$wpdb->query(
 					"ALTER TABLE $cart_table ADD COLUMN first_order_only tinyint(1) DEFAULT 0 AFTER conditions"
@@ -208,10 +194,8 @@ class Database {
 			}
 		}
 		
-		// Upgrade - Rename free_shipping to apply_free_shipping column.
 		$cart_table = $wpdb->prefix . 'wdd_cart_discount_rules';
 		
-		// Check if old column exists.
 		$old_column_exists = $wpdb->get_results(
 			$wpdb->prepare(
 				"SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = %s AND TABLE_NAME = %s AND COLUMN_NAME = %s",
@@ -221,7 +205,6 @@ class Database {
 			)
 		);
 		
-		// Check if new column exists.
 		$new_column_exists = $wpdb->get_results(
 			$wpdb->prepare(
 				"SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = %s AND TABLE_NAME = %s AND COLUMN_NAME = %s",
@@ -231,13 +214,11 @@ class Database {
 			)
 		);
 
-		// Rename column if old exists and new doesn't.
 		if ( ! empty( $old_column_exists ) && empty( $new_column_exists ) ) {
 			$wpdb->query(
 				"ALTER TABLE $cart_table CHANGE COLUMN free_shipping apply_free_shipping tinyint(1) DEFAULT 0"
 			); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 		} elseif ( empty( $old_column_exists ) && empty( $new_column_exists ) ) {
-			// Neither exists, add the new column.
 			$wpdb->query(
 				"ALTER TABLE $cart_table ADD COLUMN apply_free_shipping tinyint(1) DEFAULT 0 AFTER max_cart_quantity"
 			); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
@@ -248,7 +229,6 @@ class Database {
 	 * Deactivate plugin - clean up scheduled events
 	 */
 	public static function deactivate() {
-		// Clear any scheduled events.
 		wp_clear_scheduled_hook( 'wdd_cleanup_expired_rules' );
 	}
 
@@ -258,11 +238,9 @@ class Database {
 	public static function uninstall() {
 		global $wpdb;
 
-		// Check if user wants to keep data.
 		$keep_data = get_option( 'wdd_keep_data_on_uninstall', false );
 
 		if ( ! $keep_data ) {
-			// Drop tables.
 			$tables = array(
 				$wpdb->prefix . 'wdd_pricing_rules',
 				$wpdb->prefix . 'wdd_tiered_pricing',
@@ -274,7 +252,6 @@ class Database {
 				$wpdb->query( "DROP TABLE IF EXISTS $table" ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 			}
 
-		// Delete options.
 		delete_option( self::DB_VERSION_OPTION );
 		delete_option( 'wdd_settings' );
 		delete_option( 'wdd_keep_data_on_uninstall' );

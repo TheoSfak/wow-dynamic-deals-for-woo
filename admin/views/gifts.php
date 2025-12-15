@@ -6,7 +6,6 @@
  * @since 1.0.0
  */
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -70,7 +69,6 @@ $rules = $wpdb->get_results( "SELECT * FROM {$table_name} ORDER BY priority ASC,
 							</td>
 							<td>
 								<?php
-								// Check if dates are valid (not empty, not null, not 0000-00-00)
 								$has_valid_date_from = ! empty( $rule->date_from ) && '0000-00-00' !== substr( $rule->date_from, 0, 10 ) && 'NULL' !== $rule->date_from;
 								$has_valid_date_to = ! empty( $rule->date_to ) && '0000-00-00' !== substr( $rule->date_to, 0, 10 ) && 'NULL' !== $rule->date_to;
 								
@@ -107,6 +105,5 @@ $rules = $wpdb->get_results( "SELECT * FROM {$table_name} ORDER BY priority ASC,
 </div>
 
 <?php
-// Include the modal.
 require_once WDD_PLUGIN_DIR . 'admin/views/modals/gift-edit-modal.php';
 

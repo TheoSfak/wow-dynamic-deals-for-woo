@@ -8,7 +8,6 @@
 
 namespace WDD;
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -29,7 +28,6 @@ class PurchaseHistory {
 	 * Constructor
 	 */
 	public function __construct() {
-		// Listen for order status changes to invalidate cache.
 		add_action( 'woocommerce_loaded', array( $this, 'init_hooks' ) );
 	}
 
@@ -58,7 +56,6 @@ class PurchaseHistory {
 			return intval( $count );
 		}
 
-		// Query orders.
 		$orders = wc_get_orders( array(
 			'customer_id' => $user_id,
 			'status'      => array( 'completed', 'processing' ),
@@ -90,7 +87,6 @@ class PurchaseHistory {
 			return floatval( $total );
 		}
 
-		// Use WooCommerce customer data.
 		$customer = new \WC_Customer( $user_id );
 		$total = $customer->get_total_spent();
 
@@ -118,7 +114,6 @@ class PurchaseHistory {
 			return (bool) $has_purchased;
 		}
 
-		// Use WooCommerce built-in function.
 		$has_purchased = wc_customer_bought_product( '', $user_id, $product_id );
 
 		set_transient( $cache_key, $has_purchased ? 1 : 0, self::CACHE_EXPIRATION );
@@ -144,7 +139,6 @@ class PurchaseHistory {
 			return is_array( $products ) ? $products : array();
 		}
 
-		// Query orders and extract product IDs.
 		$orders = wc_get_orders( array(
 			'customer_id' => $user_id,
 			'status'      => array( 'completed', 'processing' ),
@@ -154,7 +148,6 @@ class PurchaseHistory {
 		$products = array();
 		foreach ( $orders as $order ) {
 			foreach ( $order->get_items() as $item ) {
-				// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 				$product = $item->get_product(); // WC_Order_Item_Product method.
 				if ( $product ) {
 					$product_id = $product->get_id();
@@ -258,16 +251,13 @@ class PurchaseHistory {
 			return;
 		}
 
-		// Delete all transients for this user.
 		delete_transient( 'wdd_order_count_' . $user_id );
 		delete_transient( 'wdd_total_spent_' . $user_id );
 		delete_transient( 'wdd_purchased_products_' . $user_id );
 		delete_transient( 'wdd_purchased_categories_' . $user_id );
 		delete_transient( 'wdd_last_order_date_' . $user_id );
 
-		// Also invalidate product-specific transients.
 		foreach ( $order->get_items() as $item ) {
-			// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 			$product = $item->get_product(); // WC_Order_Item_Product method.
 			if ( $product ) {
 				$product_id = $product->get_id();

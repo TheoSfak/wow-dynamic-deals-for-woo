@@ -8,7 +8,6 @@
 
 namespace WDD\Engines;
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -37,7 +36,6 @@ class TieredPricingEngine extends RuleEngine {
 	 */
 	public function __construct() {
 		parent::__construct();
-		error_log( 'WDD: TieredPricingEngine constructed' );
 		$this->init_hooks();
 	}
 
@@ -45,13 +43,8 @@ class TieredPricingEngine extends RuleEngine {
 	 * Initialize WooCommerce hooks
 	 */
 	private function init_hooks() {
-		error_log( 'WDD: TieredPricingEngine hooks initialized' );
-		// Remove product price filters - tiered pricing should only apply in cart, not on product pages
-		// add_filter( 'woocommerce_product_get_price', array( $this, 'apply_tiered_pricing' ), 100, 2 );
-		// add_filter( 'woocommerce_product_variation_get_price', array( $this, 'apply_tiered_pricing' ), 100, 2 );
 		add_action( 'woocommerce_before_calculate_totals', array( $this, 'apply_cart_tiered_pricing' ), 100 );
 		
-		// Display discount info in cart
 		add_filter( 'woocommerce_cart_item_price', array( $this, 'display_cart_item_discount' ), 10, 3 );
 	}
 
@@ -69,7 +62,6 @@ class TieredPricingEngine extends RuleEngine {
 
 		$product_id = $product->get_id();
 		
-		// Prevent infinite loops.
 		if ( isset( $this->processing[ $product_id ] ) ) {
 			return $price;
 		}
@@ -127,14 +119,12 @@ class TieredPricingEngine extends RuleEngine {
 
 			$calculation_mode = $rule['calculation_mode'] ?? 'per_line';
 
-			// For combined mode, get total quantity across all line items.
 			if ( 'combined' === $calculation_mode ) {
 				$quantity = $this->get_combined_product_quantity( $product_id, $cart );
 			}
 
 			$product = $cart_item['data'];
 			
-			// Get the ORIGINAL price from the product database
 			$original_price = $product->get_regular_price();
 			if ( empty( $original_price ) ) {
 				$original_price = $product->get_price();
@@ -142,14 +132,11 @@ class TieredPricingEngine extends RuleEngine {
 			
 			$tier_price = $this->calculate_tier_price( $original_price, $quantity, $rule );
 
-			error_log( "WDD: Tier price result: " . var_export( $tier_price, true ) . " vs Original: {$original_price}" );
 
 			if ( $tier_price && $tier_price !== $original_price ) {
-				// Store discount info in cart item for display FIRST
 				$discount_amount = $original_price - $tier_price;
 				$discount_percent = ( $discount_amount / $original_price ) * 100;
 				
-				error_log( "WDD: Storing discount metadata - Amount: €{$discount_amount}, Percent: {$discount_percent}%" );
 				
 				WC()->cart->cart_contents[ $cart_item_key ]['wdd_rule_name'] = $rule['title'];
 				WC()->cart->cart_contents[ $cart_item_key ]['wdd_original_price'] = $original_price;
@@ -157,11 +144,8 @@ class TieredPricingEngine extends RuleEngine {
 				WC()->cart->cart_contents[ $cart_item_key ]['wdd_discount_percent'] = $discount_percent;
 				WC()->cart->cart_contents[ $cart_item_key ]['wdd_price_applied'] = true;
 				
-				// Always apply the tier price - WooCommerce may reset it during recalculation
 				$cart_item['data']->set_price( $tier_price );
-				error_log( "WDD: Applied price €{$tier_price} to product (was €{$original_price})" );
 			} else {
-				error_log( "WDD: NOT storing discount - tier_price is null or equal to original" );
 			}
 		}
 	}
@@ -175,31 +159,25 @@ class TieredPricingEngine extends RuleEngine {
 	private function get_applicable_tier_rule( $product_id ) {
 		$rules = $this->get_rules( 'tiered_pricing' );
 
-		error_log( "WDD: Found " . count( $rules ) . " tiered pricing rules" );
 
 		if ( empty( $rules ) ) {
 			return null;
 		}
 
 		foreach ( $rules as $rule ) {
-			error_log( "WDD: Checking rule {$rule['id']} - {$rule['title']}" );
 			
 			if ( ! $this->is_valid_datetime( $rule ) ) {
-				error_log( "WDD: Rule {$rule['id']} failed datetime check" );
 				continue;
 			}
 
 			if ( ! $this->is_valid_user( $rule ) ) {
-				error_log( "WDD: Rule {$rule['id']} failed user check" );
 				continue;
 			}
 
 			if ( ! $this->is_valid_product( $rule, $product_id ) ) {
-				error_log( "WDD: Rule {$rule['id']} failed product check for product {$product_id}" );
 				continue;
 			}
 
-			error_log( "WDD: Rule {$rule['id']} MATCHED!" );
 			return $rule;
 		}
 
@@ -215,41 +193,32 @@ class TieredPricingEngine extends RuleEngine {
 	 * @return float|null
 	 */
 	private function calculate_tier_price( $original_price, $quantity, $rule ) {
-		error_log( "WDD: calculate_tier_price - Original: €{$original_price}, Qty: {$quantity}" );
 		
 		if ( empty( $rule['tiers'] ) ) {
-			error_log( "WDD: No tiers in rule" );
 			return null;
 		}
 
 		$tiers = maybe_unserialize( $rule['tiers'] );
 		if ( ! is_array( $tiers ) ) {
-			error_log( "WDD: Tiers not an array" );
 			return null;
 		}
 
-		error_log( "WDD: Found " . count( $tiers ) . " tiers: " . print_r( $tiers, true ) );
 
-		// Sort tiers by min_quantity descending.
 		usort( $tiers, function( $a, $b ) {
 			return ( $b['min_quantity'] ?? 0 ) <=> ( $a['min_quantity'] ?? 0 );
 		});
 
-		// Find matching tier.
 		foreach ( $tiers as $tier ) {
 			$min_qty = intval( $tier['min_quantity'] ?? 0 );
 			$max_qty = ! empty( $tier['max_quantity'] ) ? intval( $tier['max_quantity'] ) : PHP_INT_MAX;
 
-			error_log( "WDD: Checking tier {$min_qty}-{$max_qty} for qty {$quantity}" );
 
 			if ( $quantity >= $min_qty && $quantity <= $max_qty ) {
 				$new_price = $this->apply_tier_discount( $original_price, $tier );
-				error_log( "WDD: MATCHED! Type: {$tier['discount_type']}, Value: {$tier['discount_value']}%, New price: €{$new_price}" );
 				return $new_price;
 			}
 		}
 
-		error_log( "WDD: No matching tier found" );
 		return null;
 	}
 
@@ -335,7 +304,6 @@ class TieredPricingEngine extends RuleEngine {
 			return null;
 		}
 
-		// Sort by min_quantity.
 		usort( $tiers, function( $a, $b ) {
 			return ( $a['min_quantity'] ?? 0 ) <=> ( $b['min_quantity'] ?? 0 );
 		});
@@ -362,13 +330,10 @@ class TieredPricingEngine extends RuleEngine {
 	 * @return string Modified price HTML with discount info.
 	 */
 	public function display_cart_item_discount( $price_html, $cart_item, $cart_item_key ) {
-		// Only show if this item has a WDD discount applied
 		if ( ! isset( $cart_item['wdd_price_applied'] ) ) {
-			error_log( "WDD Display: No wdd_price_applied flag found in cart item" );
 			return $price_html;
 		}
 
-		error_log( "WDD Display: Cart item data: " . print_r( array(
 			'original' => $cart_item['wdd_original_price'] ?? 'missing',
 			'discount_amount' => $cart_item['wdd_discount_amount'] ?? 'missing',
 			'discount_percent' => $cart_item['wdd_discount_percent'] ?? 'missing',

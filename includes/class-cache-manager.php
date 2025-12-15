@@ -8,7 +8,6 @@
 
 namespace WDD;
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -29,7 +28,6 @@ class CacheManager {
 	 * Constructor
 	 */
 	public function __construct() {
-		// Hook into rule updates to invalidate cache.
 		add_action( 'wdd_rule_updated', array( $this, 'invalidate_rule_cache' ), 10, 1 );
 		add_action( 'wdd_rule_deleted', array( $this, 'invalidate_rule_cache' ), 10, 1 );
 		add_action( 'wdd_rule_created', array( $this, 'invalidate_all_caches' ), 10 );
@@ -85,8 +83,6 @@ class CacheManager {
 	 * @param string $table_name Table name.
 	 */
 	public function invalidate_rule_cache( $table_name ) {
-		// Pattern: wdd_rules_{table}_{hash}.
-		// Since we can't iterate wp_cache keys, we flush the entire group.
 		$this->flush_group();
 	}
 
@@ -101,8 +97,6 @@ class CacheManager {
 	 * Flush cache group
 	 */
 	public function flush_group() {
-		// WordPress doesn't have a built-in group flush, so we use a workaround.
-		// We'll store a version number in options and append it to cache keys.
 		$current_version = get_option( 'wdd_cache_version', 1 );
 		update_option( 'wdd_cache_version', $current_version + 1, false );
 	}

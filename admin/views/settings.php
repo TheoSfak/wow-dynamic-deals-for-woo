@@ -6,35 +6,29 @@
  * @since 1.0.0
  */
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 $settings = get_option( 'wdd_settings', array() );
 
-// Handle form submission.
 if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_settings', 'wdd_settings_nonce' ) ) {
 	$new_settings = array(
-			// Module Controls
 			'enable_price_rules'      => isset( $_POST['enable_price_rules'] ) ? 1 : 0,
 			'enable_tiered_pricing'   => isset( $_POST['enable_tiered_pricing'] ) ? 1 : 0,
 			'enable_cart_discounts'   => isset( $_POST['enable_cart_discounts'] ) ? 1 : 0,
 			'enable_gift_rules'       => isset( $_POST['enable_gift_rules'] ) ? 1 : 0,
 			
-			// Display & Frontend
 			'show_sale_badge'         => isset( $_POST['show_sale_badge'] ) ? 1 : 0,
 			'sale_badge_text'         => isset( $_POST['sale_badge_text'] ) ? sanitize_text_field( $_POST['sale_badge_text'] ) : 'SALE!',
 			'pricing_display_format'  => isset( $_POST['pricing_display_format'] ) ? sanitize_text_field( $_POST['pricing_display_format'] ) : 'both',
 			'show_cart_savings'       => isset( $_POST['show_cart_savings'] ) ? 1 : 0,
 		
-		// Price Display Customization
 		'sale_price_color'        => isset( $_POST['sale_price_color'] ) ? sanitize_hex_color( $_POST['sale_price_color'] ) : '#d32f2f',
 		'original_price_color'    => isset( $_POST['original_price_color'] ) ? sanitize_hex_color( $_POST['original_price_color'] ) : '#999999',
 		'savings_text'            => isset( $_POST['savings_text'] ) ? sanitize_text_field( $_POST['savings_text'] ) : 'You save:',
 		'savings_text_color'      => isset( $_POST['savings_text_color'] ) ? sanitize_hex_color( $_POST['savings_text_color'] ) : '#4caf50',
 			
-			// Cart & Checkout Display
 			'show_quantity_table'     => isset( $_POST['show_quantity_table'] ) ? 1 : 0,
 			'cart_discount_label'     => isset( $_POST['cart_discount_label'] ) ? sanitize_text_field( $_POST['cart_discount_label'] ) : 'Discount',
 		'cart_discount_label_color' => isset( $_POST['cart_discount_label_color'] ) ? sanitize_hex_color( $_POST['cart_discount_label_color'] ) : '#333333',
@@ -46,7 +40,6 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 			'free_shipping_text'      => isset( $_POST['free_shipping_text'] ) ? sanitize_text_field( $_POST['free_shipping_text'] ) : 'Free Shipping',
 			'free_shipping_color'     => isset( $_POST['free_shipping_color'] ) ? sanitize_hex_color( $_POST['free_shipping_color'] ) : '#4caf50',
 			
-			// Debug & Developer
 	);
 	
 	update_option( 'wdd_settings', $new_settings );

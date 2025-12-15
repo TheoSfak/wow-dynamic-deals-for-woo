@@ -8,7 +8,6 @@
 
 namespace WDD\Admin;
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -29,7 +28,6 @@ class AdminMenu {
 	 * Add admin menu
 	 */
 	public function add_menu() {
-		// Get settings to check which features are enabled
 		$settings = get_option( 'wdd_settings', array(
 			'enable_price_rules'     => 1,
 			'enable_tiered_pricing'  => 1,
@@ -37,7 +35,6 @@ class AdminMenu {
 			'enable_gift_rules'      => 1,
 		) );
 		
-		// Main menu page
 		add_menu_page(
 			__( 'Wow Dynamic Deals for Woo', 'woo-dynamic-deals' ),
 			__( 'Dynamic Deals', 'woo-dynamic-deals' ),
@@ -48,7 +45,6 @@ class AdminMenu {
 			56
 		);
 		
-		// Home submenu (rename the first item)
 		add_submenu_page(
 			'woo-dynamic-deals',
 			__( '🏠 Home', 'woo-dynamic-deals' ),
@@ -58,7 +54,6 @@ class AdminMenu {
 			array( $this, 'render_main_page' )
 		);
 		
-		// Price Rules submenu
 		if ( ! empty( $settings['enable_price_rules'] ) ) {
 			add_submenu_page(
 				'woo-dynamic-deals',
@@ -70,7 +65,6 @@ class AdminMenu {
 			);
 		}
 		
-		// Tiered Pricing submenu
 		if ( ! empty( $settings['enable_tiered_pricing'] ) ) {
 			add_submenu_page(
 				'woo-dynamic-deals',
@@ -82,7 +76,6 @@ class AdminMenu {
 			);
 		}
 		
-		// Cart Discounts submenu
 		if ( ! empty( $settings['enable_cart_discounts'] ) ) {
 			add_submenu_page(
 				'woo-dynamic-deals',
@@ -94,7 +87,6 @@ class AdminMenu {
 			);
 		}
 		
-		// Free Gifts submenu
 		if ( ! empty( $settings['enable_gift_rules'] ) ) {
 			add_submenu_page(
 				'woo-dynamic-deals',
@@ -106,7 +98,6 @@ class AdminMenu {
 			);
 		}
 		
-		// Settings submenu
 		add_submenu_page(
 			'woo-dynamic-deals',
 			__( '⚙️ Settings', 'woo-dynamic-deals' ),

@@ -8,7 +8,6 @@
 
 namespace WDD\Engines;
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -44,7 +43,6 @@ class GiftEngine extends RuleEngine {
 	 * Initialize WooCommerce hooks
 	 */
 	private function init_hooks() {
-		error_log( 'WDD GiftEngine: Hooks initialized' );
 		add_action( 'woocommerce_before_calculate_totals', array( $this, 'add_free_gifts' ), 99 );
 		add_filter( 'woocommerce_cart_item_price', array( $this, 'display_gift_price' ), 10, 3 );
 		add_filter( 'woocommerce_cart_item_remove_link', array( $this, 'prevent_gift_removal' ), 10, 2 );
@@ -60,7 +58,6 @@ class GiftEngine extends RuleEngine {
 			return;
 		}
 
-		// Prevent infinite loop when adding gifts triggers this hook again
 		if ( self::$processing ) {
 			return;
 		}
@@ -73,10 +70,8 @@ class GiftEngine extends RuleEngine {
 			return;
 		}
 
-		// Remove existing gifts first.
 		$this->remove_all_gifts( $cart );
 
-		// Get applicable gift rules.
 		$rules = $this->get_applicable_gift_rules();
 
 		if ( empty( $rules ) ) {
@@ -87,17 +82,14 @@ class GiftEngine extends RuleEngine {
 		$context = $this->get_cart_context();
 
 		foreach ( $rules as $rule ) {
-			// Check triggers.
 			if ( ! $this->check_gift_triggers( $rule, $context ) ) {
 				continue;
 			}
 
-			// Check purchase history conditions.
 			if ( ! $this->check_purchase_history( $rule ) ) {
 				continue;
 			}
 
-			// Add gift products.
 			$this->add_gift_products( $rule, $cart );
 		}
 
@@ -141,39 +133,30 @@ class GiftEngine extends RuleEngine {
 	 * @return bool
 	 */
 	private function check_gift_triggers( $rule, $context ) {
-		// Check main trigger
 		$main_trigger_result = $this->check_single_trigger( $rule['trigger_type'] ?? '', $rule, $context );
 		
-		// If no additional triggers, return main result
 		if ( empty( $rule['additional_triggers'] ) ) {
 			return $main_trigger_result;
 		}
 		
-		// Parse additional triggers (stored as JSON string)
 		$additional_triggers = json_decode( $rule['additional_triggers'], true );
 		if ( ! is_array( $additional_triggers ) || empty( $additional_triggers ) ) {
 			return $main_trigger_result;
 		}
 		
-		// Get logic operator (default to 'and')
 		$trigger_logic = $rule['trigger_logic'] ?? 'and';
 		
-		// Start with main trigger result
 		$results = array( $main_trigger_result );
 		
-		// Check each additional trigger
 		foreach ( $additional_triggers as $trigger ) {
 			$trigger_type = $trigger['type'] ?? '';
 			$result = $this->check_single_trigger( $trigger_type, $trigger, $context );
 			$results[] = $result;
 		}
 		
-		// Apply logic operator
 		if ( $trigger_logic === 'or' ) {
-			// OR: at least one trigger must pass
 			return in_array( true, $results, true );
 		} else {
-			// AND: all triggers must pass
 			return ! in_array( false, $results, true );
 		}
 	}
@@ -213,14 +196,12 @@ class GiftEngine extends RuleEngine {
 	 * @return bool
 	 */
 	private function check_product_trigger( $data, $context ) {
-		// Check for products in either 'trigger_products' (main rule) or 'products' (additional trigger)
 		$trigger_products = $data['trigger_products'] ?? $data['products'] ?? null;
 		
 		if ( empty( $trigger_products ) ) {
 			return false;
 		}
 
-		// Unserialize if needed (main rule stores serialized, additional triggers are already arrays)
 		if ( is_string( $trigger_products ) ) {
 			$trigger_products = maybe_unserialize( $trigger_products );
 		}
@@ -241,14 +222,12 @@ class GiftEngine extends RuleEngine {
 	 * @return bool
 	 */
 	private function check_category_trigger( $data, $context ) {
-		// Check for categories in either 'trigger_categories' (main rule) or 'categories' (additional trigger)
 		$trigger_categories = $data['trigger_categories'] ?? $data['categories'] ?? null;
 		
 		if ( empty( $trigger_categories ) ) {
 			return false;
 		}
 
-		// Unserialize if needed (main rule stores serialized, additional triggers are already arrays)
 		if ( is_string( $trigger_categories ) ) {
 			$trigger_categories = maybe_unserialize( $trigger_categories );
 		}
@@ -269,7 +248,6 @@ class GiftEngine extends RuleEngine {
 	 * @return bool
 	 */
 	private function check_cart_total_trigger( $data, $context ) {
-		// Check for amount in either 'trigger_amount' (main rule) or 'amount' (additional trigger)
 		$trigger_amount = floatval( $data['trigger_amount'] ?? $data['amount'] ?? 0 );
 		$cart_total = $context['cart_total'] ?? 0;
 
@@ -284,7 +262,6 @@ class GiftEngine extends RuleEngine {
 	 * @return bool
 	 */
 	private function check_cart_quantity_trigger( $data, $context ) {
-		// Check for quantity in either 'trigger_quantity' (main rule) or 'quantity' (additional trigger)
 		$trigger_quantity = intval( $data['trigger_quantity'] ?? $data['quantity'] ?? 1 );
 		$cart_quantity = $context['cart_quantity'] ?? 0;
 
@@ -314,7 +291,6 @@ class GiftEngine extends RuleEngine {
 
 		$user_id = get_current_user_id();
 
-		// Check total spent.
 		if ( isset( $conditions['min_total_spent'] ) ) {
 			$total_spent = $purchase_history->get_total_spent( $user_id );
 			if ( $total_spent < floatval( $conditions['min_total_spent'] ) ) {
@@ -322,7 +298,6 @@ class GiftEngine extends RuleEngine {
 			}
 		}
 
-		// Check order count.
 		if ( isset( $conditions['min_order_count'] ) ) {
 			$order_count = $purchase_history->get_order_count( $user_id );
 			if ( $order_count < intval( $conditions['min_order_count'] ) ) {
@@ -352,7 +327,6 @@ class GiftEngine extends RuleEngine {
 		$max_gifts = intval( $rule['max_gifts_per_order'] ?? 1 );
 		$added_count = 0;
 		
-		// Generate rule explanation based on trigger type
 		$rule_reason = $this->generate_gift_reason( $rule );
 
 		foreach ( $gift_products as $gift_product_id ) {
@@ -365,7 +339,6 @@ class GiftEngine extends RuleEngine {
 				continue;
 			}
 
-			// Add to cart as gift.
 			$cart_item_key = $cart->add_to_cart( $gift_product_id, 1 );
 
 			if ( $cart_item_key ) {
@@ -394,13 +367,11 @@ class GiftEngine extends RuleEngine {
 		$trigger_logic = $rule['trigger_logic'] ?? 'and';
 		$logic_text = ( $trigger_logic === 'or' ) ? __( ' OR ', 'woo-dynamic-deals' ) : __( ' AND ', 'woo-dynamic-deals' );
 		
-		// Get main trigger reason
 		$main_reason = $this->generate_single_trigger_reason( $rule['trigger_type'] ?? '', $rule );
 		if ( ! empty( $main_reason ) ) {
 			$reasons[] = $main_reason;
 		}
 		
-		// Get additional trigger reasons
 		if ( ! empty( $rule['additional_triggers'] ) ) {
 			$additional_triggers = json_decode( $rule['additional_triggers'], true );
 			if ( is_array( $additional_triggers ) ) {
@@ -413,7 +384,6 @@ class GiftEngine extends RuleEngine {
 			}
 		}
 		
-		// Combine reasons with logic operator
 		if ( count( $reasons ) > 1 ) {
 			return implode( $logic_text, $reasons );
 		} elseif ( count( $reasons ) === 1 ) {
@@ -435,7 +405,6 @@ class GiftEngine extends RuleEngine {
 		
 		switch ( $trigger_type ) {
 			case 'product':
-				// Check both formats: trigger_products (main) and products (additional)
 				$trigger_products = $data['trigger_products'] ?? $data['products'] ?? null;
 				if ( is_string( $trigger_products ) ) {
 					$trigger_products = maybe_unserialize( $trigger_products );
@@ -458,7 +427,6 @@ class GiftEngine extends RuleEngine {
 				break;
 				
 			case 'category':
-				// Check both formats: trigger_categories (main) and categories (additional)
 				$trigger_categories = $data['trigger_categories'] ?? $data['categories'] ?? null;
 				if ( is_string( $trigger_categories ) ) {
 					$trigger_categories = maybe_unserialize( $trigger_categories );
@@ -481,7 +449,6 @@ class GiftEngine extends RuleEngine {
 				break;
 				
 			case 'cart_total':
-				// Check both formats: trigger_amount (main) and amount (additional)
 				$trigger_amount = floatval( $data['trigger_amount'] ?? $data['amount'] ?? 0 );
 				if ( $trigger_amount > 0 ) {
 					$reason = sprintf( __( 'cart total over %s', 'woo-dynamic-deals' ), wc_price( $trigger_amount ) );
@@ -489,7 +456,6 @@ class GiftEngine extends RuleEngine {
 				break;
 				
 			case 'cart_quantity':
-				// Check both formats: trigger_quantity (main) and quantity (additional)
 				$trigger_quantity = intval( $data['trigger_quantity'] ?? $data['quantity'] ?? 0 );
 				if ( $trigger_quantity > 0 ) {
 					$reason = sprintf( __( 'buying %d or more items', 'woo-dynamic-deals' ), $trigger_quantity );

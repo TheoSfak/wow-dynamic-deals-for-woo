@@ -8,7 +8,6 @@
 
 namespace WDD;
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -29,13 +28,11 @@ class TemplateLoader {
      * @return string Full path to template
      */
     public static function get_template_path($template_name) {
-        // Check if theme has override
         $theme_path = get_stylesheet_directory() . '/woo-dynamic-deals/' . $template_name;
         if (file_exists($theme_path)) {
             return $theme_path;
         }
 
-        // Fallback to plugin template
         return WDD_PLUGIN_DIR . 'templates/' . $template_name;
     }
 
@@ -54,7 +51,6 @@ class TemplateLoader {
             return '';
         }
 
-        // Extract variables for use in template
         extract($args);
 
         if ($echo) {

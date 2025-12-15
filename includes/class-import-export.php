@@ -8,7 +8,6 @@
 
 namespace WDD;
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -96,11 +95,9 @@ class ImportExport {
             }
 
             foreach ($rules as $rule) {
-                // Remove ID for new insertion
                 $rule_id = isset($rule['id']) ? $rule['id'] : null;
                 unset($rule['id']);
 
-                // Check if rule exists
                 if ($rule_id && !$overwrite) {
                     $exists = $wpdb->get_var($wpdb->prepare(
                         "SELECT COUNT(*) FROM {$tables[$type]} WHERE id = %d",
@@ -113,14 +110,12 @@ class ImportExport {
                     }
                 }
 
-                // Validate required fields
                 if (empty($rule['title'])) {
                     $result['errors']++;
                     $result['messages'][] = sprintf(__('Skipped rule without title in %s', 'woo-dynamic-deals'), $type);
                     continue;
                 }
 
-                // Insert or update
                 if ($rule_id && $overwrite) {
                     $wpdb->update($tables[$type], $rule, array('id' => $rule_id));
                 } else {
@@ -136,8 +131,6 @@ class ImportExport {
             }
         }
 
-        // Cache disabled
-        // CacheManager::clear_all_cache();
 
         return $result;
     }

@@ -157,7 +157,7 @@ class AdminMenu {
 		}
 		
 		// Unzip to temp directory
-		$plugin_path = $plugin_dir . '/wow-dynamic-deals-for-woo';
+		$plugin_path = untrailingslashit( WDD_PLUGIN_DIR );
 		$temp_dir = $plugin_dir . '/wdd-temp-update';
 		
 		$unzip_result = unzip_file( $temp_file, $temp_dir );
@@ -178,10 +178,15 @@ class AdminMenu {
 			wp_send_json_error( array( 'message' => __( 'Extracted folder not found.', 'wow-dynamic-deals-for-woo' ) ) );
 		}
 		
-		// Verify plugin path exists
+		// Verify plugin path exists and is writable
 		if ( ! $wp_filesystem->exists( $plugin_path ) ) {
 			$wp_filesystem->delete( $temp_dir, true );
-			wp_send_json_error( array( 'message' => __( 'Plugin directory not found.', 'wow-dynamic-deals-for-woo' ) ) );
+			wp_send_json_error( array( 'message' => sprintf( __( 'Plugin directory not found: %s', 'wow-dynamic-deals-for-woo' ), $plugin_path ) ) );
+		}
+		
+		if ( ! $wp_filesystem->is_writable( $plugin_path ) ) {
+			$wp_filesystem->delete( $temp_dir, true );
+			wp_send_json_error( array( 'message' => __( 'Plugin directory is not writable. Check file permissions.', 'wow-dynamic-deals-for-woo' ) ) );
 		}
 		
 		// Delete current plugin files (keep the folder)

@@ -20,6 +20,9 @@ $settings   = get_option( 'wdd_settings', array(
 ?>
 
 <div class="wrap wdd-admin-wrap">
+	<h1 class="wp-heading-inline"><?php esc_html_e( 'Dynamic Deals for WooCommerce', 'wow-dynamic-deals-for-woo' ); ?></h1>
+	<hr class="wp-header-end">
+	
 	<div class="wdd-tab-content">
 		<?php
 		switch ( $active_tab ) {

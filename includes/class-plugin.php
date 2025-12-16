@@ -154,7 +154,8 @@ class Plugin {
 	 * @param string $hook Current admin page hook.
 	 */
 	public function enqueue_admin_scripts( $hook ) {
-		if ( strpos( $hook, 'woo-dynamic-deals' ) === false ) {
+		// Check if we're on any of our admin pages
+		if ( strpos( $hook, 'woo-dynamic-deals' ) === false && strpos( $hook, 'wow-dynamic-deals-for-woo' ) === false ) {
 			return;
 		}
 

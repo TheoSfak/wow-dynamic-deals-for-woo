@@ -39,24 +39,24 @@ class AdminMenu {
 			__( 'Wow Dynamic Deals for Woo', 'wow-dynamic-deals-for-woo' ),
 			__( 'Dynamic Deals', 'wow-dynamic-deals-for-woo' ),
 			'manage_woocommerce',
-			'wow-dynamic-deals-for-woo',
+			'woo-dynamic-deals',
 			array( $this, 'render_main_page' ),
 			'dashicons-tag',
 			56
 		);
 		
 		add_submenu_page(
-			'wow-dynamic-deals-for-woo',
+			'woo-dynamic-deals',
 			__( '🏠 Home', 'wow-dynamic-deals-for-woo' ),
 			__( '🏠 Home', 'wow-dynamic-deals-for-woo' ),
 			'manage_woocommerce',
-			'wow-dynamic-deals-for-woo',
+			'woo-dynamic-deals',
 			array( $this, 'render_main_page' )
 		);
 		
 		if ( ! empty( $settings['enable_price_rules'] ) ) {
 			add_submenu_page(
-				'wow-dynamic-deals-for-woo',
+				'woo-dynamic-deals',
 				__( '💰 Price Rules', 'wow-dynamic-deals-for-woo' ),
 				__( '💰 Price Rules', 'wow-dynamic-deals-for-woo' ),
 				'manage_woocommerce',
@@ -67,7 +67,7 @@ class AdminMenu {
 		
 		if ( ! empty( $settings['enable_tiered_pricing'] ) ) {
 			add_submenu_page(
-				'wow-dynamic-deals-for-woo',
+			'woo-dynamic-deals',
 				__( '📊 Tiered Pricing', 'wow-dynamic-deals-for-woo' ),
 				__( '📊 Tiered Pricing', 'wow-dynamic-deals-for-woo' ),
 				'manage_woocommerce',
@@ -78,7 +78,7 @@ class AdminMenu {
 		
 		if ( ! empty( $settings['enable_cart_discounts'] ) ) {
 			add_submenu_page(
-				'wow-dynamic-deals-for-woo',
+			'woo-dynamic-deals',
 				__( '🛒 Cart Discounts', 'wow-dynamic-deals-for-woo' ),
 				__( '🛒 Cart Discounts', 'wow-dynamic-deals-for-woo' ),
 				'manage_woocommerce',
@@ -89,7 +89,7 @@ class AdminMenu {
 		
 		if ( ! empty( $settings['enable_gift_rules'] ) ) {
 			add_submenu_page(
-				'wow-dynamic-deals-for-woo',
+			'woo-dynamic-deals',
 				__( '🎁 Free Gifts', 'wow-dynamic-deals-for-woo' ),
 				__( '🎁 Free Gifts', 'wow-dynamic-deals-for-woo' ),
 				'manage_woocommerce',
@@ -99,7 +99,7 @@ class AdminMenu {
 		}
 		
 		add_submenu_page(
-			'wow-dynamic-deals-for-woo',
+		'woo-dynamic-deals',
 			__( '⚙️ Settings', 'wow-dynamic-deals-for-woo' ),
 			__( '⚙️ Settings', 'wow-dynamic-deals-for-woo' ),
 			'manage_woocommerce',

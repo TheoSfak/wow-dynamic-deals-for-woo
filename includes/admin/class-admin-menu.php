@@ -128,6 +128,15 @@ class AdminMenu {
 			wp_send_json_error( array( 'message' => __( 'Insufficient permissions.', 'wow-dynamic-deals-for-woo' ) ) );
 		}
 		
+		// Get plugin basename for reactivation
+		$plugin_basename = plugin_basename( WDD_PLUGIN_DIR . '/wow-dynamic-deals-for-woo.php' );
+		$was_active = is_plugin_active( $plugin_basename );
+		
+		// Deactivate plugin before update
+		if ( $was_active ) {
+			deactivate_plugins( $plugin_basename );
+		}
+		
 		// GitHub repository details
 		$github_user = 'TheoSfak';
 		$github_repo = 'wow-dynamic-deals-for-woo';
@@ -245,6 +254,14 @@ class AdminMenu {
 		// Clear any WordPress caches
 		if ( function_exists( 'wp_cache_flush' ) ) {
 			wp_cache_flush();
+		}
+		
+		// Reactivate plugin if it was active before
+		if ( $was_active ) {
+			$activate_result = activate_plugin( $plugin_basename );
+			if ( is_wp_error( $activate_result ) ) {
+				wp_send_json_error( array( 'message' => __( 'Plugin updated but failed to reactivate: ', 'wow-dynamic-deals-for-woo' ) . $activate_result->get_error_message() ) );
+			}
 		}
 		
 		wp_send_json_success( array( 'message' => __( 'Plugin updated successfully from GitHub!', 'wow-dynamic-deals-for-woo' ) ) );

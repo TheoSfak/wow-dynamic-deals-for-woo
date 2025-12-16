@@ -22,6 +22,17 @@ $settings   = get_option( 'wdd_settings', array(
 <div class="wrap wdd-admin-wrap">
 	<h1><?php echo esc_html__( 'Dynamic Deals', 'wow-dynamic-deals-for-woo' ); ?></h1>
 
+	<style>
+		.nav-tab-wrapper .nav-tab {
+			cursor: pointer !important;
+			pointer-events: auto !important;
+			user-select: none !important;
+		}
+		.nav-tab-wrapper .nav-tab * {
+			pointer-events: none !important;
+		}
+	</style>
+
 	<nav class="nav-tab-wrapper woo-nav-tab-wrapper">
 		<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'woo-dynamic-deals', 'tab' => 'home' ), admin_url( 'admin.php' ) ) ); ?>" class="nav-tab <?php echo 'home' === $active_tab ? 'nav-tab-active' : ''; ?>">
 			<?php esc_html_e( '🏠 Home', 'wow-dynamic-deals-for-woo' ); ?>

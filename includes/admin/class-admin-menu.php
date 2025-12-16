@@ -22,6 +22,7 @@ class AdminMenu {
 	 */
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'add_menu' ) );
+		add_action( 'wp_ajax_wdd_update_from_github', array( $this, 'update_from_github' ) );
 	}
 
 	/**
@@ -113,5 +114,134 @@ class AdminMenu {
 	 */
 	public function render_main_page() {
 		include WDD_PLUGIN_DIR . '/admin/views/dashboard.php';
+	}
+	
+	/**
+	 * Update plugin from GitHub
+	 */
+	public function update_from_github() {
+		// Verify nonce
+		check_ajax_referer( 'wdd_admin_nonce', 'nonce' );
+		
+		// Check permissions
+		if ( ! current_user_can( 'manage_woocommerce' ) ) {
+			wp_send_json_error( array( 'message' => __( 'Insufficient permissions.', 'wow-dynamic-deals-for-woo' ) ) );
+		}
+		
+		// GitHub repository details
+		$github_user = 'TheoSfak';
+		$github_repo = 'wow-dynamic-deals-for-woo';
+		$zip_url = "https://github.com/{$github_user}/{$github_repo}/archive/refs/heads/master.zip";
+		
+		// Include WordPress filesystem
+		require_once ABSPATH . 'wp-admin/includes/file.php';
+		WP_Filesystem();
+		global $wp_filesystem;
+		
+		// Clean up any old temp folders first
+		$plugin_dir = WP_PLUGIN_DIR;
+		$folders = $wp_filesystem->dirlist( $plugin_dir );
+		if ( is_array( $folders ) ) {
+			foreach ( $folders as $folder => $details ) {
+				if ( strpos( $folder, 'wdd-temp-' ) === 0 || strpos( $folder, 'wdd-backup-' ) === 0 ) {
+					$wp_filesystem->delete( $plugin_dir . '/' . $folder, true );
+				}
+			}
+		}
+		
+		// Download the zip file
+		$temp_file = download_url( $zip_url );
+		
+		if ( is_wp_error( $temp_file ) ) {
+			wp_send_json_error( array( 'message' => $temp_file->get_error_message() ) );
+		}
+		
+		// Unzip to temp directory
+		$plugin_path = $plugin_dir . '/wow-dynamic-deals-for-woo';
+		$temp_dir = $plugin_dir . '/wdd-temp-update';
+		
+		$unzip_result = unzip_file( $temp_file, $temp_dir );
+		
+		// Clean up temp zip
+		@unlink( $temp_file );
+		
+		if ( is_wp_error( $unzip_result ) ) {
+			$wp_filesystem->delete( $temp_dir, true );
+			wp_send_json_error( array( 'message' => $unzip_result->get_error_message() ) );
+		}
+		
+		// Move files from extracted folder to plugin directory
+		$extracted_folder = $temp_dir . '/' . $github_repo . '-master';
+		
+		if ( ! $wp_filesystem->exists( $extracted_folder ) ) {
+			$wp_filesystem->delete( $temp_dir, true );
+			wp_send_json_error( array( 'message' => __( 'Extracted folder not found.', 'wow-dynamic-deals-for-woo' ) ) );
+		}
+		
+		// Verify plugin path exists
+		if ( ! $wp_filesystem->exists( $plugin_path ) ) {
+			$wp_filesystem->delete( $temp_dir, true );
+			wp_send_json_error( array( 'message' => __( 'Plugin directory not found.', 'wow-dynamic-deals-for-woo' ) ) );
+		}
+		
+		// Delete current plugin files (keep the folder)
+		$plugin_files = $wp_filesystem->dirlist( $plugin_path );
+		if ( is_array( $plugin_files ) ) {
+			foreach ( $plugin_files as $file => $details ) {
+				if ( $file !== '.' && $file !== '..' ) {
+					$delete_result = $wp_filesystem->delete( $plugin_path . '/' . $file, true );
+					if ( ! $delete_result ) {
+						$wp_filesystem->delete( $temp_dir, true );
+						wp_send_json_error( array( 'message' => sprintf( __( 'Failed to delete file: %s', 'wow-dynamic-deals-for-woo' ), $file ) ) );
+					}
+				}
+			}
+		}
+		
+		// Copy new files to plugin directory
+		$new_files = $wp_filesystem->dirlist( $extracted_folder );
+		if ( ! is_array( $new_files ) || empty( $new_files ) ) {
+			$wp_filesystem->delete( $temp_dir, true );
+			wp_send_json_error( array( 'message' => __( 'No files found in downloaded package.', 'wow-dynamic-deals-for-woo' ) ) );
+		}
+		
+		$copy_errors = array();
+		foreach ( $new_files as $file => $details ) {
+			if ( $file === '.' || $file === '..' ) {
+				continue;
+			}
+			
+			$source = $extracted_folder . '/' . $file;
+			$destination = $plugin_path . '/' . $file;
+			
+			if ( $details['type'] === 'd' ) {
+				$copy_result = copy_dir( $source, $destination );
+				if ( is_wp_error( $copy_result ) ) {
+					$copy_errors[] = $file . ': ' . $copy_result->get_error_message();
+				}
+			} else {
+				$copy_result = $wp_filesystem->copy( $source, $destination, true );
+				if ( ! $copy_result ) {
+					$copy_errors[] = $file;
+				}
+			}
+		}
+		
+		// Clean up temp directory
+		$wp_filesystem->delete( $temp_dir, true );
+		
+		// Check if there were any copy errors
+		if ( ! empty( $copy_errors ) ) {
+			wp_send_json_error( array( 
+				'message' => __( 'Some files failed to copy: ', 'wow-dynamic-deals-for-woo' ) . implode( ', ', $copy_errors )
+			) );
+		}
+		
+		// Clear any WordPress caches
+		if ( function_exists( 'wp_cache_flush' ) ) {
+			wp_cache_flush();
+		}
+		
+		wp_send_json_success( array( 'message' => __( 'Plugin updated successfully from GitHub!', 'wow-dynamic-deals-for-woo' ) ) );
 	}
 }

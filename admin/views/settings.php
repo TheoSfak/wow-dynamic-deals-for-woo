@@ -586,10 +586,75 @@ if ( isset( $_POST['wdd_save_settings'] ) && check_admin_referer( 'wdd_save_sett
 		</div>
 	</div>
 
+	<!-- Plugin Updates -->
+	<div class="wdd-card wdd-fade-in">
+		<div class="wdd-card-header">
+			🔄 <?php esc_html_e( 'Plugin Updates', 'wow-dynamic-deals-for-woo' ); ?>
+		</div>
+		<div class="wdd-card-body">
+			<p style="color: #6c757d; margin-bottom: 20px;">
+				<?php esc_html_e( 'Update the plugin directly from GitHub repository.', 'wow-dynamic-deals-for-woo' ); ?>
+			</p>
+			
+			<div class="wdd-form-group">
+				<button type="button" id="wdd-update-github" class="wdd-btn wdd-btn-secondary">
+					⬇️ <?php esc_html_e( 'Update Plugin from GitHub', 'wow-dynamic-deals-for-woo' ); ?>
+				</button>
+				<p class="wdd-form-help">
+					<?php esc_html_e( 'Click to download and install the latest version from GitHub. Your settings and rules will be preserved.', 'wow-dynamic-deals-for-woo' ); ?>
+				</p>
+				<div id="wdd-update-status" style="margin-top: 15px;"></div>
+			</div>
+		</div>
+	</div>
+
 	<div style="text-align: right; margin-top: 30px;">
 		<button type="submit" name="wdd_save_settings" class="wdd-btn wdd-btn-primary wdd-btn-lg">
 			💾 <?php esc_html_e( 'Save Settings', 'wow-dynamic-deals-for-woo' ); ?>
 		</button>
 	</div>
 </form>
+
+<script>
+jQuery(document).ready(function($) {
+	$('#wdd-update-github').on('click', function(e) {
+		e.preventDefault();
+		
+		if (!confirm('<?php esc_html_e( 'This will update the plugin from GitHub. Your settings and rules will be preserved. Continue?', 'wow-dynamic-deals-for-woo' ); ?>')) {
+			return;
+		}
+		
+		var $button = $(this);
+		var originalText = $button.html();
+		var $status = $('#wdd-update-status');
+		
+		$button.prop('disabled', true).html('⏳ <?php esc_html_e( 'Updating from GitHub...', 'wow-dynamic-deals-for-woo' ); ?>');
+		$status.html('<div class="wdd-info-box wdd-info-box-info">⏳ <?php esc_html_e( 'Updating from GitHub...', 'wow-dynamic-deals-for-woo' ); ?></div>');
+		
+		$.ajax({
+			url: ajaxurl,
+			type: 'POST',
+			data: {
+				action: 'wdd_update_from_github',
+				nonce: '<?php echo wp_create_nonce( 'wdd_admin_nonce' ); ?>'
+			},
+			success: function(response) {
+				if (response.success) {
+					$status.html('<div class="wdd-info-box wdd-info-box-success">✓ ' + response.data.message + '</div>');
+					setTimeout(function() {
+						location.reload();
+					}, 2000);
+				} else {
+					$status.html('<div class="wdd-info-box wdd-info-box-error">✗ ' + (response.data.message || '<?php esc_html_e( 'An error occurred. Please try again.', 'wow-dynamic-deals-for-woo' ); ?>') + '</div>');
+					$button.prop('disabled', false).html(originalText);
+				}
+			},
+			error: function() {
+				$status.html('<div class="wdd-info-box wdd-info-box-error">✗ <?php esc_html_e( 'An error occurred. Please try again.', 'wow-dynamic-deals-for-woo' ); ?></div>');
+				$button.prop('disabled', false).html(originalText);
+			}
+		});
+	});
+});
+</script>
 

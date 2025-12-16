@@ -20,53 +20,7 @@ $settings   = get_option( 'wdd_settings', array(
 ?>
 
 <div class="wrap wdd-admin-wrap">
-	<h1><?php echo esc_html__( 'Dynamic Deals', 'wow-dynamic-deals-for-woo' ); ?></h1>
-
-	<style>
-		.nav-tab-wrapper .nav-tab {
-			cursor: pointer !important;
-			pointer-events: auto !important;
-			user-select: none !important;
-		}
-		.nav-tab-wrapper .nav-tab * {
-			pointer-events: none !important;
-		}
-	</style>
-
-	<nav class="nav-tab-wrapper woo-nav-tab-wrapper">
-		<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'woo-dynamic-deals', 'tab' => 'home' ), admin_url( 'admin.php' ) ) ); ?>" class="nav-tab <?php echo 'home' === $active_tab ? 'nav-tab-active' : ''; ?>">
-			<?php esc_html_e( '🏠 Home', 'wow-dynamic-deals-for-woo' ); ?>
-		</a>
-		<?php if ( ! empty( $settings['enable_price_rules'] ) ) : ?>
-		<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'woo-dynamic-deals', 'tab' => 'price-rules' ), admin_url( 'admin.php' ) ) ); ?>" class="nav-tab <?php echo 'price-rules' === $active_tab ? 'nav-tab-active' : ''; ?>">
-			<?php esc_html_e( '💰 Price Rules', 'wow-dynamic-deals-for-woo' ); ?>
-		</a>
-		<?php endif; ?>
-		<?php if ( ! empty( $settings['enable_tiered_pricing'] ) ) : ?>
-		<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'woo-dynamic-deals', 'tab' => 'tiered-pricing' ), admin_url( 'admin.php' ) ) ); ?>" class="nav-tab <?php echo 'tiered-pricing' === $active_tab ? 'nav-tab-active' : ''; ?>">
-			<?php esc_html_e( '📊 Tiered Pricing', 'wow-dynamic-deals-for-woo' ); ?>
-		</a>
-		<?php endif; ?>
-		<?php if ( ! empty( $settings['enable_cart_discounts'] ) ) : ?>
-		<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'woo-dynamic-deals', 'tab' => 'cart-discounts' ), admin_url( 'admin.php' ) ) ); ?>" class="nav-tab <?php echo 'cart-discounts' === $active_tab ? 'nav-tab-active' : ''; ?>">
-			<?php esc_html_e( '🛒 Cart Discounts', 'wow-dynamic-deals-for-woo' ); ?>
-		</a>
-		<?php endif; ?>
-		<?php if ( ! empty( $settings['enable_gift_rules'] ) ) : ?>
-		<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'woo-dynamic-deals', 'tab' => 'gifts' ), admin_url( 'admin.php' ) ) ); ?>" class="nav-tab <?php echo 'gifts' === $active_tab ? 'nav-tab-active' : ''; ?>">
-			<?php esc_html_e( '🎁 Free Gifts', 'wow-dynamic-deals-for-woo' ); ?>
-		</a>
-		<?php endif; ?>
-		<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'woo-dynamic-deals', 'tab' => 'settings' ), admin_url( 'admin.php' ) ) ); ?>" class="nav-tab <?php echo 'settings' === $active_tab ? 'nav-tab-active' : ''; ?>">
-			<?php esc_html_e( '⚙️ Settings', 'wow-dynamic-deals-for-woo' ); ?>
-		</a>
-		<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'woo-dynamic-deals', 'tab' => 'examples' ), admin_url( 'admin.php' ) ) ); ?>" class="nav-tab <?php echo 'examples' === $active_tab ? 'nav-tab-active' : ''; ?>">
-			<?php esc_html_e( '📚 Rules Examples', 'wow-dynamic-deals-for-woo' ); ?>
-		</a>
-		<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'woo-dynamic-deals', 'tab' => 'donate' ), admin_url( 'admin.php' ) ) ); ?>" class="nav-tab <?php echo 'donate' === $active_tab ? 'nav-tab-active' : ''; ?>">
-			<?php esc_html_e( '❤️ Please Donate', 'wow-dynamic-deals-for-woo' ); ?>
-		</a>
-	</nav>	<div class="wdd-tab-content">
+	<div class="wdd-tab-content">
 		<?php
 		switch ( $active_tab ) {
 			case 'home':

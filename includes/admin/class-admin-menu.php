@@ -107,6 +107,24 @@ class AdminMenu {
 			'woo-dynamic-deals&tab=settings',
 			array( $this, 'render_main_page' )
 		);
+		
+		add_submenu_page(
+			'woo-dynamic-deals',
+			__( '📚 Rules Examples', 'wow-dynamic-deals-for-woo' ),
+			__( '📚 Rules Examples', 'wow-dynamic-deals-for-woo' ),
+			'manage_woocommerce',
+			'woo-dynamic-deals&tab=examples',
+			array( $this, 'render_main_page' )
+		);
+		
+		add_submenu_page(
+			'woo-dynamic-deals',
+			__( '❤️ Please Donate', 'wow-dynamic-deals-for-woo' ),
+			__( '❤️ Please Donate', 'wow-dynamic-deals-for-woo' ),
+			'manage_woocommerce',
+			'woo-dynamic-deals&tab=donate',
+			array( $this, 'render_main_page' )
+		);
 	}
 
 	/**

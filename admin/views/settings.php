@@ -640,10 +640,15 @@ jQuery(document).ready(function($) {
 			},
 			success: function(response) {
 				if (response.success) {
-					$status.html('<div class="wdd-info-box wdd-info-box-success">✓ ' + response.data.message + '</div>');
-					setTimeout(function() {
-						location.reload();
-					}, 2000);
+				var message = '<div class="wdd-info-box wdd-info-box-success">✓ ' + response.data.message;
+				if (response.data.commit_message) {
+					message += '<br><strong style="color: #10b981; margin-top: 10px; display: inline-block;">📝 What\'s New:</strong> <span style="color: #10b981;">' + response.data.commit_message + '</span>';
+				}
+				message += '</div>';
+				$status.html(message);
+				setTimeout(function() {
+					location.reload();
+				}, 3000);
 				} else {
 					$status.html('<div class="wdd-info-box wdd-info-box-error">✗ ' + (response.data.message || '<?php esc_html_e( 'An error occurred. Please try again.', 'wow-dynamic-deals-for-woo' ); ?>') + '</div>');
 					$button.prop('disabled', false).html(originalText);

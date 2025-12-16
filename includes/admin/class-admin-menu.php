@@ -142,6 +142,22 @@ class AdminMenu {
 		$github_repo = 'wow-dynamic-deals-for-woo';
 		$zip_url = "https://github.com/{$github_user}/{$github_repo}/archive/refs/heads/master.zip";
 		
+		// Fetch latest commit info from GitHub API
+		$api_url = "https://api.github.com/repos/{$github_user}/{$github_repo}/commits/master";
+		$commit_response = wp_remote_get( $api_url, array(
+			'headers' => array(
+				'Accept' => 'application/vnd.github.v3+json',
+			),
+		) );
+		
+		$commit_message = '';
+		if ( ! is_wp_error( $commit_response ) && wp_remote_retrieve_response_code( $commit_response ) === 200 ) {
+			$commit_data = json_decode( wp_remote_retrieve_body( $commit_response ), true );
+			if ( isset( $commit_data['commit']['message'] ) ) {
+				$commit_message = $commit_data['commit']['message'];
+			}
+		}
+		
 		// Include WordPress filesystem
 		require_once ABSPATH . 'wp-admin/includes/file.php';
 		WP_Filesystem();
@@ -264,6 +280,9 @@ class AdminMenu {
 			}
 		}
 		
-		wp_send_json_success( array( 'message' => __( 'Plugin updated successfully from GitHub!', 'wow-dynamic-deals-for-woo' ) ) );
+		wp_send_json_success( array( 
+			'message' => __( 'Plugin updated successfully from GitHub!', 'wow-dynamic-deals-for-woo' ),
+			'commit_message' => $commit_message
+		) );
 	}
 }

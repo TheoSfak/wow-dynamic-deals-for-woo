@@ -201,7 +201,7 @@
 }
 
 .wdd-gift-message li::before {
-	content: "🎁 GIFT";
+	content: "🎁 ΔΩΡΟ";
 	position: absolute;
 	left: 0;
 	top: 0;

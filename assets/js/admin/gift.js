@@ -48,14 +48,10 @@
             });
 
             // Edit gift rule
-            $(document).on('click', '.wdd-edit-rule', function(e) {
-                const $tab = $('.nav-tab-active');
-                const href = $tab.attr('href');
-                if (href && href.indexOf('gifts') !== -1) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    WDDGift.openModal('edit', $(this).data('rule-id'));
-                }
+            $(document).on('click', '#wdd-gifts-table .wdd-edit-rule', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                WDDGift.openModal('edit', $(this).data('rule-id'));
             });
 
             // Close modal - X button and backdrop

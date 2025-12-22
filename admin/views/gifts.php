@@ -37,7 +37,7 @@ $rules = $wpdb->get_results( "SELECT * FROM {$table_name} ORDER BY priority ASC,
 		</div>
 	<?php else : ?>
 		<div class="wdd-table-wrapper wdd-fade-in">
-			<table class="wdd-table">
+			<table class="wdd-table" id="wdd-gifts-table">
 				<thead>
 					<tr>
 						<th><?php esc_html_e( 'Priority', 'wow-dynamic-deals-for-woo' ); ?></th>

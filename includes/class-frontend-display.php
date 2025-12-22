@@ -266,7 +266,8 @@ class FrontendDisplay {
 		}
 
 		echo '<div class="wdd-gift-message">';
-		echo '<strong class="wdd-gift-header"><span class="wdd-gift-icon">🎁</span> <span class="wdd-glow-text">Free Gifts</span> in Your Cart!</strong>';
+		// translators: Header message shown when free gifts are in cart
+		echo '<strong class="wdd-gift-header"><span class="wdd-gift-icon">🎁</span> <span class="wdd-glow-text">' . esc_html__( 'Free Gifts in Your Cart!', 'wow-dynamic-deals-for-woo' ) . '</span></strong>';
 		echo '<ul>';
 
 		foreach ( $active_gifts as $gift_item ) {

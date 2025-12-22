@@ -315,7 +315,7 @@ class FrontendDisplay {
 			
 			$sale_color = ! empty( $settings['sale_price_color'] ) ? $settings['sale_price_color'] : '#d32f2f';
 			$original_color = ! empty( $settings['original_price_color'] ) ? $settings['original_price_color'] : '#999999';
-			$savings_text = ! empty( $settings['savings_text'] ) ? $settings['savings_text'] : 'You save:';
+			$savings_text = ! empty( $settings['savings_text'] ) ? $settings['savings_text'] : __( 'You saved:', 'wow-dynamic-deals-for-woo' );
 			$savings_color = ! empty( $settings['savings_text_color'] ) ? $settings['savings_text_color'] : '#4caf50';
 			
 			switch ( $format ) {
@@ -402,7 +402,7 @@ class FrontendDisplay {
 			
 			$sale_color = ! empty( $settings['sale_price_color'] ) ? $settings['sale_price_color'] : '#d32f2f';
 			$original_color = ! empty( $settings['original_price_color'] ) ? $settings['original_price_color'] : '#999999';
-			$cart_savings_text = ! empty( $settings['cart_savings_text'] ) ? $settings['cart_savings_text'] : 'You save';
+			$cart_savings_text = ! empty( $settings['cart_savings_text'] ) ? $settings['cart_savings_text'] : __( 'You Save', 'wow-dynamic-deals-for-woo' );
 			$cart_savings_color = ! empty( $settings['cart_savings_color'] ) ? $settings['cart_savings_color'] : '#4caf50';
 			$cart_font_size = ! empty( $settings['cart_discount_font_size'] ) ? $settings['cart_discount_font_size'] : 14;
 			$cart_font_weight = ! empty( $settings['cart_discount_font_weight'] ) ? $settings['cart_discount_font_weight'] : 'normal';

@@ -68,6 +68,16 @@ function wdd_check_php_version() {
  * Load plugin textdomain for translations
  */
 function wdd_load_textdomain() {
+	$locale = apply_filters( 'plugin_locale', determine_locale(), 'wow-dynamic-deals-for-woo' );
+	$mofile = WDD_PLUGIN_DIR . 'languages/wow-dynamic-deals-for-woo-' . $locale . '.mo';
+	
+	// Debug: Log the locale and file path
+	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+		error_log( 'WDD: Attempting to load translation for locale: ' . $locale );
+		error_log( 'WDD: MO file path: ' . $mofile );
+		error_log( 'WDD: File exists: ' . ( file_exists( $mofile ) ? 'YES' : 'NO' ) );
+	}
+	
 	load_plugin_textdomain( 'wow-dynamic-deals-for-woo', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 add_action( 'init', 'wdd_load_textdomain', 0 );

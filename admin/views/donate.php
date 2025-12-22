@@ -62,13 +62,10 @@ if (!defined('ABSPATH')) {
 
         <!-- Donation Button -->
         <div style="text-align: center; margin-bottom: 50px;">
-            <a href="https://www.paypal.com/paypalme/TheodoreSfakianakis" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 60px; font-size: 24px; font-weight: 700; text-decoration: none; border-radius: 50px; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4); transition: all 0.3s ease; border: none; margin: 10px;">
+            <a href="https://www.paypal.com/paypalme/TheodoreSfakianakis" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 60px; font-size: 24px; font-weight: 700; text-decoration: none; border-radius: 50px; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4); transition: all 0.3s ease; border: none;">
                 💝 Donate via PayPal
             </a>
-            <a href="https://revolut.me/theodocmx" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 60px; font-size: 24px; font-weight: 700; text-decoration: none; border-radius: 50px; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4); transition: all 0.3s ease; border: none; margin: 10px;">
-                💰 Donate via Revolut
-            </a>
-            <p style="margin: 20px 0 0 0; color: #999; font-size: 14px;">Secure payment through PayPal or Revolut • Any amount appreciated</p>
+            <p style="margin: 20px 0 0 0; color: #999; font-size: 14px;">Secure payment through PayPal • Any amount appreciated</p>
         </div>
 
         <!-- Testimonial Style Quote -->

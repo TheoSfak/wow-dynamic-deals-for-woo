@@ -89,11 +89,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</p>
 
 	<div style="margin: 35px 0;">
-		<a href="https://www.paypal.com/paypalme/TheodoreSfakianakis" target="_blank" style="display: inline-block; background: white; color: #f5576c; padding: 20px 50px; border-radius: 50px; text-decoration: none; font-size: 22px; font-weight: 700; box-shadow: 0 5px 20px rgba(0,0,0,0.2); transition: transform 0.2s; margin: 10px;">
+		<a href="https://www.paypal.com/paypalme/TheodoreSfakianakis" target="_blank" style="display: inline-block; background: white; color: #f5576c; padding: 20px 50px; border-radius: 50px; text-decoration: none; font-size: 22px; font-weight: 700; box-shadow: 0 5px 20px rgba(0,0,0,0.2); transition: transform 0.2s;">
 			💝 Donate via PayPal
-		</a>
-		<a href="https://revolut.me/theodocmx" target="_blank" style="display: inline-block; background: white; color: #f5576c; padding: 20px 50px; border-radius: 50px; text-decoration: none; font-size: 22px; font-weight: 700; box-shadow: 0 5px 20px rgba(0,0,0,0.2); transition: transform 0.2s; margin: 10px;">
-			💰 Donate via Revolut
 		</a>
 	</div>		<p style="font-size: 18px; margin: 25px 0 0 0; font-weight: 500;">
 			🙏 Your support keeps this plugin alive and motivates future updates!

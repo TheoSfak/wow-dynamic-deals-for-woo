@@ -80,7 +80,7 @@ function wdd_load_textdomain() {
 	
 	load_plugin_textdomain( 'wow-dynamic-deals-for-woo', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
-add_action( 'init', 'wdd_load_textdomain', 0 );
+add_action( 'plugins_loaded', 'wdd_load_textdomain', 1 );
 
 /**
  * Initialize the plugin

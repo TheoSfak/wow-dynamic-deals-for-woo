@@ -396,27 +396,38 @@ class AjaxHandler {
 			return;
 		}
 
-		$products = array();
-		$args = array(
-			'post_type'      => 'product',
-			'post_status'    => 'publish',
-			'posts_per_page' => 20,
-			'orderby'        => 'title',
-			'order'          => 'ASC',
-			's'              => $search,
+		global $wpdb;
+		
+		// Normalize Greek characters for better search results
+		$search_normalized = $this->normalize_greek_chars( $search );
+		$search_like = '%' . $wpdb->esc_like( $search_normalized ) . '%';
+		
+		// Search in post_title with Greek character normalization
+		$query = $wpdb->prepare(
+			"SELECT DISTINCT p.ID, p.post_title
+			FROM {$wpdb->posts} p
+			WHERE p.post_type = 'product'
+			AND p.post_status = 'publish'
+			AND (
+				p.post_title LIKE %s
+				OR p.post_title LIKE %s
+			)
+			ORDER BY p.post_title ASC
+			LIMIT 20",
+			$search_like,
+			'%' . $wpdb->esc_like( $search ) . '%'
 		);
-
-		$query = new \WP_Query( $args );
-
-		if ( $query->have_posts() ) {
-			while ( $query->have_posts() ) {
-				$query->the_post();
+		
+		$results = $wpdb->get_results( $query ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+		
+		$products = array();
+		if ( $results ) {
+			foreach ( $results as $product ) {
 				$products[] = array(
-					'id'   => get_the_ID(),
-					'text' => get_the_title() . ' (#' . get_the_ID() . ')',
+					'id'   => $product->ID,
+					'text' => $product->post_title . ' (#' . $product->ID . ')',
 				);
 			}
-			wp_reset_postdata();
 		}
 
 		wp_send_json_success( $products );

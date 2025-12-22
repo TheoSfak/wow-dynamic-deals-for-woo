@@ -351,7 +351,7 @@ msgstr "Ημέρες Εβδομάδας"
 
 #: admin/views/settings.php
 msgid "Debug & Developer Options"
-msgstr ""
+msgstr "Επιλογές Αποσφαλμάτωσης & Προγραμματιστή"
 
 #: admin/views/cart-discounts.php
 #: admin/views/gifts.php
@@ -685,7 +685,7 @@ msgstr "Αφήστε ακατάστατο για όλους τους χρήστ�
 
 #: admin/views/modals/gift-edit-modal.php
 msgid "Limit the total number of gift items per order. For example: Set to 1 to give only one free gift even if customer qualifies multiple times. Set to 2 to allow maximum 2 free gifts per order. Leave at 1 for standard promotions."
-msgstr ""
+msgstr "Περιορίστε τον συνολικό αριθμό δώρων ανά παραγγελία. Για παράδειγμα: Ορίστε σε 1 για να δώσετε μόνο ένα δωρεάν δώρο ακόμα κι αν ο πελάτης πληροί τις προϋποθέσεις πολλές φορές. Ορίστε σε 2 για να επιτρέψετε μέγιστο 2 δωρεάν δώρα ανά παραγγελία. Αφήστε στο 1 για τυπικές προσφορές."
 
 #: admin/views/settings.php
 msgid "Logs detailed rule evaluation information to wp-content/debug.log (requires WP_DEBUG_LOG to be enabled)."
@@ -951,7 +951,7 @@ msgstr ""
 
 #: includes/admin/class-ajax-handler.php
 msgid "Rule not found"
-msgstr ""
+msgstr "Ο κανόνας δεν βρέθηκε"
 
 #: includes/admin/class-ajax-handler.php
 #: includes/class-plugin.php
@@ -1171,7 +1171,7 @@ msgstr "Κυριακή"
 
 #: admin/views/gifts.php
 msgid "Surprise your customers with free gifts to increase satisfaction and loyalty!"
-msgstr ""
+msgstr "Εκπλήξτε τους πελάτες σας με δωρεάν δώρα για να αυξήσετε την ικανοποίηση και την αφοσίωση!"
 
 #: admin/views/settings.php
 msgid "Text & Font Customization"
@@ -1328,7 +1328,7 @@ msgstr "Woo Δυναμικές Προσφορές"
 
 #: includes/admin/class-admin-menu.php
 msgid "Wow Dynamic Deals for Woo"
-msgstr ""
+msgstr "Wow Δυναμικές Προσφορές για Woo"
 
 #: includes/class-frontend-display.php
 msgid "You Save"
@@ -1340,7 +1340,7 @@ msgstr "Εξοικονομήσατε:"
 
 #: includes/engines/class-gift-engine.php
 msgid "and more"
-msgstr ""
+msgstr "και περισσότερα"
 
 #: includes/engines/class-gift-engine.php
 msgid "buying %d or more items"

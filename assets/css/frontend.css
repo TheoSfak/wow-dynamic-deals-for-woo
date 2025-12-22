@@ -1,0 +1,407 @@
+/* Woo Dynamic Deals - Frontend Styles */
+
+.wdd-tiered-pricing-table {
+    margin: 25px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+}
+
+.wdd-tiered-pricing-table h4 {
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.wdd-tiered-pricing-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.wdd-tiered-pricing-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.wdd-tiered-pricing-table thead th {
+    color: #ffffff;
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wdd-tiered-pricing-table tbody tr {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.wdd-tiered-pricing-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.wdd-tiered-pricing-table tbody tr:hover {
+    background: #f8f9ff;
+    transform: scale(1.02);
+}
+
+.wdd-tiered-pricing-table tbody td {
+    padding: 15px 20px;
+    font-size: 15px;
+    color: #333;
+}
+
+.wdd-tiered-pricing-table tbody td:first-child {
+    font-weight: 600;
+    color: #667eea;
+}
+
+.wdd-tiered-pricing-table tbody td:nth-child(2) {
+    font-size: 18px;
+    font-weight: 700;
+    color: #28a745;
+}
+
+.wdd-tiered-pricing-table tbody td:last-child {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+/* Cart discount info styling */
+.wdd-cart-price {
+    margin-bottom: 5px;
+}
+
+.wdd-discount-info {
+    display: block;
+    color: #28a745;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.wdd-discount-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff9068 100%);
+    color: white;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    animation: saleBadgePulse 2s infinite;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes saleBadgePulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 25px rgba(255, 107, 107, 0.6);
+    }
+}
+
+/* Savings Summary Styling */
+.wdd-savings-summary th,
+.wdd-savings-summary td {
+    color: #10b981 !important;
+    font-weight: 600;
+}
+
+.wdd-savings-summary td strong {
+    font-size: 18px;
+}
+
+/* Price display enhancements for discounted products */
+.wdd-you-save {
+    color: #4caf50;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-left: 8px;
+    display: inline-block;
+}
+
+.wdd-original-price {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.wdd-discounted-price {
+    color: #d32f2f;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.wdd-gift-message {
+	padding: 20px;
+	background: linear-gradient(135deg, #ff6b6b 0%, #feca57 25%, #48dbfb 50%, #ff9ff3 75%, #54a0ff 100%);
+	background-size: 400% 400%;
+	border-radius: 12px;
+	margin: 15px 0;
+	box-shadow: 0 4px 20px rgba(255, 107, 107, 0.5);
+	animation: giftPulse 2s infinite, gradientShift 8s ease infinite;
+	border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.wdd-gift-header {
+	color: #ffffff;
+	font-size: 20px;
+	display: block;
+	margin-bottom: 15px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.wdd-gift-icon {
+	display: inline-block;
+	animation: giftBounce 1s infinite;
+	font-size: 28px;
+	filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+.wdd-glow-text {
+	display: inline-block;
+	animation: colorChange 3s infinite, textGlow 2s infinite;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 22px;
+}
+
+.wdd-gift-message ul {
+	list-style: none;
+	padding: 0;
+	margin: 10px 0 0 0;
+}
+
+.wdd-gift-message li {
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+	padding: 15px 20px;
+	margin: 10px 0;
+	border-radius: 8px;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+	position: relative;
+	overflow: hidden;
+}
+
+.wdd-gift-message li::before {
+	content: "🎁 GIFT";
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	background: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
+	background-size: 200% 200%;
+	color: white;
+	font-weight: bold;
+	font-size: 11px;
+	padding: 0 12px;
+	display: flex;
+	align-items: center;
+	border-radius: 8px 0 0 8px;
+	animation: gradientShift 4s ease infinite, giftLabelGlow 2s infinite;
+	letter-spacing: 1px;
+	box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.wdd-gift-product-name {
+	color: #667eea;
+	font-weight: 600;
+	font-size: 16px;
+	margin-left: 80px;
+	display: block;
+}
+
+.wdd-gift-reason {
+	color: #666;
+	font-style: italic;
+	display: block;
+	margin-top: 5px;
+	margin-left: 80px;
+	line-height: 1.4;
+}
+
+.wdd-gift-price {
+	color: #28a745;
+	font-weight: bold;
+	font-size: 18px;
+	animation: priceGlow 2s infinite;
+	text-shadow: 0 0 10px rgba(40, 167, 69, 0.6);
+}
+
+@keyframes gradientShift {
+	0%, 100% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+}
+
+@keyframes giftPulse {
+	0%, 100% {
+		box-shadow: 0 4px 20px rgba(255, 107, 107, 0.5);
+	}
+	50% {
+		box-shadow: 0 6px 30px rgba(255, 107, 107, 0.8), 0 0 20px rgba(254, 202, 87, 0.6);
+	}
+}
+
+@keyframes giftBounce {
+	0%, 100% {
+		transform: translateY(0) rotate(0deg) scale(1);
+	}
+	25% {
+		transform: translateY(-8px) rotate(-10deg) scale(1.1);
+	}
+	75% {
+		transform: translateY(-8px) rotate(10deg) scale(1.1);
+	}
+}
+
+@keyframes colorChange {
+	0% {
+		color: #ffffff;
+	}
+	20% {
+		color: #ffd700;
+	}
+	40% {
+		color: #00ff88;
+	}
+	60% {
+		color: #ff69b4;
+	}
+	80% {
+		color: #00d4ff;
+	}
+	100% {
+		color: #ffffff;
+	}
+}
+
+@keyframes textGlow {
+	0%, 100% {
+		text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+	}
+	50% {
+		text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 0, 255, 0.6);
+	}
+}
+
+@keyframes priceGlow {
+	0%, 100% {
+		text-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+	}
+	50% {
+		text-shadow: 0 0 15px rgba(40, 167, 69, 0.8), 0 0 25px rgba(0, 255, 136, 0.6);
+	}
+}
+
+@keyframes giftLabelGlow {
+	0%, 100% {
+		box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+	}
+	50% {
+		box-shadow: 2px 0 15px rgba(255, 107, 107, 0.6), 0 0 20px rgba(254, 202, 87, 0.4);
+	}
+}
+
+/* Cart table GIFT badge styling */
+.wdd-gift-badge {
+	display: inline-block;
+	padding: 8px 16px;
+	background: linear-gradient(135deg, #ff6b6b 0%, #feca57 25%, #48dbfb 50%, #ff9ff3 75%, #54a0ff 100%);
+	background-size: 300% 300%;
+	color: white;
+	font-weight: bold;
+	font-size: 13px;
+	border-radius: 20px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	animation: gradientShift 4s ease infinite, badgePulse 2s infinite, badgeFloat 3s ease-in-out infinite;
+	box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+	border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+@keyframes badgePulse {
+	0%, 100% {
+		transform: scale(1);
+		box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+	}
+	50% {
+		transform: scale(1.05);
+		box-shadow: 0 6px 25px rgba(255, 107, 107, 0.6), 0 0 15px rgba(254, 202, 87, 0.5);
+	}
+}
+
+@keyframes badgeFloat {
+	0%, 100% {
+		transform: translateY(0) rotate(0deg);
+	}
+	33% {
+		transform: translateY(-3px) rotate(-2deg);
+	}
+	66% {
+		transform: translateY(-3px) rotate(2deg);
+	}
+}
+/* Cart item discount display */
+.wdd-cart-original {
+color: #999;
+text-decoration: line-through;
+font-size: 0.9em;
+display: inline-block;
+}
+
+.wdd-cart-discounted {
+color: #d32f2f;
+font-weight: bold;
+font-size: 1.1em;
+text-decoration: none;
+display: inline-block;
+}
+
+.wdd-cart-save {
+color: #4caf50;
+font-weight: 600;
+display: inline-block;
+padding: 2px 6px;
+background: rgba(76, 175, 80, 0.1);
+border-radius: 3px;
+}
+
+/* Mini cart and cart widget styles */
+.woocommerce-mini-cart .wdd-cart-original,
+.widget_shopping_cart .wdd-cart-original {
+font-size: 0.85em;
+}
+
+.woocommerce-mini-cart .wdd-cart-discounted,
+.widget_shopping_cart .wdd-cart-discounted {
+font-size: 1em;
+}
+
+.woocommerce-mini-cart .wdd-cart-save,
+.widget_shopping_cart .wdd-cart-save {
+display: block;
+margin-top: 3px;
+font-size: 0.85em;
+}

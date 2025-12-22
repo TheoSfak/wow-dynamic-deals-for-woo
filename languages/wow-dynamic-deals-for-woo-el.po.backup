@@ -25,15 +25,15 @@ msgstr ""
 
 #: includes/engines/class-cart-discount-engine.php
 msgid "%1$s (%2$s discount)"
-msgstr "%1$s (έκπτωση %2$s)"
+msgid "%1$s (%2$s discount)"
 
 #: includes/class-frontend-display.php
 msgid "%1$s (%2$s%%)"
-msgstr "%1$s (%2$s%%)"
+msgid "%1$s (%2$s%%)"
 
 #: templates/tiered-pricing-table.php
 msgid "*Discount applies to entire cart quantity"
-msgstr "*Η έκπτωση εφαρμόζεται σε ολόκληρη την ποσότητα του καλαθιού"
+msgid "*Discount applies to entire cart quantity"
 
 #: admin/views/cart-discounts.php
 #: admin/views/gifts.php
@@ -55,13 +55,13 @@ msgid "Active"
 
 #: admin/views/modals/gift-edit-modal.php
 msgid "Add Additional Trigger Condition"
-msgstr "Προσθήκη Επιπλέον Συνθήκης Ενεργοποίησης"
+msgid "Add Additional Trigger Condition"
 
 #: admin/views/cart-discounts.php
 #: admin/views/modals/cart-edit-modal.php
 #: includes/class-plugin.php
 msgid "Add Cart Discount"
-msgstr ""
+msgid "Add Cart Discount"
 
 #: admin/views/gifts.php
 #: admin/views/modals/gift-edit-modal.php
@@ -77,7 +77,7 @@ msgid "Add Price Rule"
 
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Add Tier"
-msgstr ""
+msgid "Add Tier"
 
 #: admin/views/modals/tiered-edit-modal.php
 #: admin/views/tiered-pricing.php
@@ -87,14 +87,14 @@ msgstr ""
 
 #: admin/views/modals/gift-edit-modal.php
 msgid "Add multiple conditions and choose AND (all must match) or OR (any can match)"
-msgstr "Προσθέστε πολλαπλές συνθήκες και επιλέξτε ΚΑΙ (όλες πρέπει να ταιριάζουν) ή Ή (οποιαδήποτε)"
+msgid "Add multiple conditions and choose AND (all must match) or OR (any can match)"
 
 #: admin/views/modals/cart-edit-modal.php
 #: admin/views/modals/gift-edit-modal.php
 #: admin/views/modals/rule-edit-modal.php
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Additional Options"
-msgstr ""
+msgid "Additional Options"
 
 #: admin/views/modals/rule-edit-modal.php
 msgid "Adjustment Type"
@@ -113,11 +113,11 @@ msgstr ""
 #: admin/views/price-rules.php
 #: admin/views/tiered-pricing.php
 msgid "Always Active"
-msgstr "Πάντα Ενεργό"
+msgid "Always Active"
 
 #: includes/class-plugin.php
 msgid "An error occurred"
-msgstr "Παρουσιάστηκε σφάλμα"
+msgid "An error occurred"
 
 #: admin/views/settings.php
 #: includes/class-plugin.php
@@ -126,7 +126,7 @@ msgstr ""
 
 #: templates/savings-summary.php
 msgid "Applied discounts:"
-msgstr "Εφαρμοσμένες εκπτώσεις:"
+msgid "Applied discounts:"
 
 #: admin/views/modals/rule-edit-modal.php
 msgid "Apply To"
@@ -134,15 +134,15 @@ msgid "Apply To"
 
 #: admin/views/cart-discounts.php
 msgid "Apply automatic discounts and free shipping based on cart conditions"
-msgstr ""
+msgid "Apply automatic discounts and free shipping based on cart conditions"
 
 #: admin/views/modals/cart-edit-modal.php
 msgid "Apply free shipping when this rule is active"
-msgstr ""
+msgid "Apply free shipping when this rule is active"
 
 #: admin/views/modals/cart-edit-modal.php
 msgid "Apply only to first order (new customers)"
-msgstr ""
+msgid "Apply only to first order (new customers)"
 
 #: includes/class-plugin.php
 msgid "Are you sure you want to delete this rule?"
@@ -150,11 +150,11 @@ msgid "Are you sure you want to delete this rule?"
 
 #: admin/views/examples.php
 msgid "BOGO - Buy One Get One 50% Off"
-msgstr "BOGO - Αγοράστε 1 Πάρτε 1 στο 50%"
+msgid "BOGO - Buy One Get One 50% Off"
 
 #: admin/views/settings.php
 msgid "Badge Text"
-msgstr ""
+msgid "Badge Text"
 
 #: admin/views/examples.php
 msgid "Birthday Month Special Gift"
@@ -166,7 +166,7 @@ msgstr ""
 
 #: admin/views/cart-discounts.php
 msgid "Boost conversions with smart cart-level discounts!"
-msgstr ""
+msgid "Boost conversions with smart cart-level discounts!"
 
 #: admin/views/modals/rule-edit-modal.php
 msgid "Both"
@@ -174,27 +174,27 @@ msgid "Both"
 
 #: admin/views/examples.php
 msgid "Bulk Discount - Buy More, Save More"
-msgstr "Έκπτωση Όγκου - Αγοράστε Περισσότερα, Εξοικονομήστε Περισσότερα"
+msgid "Bulk Discount - Buy More, Save More"
 
 #: admin/views/examples.php
 msgid "Buy 2 Get 1 Free"
-msgstr "Αγοράστε 2 Πάρτε 1 Δωρεάν"
+msgid "Buy 2 Get 1 Free"
 
 #: admin/views/examples.php
 msgid "Buy 3 Books, Get 50% Off"
-msgstr "Αγοράστε 3 Βιβλία, Πάρτε 50% Έκπτωση"
+msgid "Buy 3 Books, Get 50% Off"
 
 #: admin/views/examples.php
 msgid "Buy Laptop, Get Free Mouse"
-msgstr "Αγοράστε Laptop, Πάρτε Δωρεάν Ποντίκι"
+msgid "Buy Laptop, Get Free Mouse"
 
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Calculate tiers for each cart line separately"
-msgstr "Υπολογισμός βαθμίδων για κάθε γραμμή καλαθιού ξεχωριστά"
+msgid "Calculate tiers for each cart line separately"
 
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Calculation Mode"
-msgstr "Λειτουργία Υπολογισμού"
+msgid "Calculation Mode"
 
 #: admin/views/modals/cart-edit-modal.php
 #: admin/views/modals/gift-edit-modal.php
@@ -209,11 +209,11 @@ msgstr ""
 
 #: admin/views/modals/cart-edit-modal.php
 msgid "Cart Conditions"
-msgstr ""
+msgid "Cart Conditions"
 
 #: includes/class-frontend-display.php
 msgid "Cart Discount"
-msgstr "Έκπτωση Καλαθιού"
+msgid "Cart Discount"
 
 #: admin/views/settings.php
 msgid "Cart Discount Display Customization"
@@ -229,7 +229,7 @@ msgstr ""
 
 #: admin/views/cart-discounts.php
 msgid "Cart Discount Rules"
-msgstr ""
+msgid "Cart Discount Rules"
 
 #: admin/views/settings.php
 msgid "Cart Discounts"
@@ -241,15 +241,15 @@ msgstr ""
 
 #: admin/views/examples.php
 msgid "Christmas Sale - December Special"
-msgstr "Χριστουγεννιάτικη Προσφορά - Ειδική Δεκεμβρίου"
+msgid "Christmas Sale - December Special"
 
 #: admin/views/examples.php
 msgid "Clearance - Fixed Price $9.99"
-msgstr "Εκκαθάριση - Σταθερή Τιμή $9.99"
+msgid "Clearance - Fixed Price $9.99"
 
 #: admin/views/examples.php
 msgid "Click any example below to see detailed setup instructions for common promotional scenarios"
-msgstr "Κάντε κλικ σε οποιοδήποτε παράδειγμα για λεπτομερείς οδηγίες ρύθμισης"
+msgid "Click any example below to see detailed setup instructions for common promotional scenarios"
 
 #: admin/views/settings.php
 msgid "Click to download and install the latest version from GitHub. Your settings and rules will be preserved."
@@ -277,11 +277,11 @@ msgstr ""
 
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Combined Quantity"
-msgstr "Συνδυασμένη Ποσότητα"
+msgid "Combined Quantity"
 
 #: admin/views/examples.php
 msgid "Combo Deal - Phone + Case = 20% Off"
-msgstr "Προσφορά Combo - Τηλέφωνο + Θήκη = 20% Έκπτωση"
+msgid "Combo Deal - Phone + Case = 20% Off"
 
 #: admin/views/settings.php
 msgid "Configure plugin behavior and enable/disable modules"
@@ -296,19 +296,19 @@ msgstr ""
 #: admin/views/price-rules.php
 #: admin/views/tiered-pricing.php
 msgid "Copy"
-msgstr "Αντιγραφή"
+msgid "Copy"
 
 #: admin/views/cart-discounts.php
 msgid "Create Your First Discount"
-msgstr ""
+msgid "Create Your First Discount"
 
 #: admin/views/gifts.php
 msgid "Create Your First Gift Rule"
-msgstr "Δημιουργήστε τον Πρώτο σας Κανόνα Δώρου"
+msgid "Create Your First Gift Rule"
 
 #: admin/views/price-rules.php
 msgid "Create Your First Rule"
-msgstr "Δημιουργήστε τον Πρώτο σας Κανόνα"
+msgid "Create Your First Rule"
 
 #: admin/views/tiered-pricing.php
 msgid "Create Your First Tier"
@@ -347,11 +347,11 @@ msgstr ""
 #: admin/views/modals/rule-edit-modal.php
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Days of Week"
-msgstr ""
+msgid "Days of Week"
 
 #: admin/views/settings.php
 msgid "Debug & Developer Options"
-msgstr ""
+msgid "Debug & Developer Options"
 
 #: admin/views/cart-discounts.php
 #: admin/views/gifts.php
@@ -381,7 +381,7 @@ msgstr ""
 
 #: admin/views/modals/cart-edit-modal.php
 msgid "Discount Settings"
-msgstr ""
+msgid "Discount Settings"
 
 #: admin/views/settings.php
 msgid "Discount Stacking & Priority"
@@ -390,15 +390,15 @@ msgstr ""
 #: admin/views/modals/cart-edit-modal.php
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Discount Type"
-msgstr ""
+msgid "Discount Type"
 
 #: admin/views/modals/cart-edit-modal.php
 msgid "Discount Value"
-msgstr ""
+msgid "Discount Value"
 
 #: admin/views/modals/cart-edit-modal.php
 msgid "Discount will only apply if customer has never placed an order before. Works for both logged-in users and guest email addresses."
-msgstr ""
+msgid "Discount will only apply if customer has never placed an order before. Works for both logged-in users and guest email addresses."
 
 #: admin/views/settings.php
 msgid "Display & Frontend Settings"
@@ -410,7 +410,7 @@ msgstr ""
 
 #: includes/class-plugin.php
 msgid "Duplicate"
-msgstr "Αντιγραφή"
+msgid "Duplicate"
 
 #: includes/class-plugin.php
 msgid "Duplicating..."
@@ -484,7 +484,7 @@ msgstr ""
 
 #: includes/admin/class-ajax-handler.php
 msgid "Failed to delete rule"
-msgstr "Αποτυχία διαγραφής"
+msgid "Failed to delete rule"
 
 #: includes/class-plugin.php
 msgid "Failed to delete rule."
@@ -504,7 +504,7 @@ msgstr ""
 
 #: includes/admin/class-ajax-handler.php
 msgid "Failed to save rule"
-msgstr "Αποτυχία αποθήκευσης"
+msgid "Failed to save rule"
 
 #: includes/class-plugin.php
 msgid "Failed to save rule."
@@ -566,7 +566,7 @@ msgid "Free Gifts in Your Cart!"
 
 #: admin/views/examples.php
 msgid "Free Sample with Every Order"
-msgstr "Δωρεάν Δείγμα με Κάθε Παραγγελία"
+msgid "Free Sample with Every Order"
 
 #: admin/views/cart-discounts.php
 msgid "Free Shipping"
@@ -597,11 +597,11 @@ msgstr ""
 #: admin/views/modals/rule-edit-modal.php
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Friday"
-msgstr "Παρασκευή"
+msgid "Friday"
 
 #: admin/views/modals/gift-edit-modal.php
 msgid "Gift Products"
-msgstr ""
+msgid "Gift Products"
 
 #: admin/views/modals/gift-edit-modal.php
 msgid "Gift will be added when any of these products are in cart"
@@ -677,15 +677,15 @@ msgid "Leave empty to apply to all products"
 
 #: admin/views/modals/rule-edit-modal.php
 msgid "Leave unchecked for all days"
-msgstr "Αφήστε κενό για όλες τις ημέρες"
+msgid "Leave unchecked for all days"
 
 #: admin/views/modals/rule-edit-modal.php
 msgid "Leave unchecked for all users"
-msgstr "Αφήστε κενό για όλους τους χρήστες"
+msgid "Leave unchecked for all users"
 
 #: admin/views/modals/gift-edit-modal.php
 msgid "Limit the total number of gift items per order. For example: Set to 1 to give only one free gift even if customer qualifies multiple times. Set to 2 to allow maximum 2 free gifts per order. Leave at 1 for standard promotions."
-msgstr ""
+msgid "Limit the total number of gift items per order. For example: Set to 1 to give only one free gift even if customer qualifies multiple times. Set to 2 to allow maximum 2 free gifts per order. Leave at 1 for standard promotions."
 
 #: admin/views/settings.php
 msgid "Logs detailed rule evaluation information to wp-content/debug.log (requires WP_DEBUG_LOG to be enabled)."
@@ -693,7 +693,7 @@ msgstr ""
 
 #: admin/views/examples.php
 msgid "Loyalty Tiers - Spend More, Save More"
-msgstr "Βαθμίδες Πιστότητας - Ξοδέψτε Περισσότερα, Εξοικονομήστε Περισσότερα"
+msgid "Loyalty Tiers - Spend More, Save More"
 
 #: admin/views/modals/gift-edit-modal.php
 msgid "Main Trigger Condition"
@@ -701,11 +701,11 @@ msgstr ""
 
 #: admin/views/modals/cart-edit-modal.php
 msgid "Max Cart Quantity"
-msgstr ""
+msgid "Max Cart Quantity"
 
 #: admin/views/modals/cart-edit-modal.php
 msgid "Max Cart Total"
-msgstr ""
+msgid "Max Cart Total"
 
 #: admin/views/gifts.php
 msgid "Max Gifts"
@@ -713,7 +713,7 @@ msgstr ""
 
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Max Qty"
-msgstr "Μέγ. Ποσ."
+msgid "Max Qty"
 
 #: admin/views/modals/gift-edit-modal.php
 msgid "Maximum Gifts per Order"
@@ -733,15 +733,15 @@ msgstr ""
 
 #: admin/views/modals/cart-edit-modal.php
 msgid "Min Cart Quantity"
-msgstr ""
+msgid "Min Cart Quantity"
 
 #: admin/views/modals/cart-edit-modal.php
 msgid "Min Cart Total"
-msgstr ""
+msgid "Min Cart Total"
 
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Min Qty"
-msgstr "Ελάχ. Ποσ."
+msgid "Min Qty"
 
 #: admin/views/modals/gift-edit-modal.php
 msgid "Minimum Cart Quantity"
@@ -764,11 +764,11 @@ msgstr ""
 #: admin/views/modals/rule-edit-modal.php
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Monday"
-msgstr "Δευτέρα"
+msgid "Monday"
 
 #: admin/views/cart-discounts.php
 msgid "No Cart Discount Rules Yet"
-msgstr ""
+msgid "No Cart Discount Rules Yet"
 
 #: admin/views/gifts.php
 msgid "No Gift Rules Yet"
@@ -800,7 +800,7 @@ msgstr ""
 
 #: admin/views/settings.php
 msgid "Original Price Color"
-msgstr ""
+msgid "Original Price Color"
 
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Per Line Item"
@@ -912,7 +912,7 @@ msgstr ""
 #: includes/class-frontend-display.php
 #: templates/tiered-pricing-table.php
 msgid "Quantity"
-msgstr ""
+msgid "Quantity"
 
 #: includes/engines/class-tiered-pricing-engine.php
 msgid "Quantity Discount Applied"
@@ -951,7 +951,7 @@ msgstr ""
 
 #: includes/admin/class-ajax-handler.php
 msgid "Rule not found"
-msgstr ""
+msgid "Rule not found"
 
 #: includes/admin/class-ajax-handler.php
 #: includes/class-plugin.php
@@ -972,7 +972,7 @@ msgid "Sale Price"
 
 #: admin/views/settings.php
 msgid "Sale Price Color"
-msgstr ""
+msgid "Sale Price Color"
 
 #: admin/views/settings.php
 msgid "Sale Price Only"
@@ -983,12 +983,12 @@ msgstr ""
 #: admin/views/modals/rule-edit-modal.php
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Saturday"
-msgstr "Σάββατο"
+msgid "Saturday"
 
 #: admin/views/modals/cart-edit-modal.php
 #: includes/class-plugin.php
 msgid "Save Cart Discount"
-msgstr ""
+msgid "Save Cart Discount"
 
 #: admin/views/modals/gift-edit-modal.php
 #: includes/class-plugin.php
@@ -1019,7 +1019,7 @@ msgstr ""
 
 #: admin/views/settings.php
 msgid "Savings Text Color"
-msgstr ""
+msgid "Savings Text Color"
 
 #: admin/views/cart-discounts.php
 #: admin/views/gifts.php
@@ -1115,7 +1115,7 @@ msgid "Specific Products in Cart"
 #: admin/views/modals/rule-edit-modal.php
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Specific Users"
-msgstr ""
+msgid "Specific Users"
 
 #: admin/views/examples.php
 msgid "Spend $200, Save $20"
@@ -1148,7 +1148,7 @@ msgid "Status"
 #: admin/views/modals/rule-edit-modal.php
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Stop processing further rules after this one"
-msgstr ""
+msgid "Stop processing further rules after this one"
 
 #: admin/views/settings.php
 msgid "Strikethrough Original Price"
@@ -1167,11 +1167,11 @@ msgstr ""
 #: admin/views/modals/rule-edit-modal.php
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Sunday"
-msgstr "Κυριακή"
+msgid "Sunday"
 
 #: admin/views/gifts.php
 msgid "Surprise your customers with free gifts to increase satisfaction and loyalty!"
-msgstr ""
+msgid "Surprise your customers with free gifts to increase satisfaction and loyalty!"
 
 #: admin/views/settings.php
 msgid "Text & Font Customization"
@@ -1202,7 +1202,7 @@ msgstr ""
 #: admin/views/modals/rule-edit-modal.php
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Thursday"
-msgstr "Πέμπτη"
+msgid "Thursday"
 
 #: admin/views/settings.php
 msgid "Tiered Pricing"
@@ -1210,11 +1210,11 @@ msgstr ""
 
 #: admin/views/tiered-pricing.php
 msgid "Tiered Pricing Rules"
-msgstr ""
+msgid "Tiered Pricing Rules"
 
 #: admin/views/tiered-pricing.php
 msgid "Tiers"
-msgstr "Βαθμίδες"
+msgid "Tiers"
 
 #: admin/views/cart-discounts.php
 #: admin/views/gifts.php
@@ -1241,14 +1241,14 @@ msgstr ""
 
 #: admin/views/modals/gift-edit-modal.php
 msgid "Trigger Type"
-msgstr ""
+msgid "Trigger Type"
 
 #: admin/views/modals/cart-edit-modal.php
 #: admin/views/modals/gift-edit-modal.php
 #: admin/views/modals/rule-edit-modal.php
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Tuesday"
-msgstr "Τρίτη"
+msgid "Tuesday"
 
 #: admin/views/price-rules.php
 msgid "Type"
@@ -1261,7 +1261,7 @@ msgstr ""
 #: admin/views/modals/cart-edit-modal.php
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Unlimited"
-msgstr ""
+msgid "Unlimited"
 
 #: admin/views/settings.php
 msgid "Update Plugin from GitHub"
@@ -1280,14 +1280,14 @@ msgstr ""
 #: admin/views/modals/rule-edit-modal.php
 #: admin/views/modals/tiered-edit-modal.php
 msgid "User Restrictions"
-msgstr ""
+msgid "User Restrictions"
 
 #: admin/views/modals/cart-edit-modal.php
 #: admin/views/modals/gift-edit-modal.php
 #: admin/views/modals/rule-edit-modal.php
 #: admin/views/modals/tiered-edit-modal.php
 msgid "User Roles"
-msgstr "Ρόλοι Χρήστη"
+msgid "User Roles"
 
 #: admin/views/examples.php
 msgid "VIP Customer 20% Discount"
@@ -1304,7 +1304,7 @@ msgid "Value"
 #: admin/views/modals/rule-edit-modal.php
 #: admin/views/modals/tiered-edit-modal.php
 msgid "Wednesday"
-msgstr "Τετάρτη"
+msgid "Wednesday"
 
 #: admin/views/examples.php
 msgid "Weekend Sale - Saturday & Sunday"
@@ -1328,19 +1328,19 @@ msgid "Woo Dynamic Deals"
 
 #: includes/admin/class-admin-menu.php
 msgid "Wow Dynamic Deals for Woo"
-msgstr ""
+msgid "Wow Dynamic Deals for Woo"
 
 #: includes/class-frontend-display.php
 msgid "You Save"
-msgstr ""
+msgid "You Save"
 
 #: templates/savings-summary.php
 msgid "You saved:"
-msgstr ""
+msgid "You saved:"
 
 #: includes/engines/class-gift-engine.php
 msgid "and more"
-msgstr ""
+msgid "and more"
 
 #: includes/engines/class-gift-engine.php
 msgid "buying %d or more items"

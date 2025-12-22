@@ -1,0 +1,365 @@
+# Greek translation for Wow Dynamic Deals for Woo
+# Copyright (C) 2025 Theodore Sfakianakis
+# This file is distributed under the same license as the Wow Dynamic Deals for Woo plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wow Dynamic Deals for Woo 1.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/TheoSfak/wow-dynamic-deals-for-woo/issues\n"
+"POT-Creation-Date: 2025-12-22 10:43+0000\n"
+"PO-Revision-Date: 2025-12-22 10:50+0000\n"
+"Last-Translator: Theodore Sfakianakis\n"
+"Language-Team: Greek\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: woo-dynamic-deals.php:41
+msgid "Woo Dynamic Deals"
+msgstr "Woo Δυναμικές Προσφορές"
+
+#: woo-dynamic-deals.php:42
+msgid "requires WooCommerce to be installed and activated."
+msgstr "απαιτεί το WooCommerce να είναι εγκατεστημένο και ενεργοποιημένο."
+
+#: woo-dynamic-deals.php:59
+msgid "requires PHP 8.0 or higher. Your current PHP version is"
+msgstr "απαιτεί PHP 8.0 ή νεότερο. Η τρέχουσα έκδοση PHP είναι"
+
+#: woo-dynamic-deals.php:102
+msgid "Plugin activation failed. Please check the requirements."
+msgstr "Η ενεργοποίηση του plugin απέτυχε. Παρακαλώ ελέγξτε τις απαιτήσεις."
+
+#: woo-dynamic-deals.php:103
+msgid "Plugin Activation Error"
+msgstr "Σφάλμα Ενεργοποίησης Plugin"
+
+#: admin/views/dashboard.php:23
+msgid "Dynamic Deals for WooCommerce"
+msgstr "Δυναμικές Προσφορές για WooCommerce"
+
+#: admin/views/price-rules.php:20
+msgid "Price Rules"
+msgstr "Κανόνες Τιμών"
+
+#: admin/views/price-rules.php:21
+msgid "Create dynamic pricing rules to adjust product prices based on conditions"
+msgstr "Δημιουργήστε δυναμικούς κανόνες τιμολόγησης για να προσαρμόσετε τις τιμές προϊόντων βάσει συνθηκών"
+
+#: admin/views/price-rules.php:24
+msgid "Add Price Rule"
+msgstr "Προσθήκη Κανόνα Τιμής"
+
+#: admin/views/price-rules.php:32
+msgid "No Price Rules Yet"
+msgstr "Δεν Υπάρχουν Ακόμα Κανόνες Τιμών"
+
+#: admin/views/price-rules.php:33
+msgid "Create your first price rule to start offering dynamic pricing to your customers!"
+msgstr "Δημιουργήστε τον πρώτο σας κανόνα τιμής για να αρχίσετε να προσφέρετε δυναμική τιμολόγηση στους πελάτες σας!"
+
+#: admin/views/price-rules.php:35
+msgid "Create Your First Rule"
+msgstr "Δημιουργήστε τον Πρώτο σας Κανόνα"
+
+#: admin/views/price-rules.php:43
+#: admin/views/tiered-pricing.php:43
+#: admin/views/cart-discounts.php:43
+#: admin/views/gifts.php:43
+msgid "Priority"
+msgstr "Προτεραιότητα"
+
+#: admin/views/price-rules.php:44
+#: admin/views/tiered-pricing.php:44
+#: admin/views/cart-discounts.php:44
+#: admin/views/gifts.php:44
+msgid "Title"
+msgstr "Τίτλος"
+
+#: admin/views/price-rules.php:45
+msgid "Type"
+msgstr "Τύπος"
+
+#: admin/views/price-rules.php:46
+msgid "Value"
+msgstr "Αξία"
+
+#: admin/views/price-rules.php:47
+#: admin/views/tiered-pricing.php:47
+#: admin/views/cart-discounts.php:47
+#: admin/views/gifts.php:47
+msgid "Status"
+msgstr "Κατάσταση"
+
+#: admin/views/price-rules.php:48
+#: admin/views/tiered-pricing.php:48
+#: admin/views/cart-discounts.php:48
+#: admin/views/gifts.php:48
+msgid "Schedule"
+msgstr "Προγραμματισμός"
+
+#: admin/views/price-rules.php:49
+#: admin/views/tiered-pricing.php:49
+#: admin/views/cart-discounts.php:49
+#: admin/views/gifts.php:49
+msgid "Actions"
+msgstr "Ενέργειες"
+
+#: admin/views/price-rules.php:73
+#: admin/views/tiered-pricing.php:68
+#: admin/views/cart-discounts.php:68
+#: admin/views/gifts.php:65
+msgid "Active"
+msgstr "Ενεργός"
+
+#: admin/views/price-rules.php:75
+#: admin/views/tiered-pricing.php:70
+#: admin/views/cart-discounts.php:70
+#: admin/views/gifts.php:67
+msgid "Inactive"
+msgstr "Ανενεργός"
+
+#: admin/views/price-rules.php:90
+#: admin/views/tiered-pricing.php:85
+#: admin/views/cart-discounts.php:85
+#: admin/views/gifts.php:82
+msgid "Always Active"
+msgstr "Πάντα Ενεργός"
+
+#: admin/views/price-rules.php:97
+#: admin/views/tiered-pricing.php:92
+#: admin/views/cart-discounts.php:92
+#: admin/views/gifts.php:89
+msgid "Edit"
+msgstr "Επεξεργασία"
+
+#: admin/views/price-rules.php:100
+#: admin/views/tiered-pricing.php:95
+#: admin/views/cart-discounts.php:95
+#: admin/views/gifts.php:92
+msgid "Copy"
+msgstr "Αντιγραφή"
+
+#: admin/views/price-rules.php:103
+#: admin/views/tiered-pricing.php:98
+#: admin/views/cart-discounts.php:98
+#: admin/views/gifts.php:95
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: admin/views/tiered-pricing.php:20
+msgid "Tiered Pricing Rules"
+msgstr "Κανόνες Βαθμιδωτής Τιμολόγησης"
+
+#: admin/views/tiered-pricing.php:21
+msgid "Offer quantity-based discounts to encourage bulk purchases"
+msgstr "Προσφέρετε εκπτώσεις βάσει ποσότητας για να ενθαρρύνετε τις χονδρικές αγορές"
+
+#: admin/views/tiered-pricing.php:24
+msgid "Add Tiered Pricing"
+msgstr "Προσθήκη Βαθμιδωτής Τιμολόγησης"
+
+#: admin/views/tiered-pricing.php:32
+msgid "No Tiered Pricing Rules Yet"
+msgstr "Δεν Υπάρχουν Ακόμα Κανόνες Βαθμιδωτής Τιμολόγησης"
+
+#: admin/views/tiered-pricing.php:33
+msgid "Create tiered pricing to reward customers who buy in bulk!"
+msgstr "Δημιουργήστε βαθμιδωτή τιμολόγηση για να ανταμείψετε τους πελάτες που αγοράζουν χονδρικά!"
+
+#: admin/views/tiered-pricing.php:35
+msgid "Create Your First Tier"
+msgstr "Δημιουργήστε την Πρώτη σας Βαθμίδα"
+
+#: admin/views/tiered-pricing.php:45
+msgid "Mode"
+msgstr "Λειτουργία"
+
+#: admin/views/tiered-pricing.php:46
+msgid "Tiers"
+msgstr "Βαθμίδες"
+
+#: admin/views/cart-discounts.php:20
+msgid "Cart Discount Rules"
+msgstr "Κανόνες Έκπτωσης Καλαθιού"
+
+#: admin/views/cart-discounts.php:21
+msgid "Apply automatic discounts and free shipping based on cart conditions"
+msgstr "Εφαρμόστε αυτόματες εκπτώσεις και δωρεάν αποστολή βάσει συνθηκών καλαθιού"
+
+#: admin/views/cart-discounts.php:24
+msgid "Add Cart Discount"
+msgstr "Προσθήκη Έκπτωσης Καλαθιού"
+
+#: admin/views/cart-discounts.php:32
+msgid "No Cart Discount Rules Yet"
+msgstr "Δεν Υπάρχουν Ακόμα Κανόνες Έκπτωσης Καλαθιού"
+
+#: admin/views/cart-discounts.php:33
+msgid "Boost conversions with smart cart-level discounts!"
+msgstr "Αυξήστε τις μετατροπές με έξυπνες εκπτώσεις σε επίπεδο καλαθιού!"
+
+#: admin/views/cart-discounts.php:35
+msgid "Create Your First Discount"
+msgstr "Δημιουργήστε την Πρώτη σας Έκπτωση"
+
+#: admin/views/cart-discounts.php:45
+msgid "Discount"
+msgstr "Έκπτωση"
+
+#: admin/views/cart-discounts.php:46
+msgid "Min Amount"
+msgstr "Ελάχιστο Ποσό"
+
+#: admin/views/gifts.php:20
+msgid "Free Gift Rules"
+msgstr "Κανόνες Δωρεάν Δώρων"
+
+#: admin/views/gifts.php:21
+msgid "Delight customers with automatic free gifts based on purchase conditions"
+msgstr "Ευχαριστήστε τους πελάτες με αυτόματα δωρεάν δώρα βάσει συνθηκών αγοράς"
+
+#: admin/views/gifts.php:24
+msgid "Add Gift Rule"
+msgstr "Προσθήκη Κανόνα Δώρου"
+
+#: admin/views/gifts.php:32
+msgid "No Gift Rules Yet"
+msgstr "Δεν Υπάρχουν Ακόμα Κανόνες Δώρων"
+
+#: admin/views/gifts.php:33
+msgid "Surprise your customers with free gifts to increase satisfaction and loyalty!"
+msgstr "Εκπλήξτε τους πελάτες σας με δωρεάν δώρα για να αυξήσετε την ικανοποίηση και την πιστότητα!"
+
+#: admin/views/gifts.php:35
+msgid "Create Your First Gift Rule"
+msgstr "Δημιουργήστε τον Πρώτο σας Κανόνα Δώρου"
+
+#: admin/views/gifts.php:45
+msgid "Trigger"
+msgstr "Ενεργοποίηση"
+
+#: admin/views/gifts.php:46
+msgid "Max Gifts"
+msgstr "Μέγιστα Δώρα"
+
+#: admin/views/gifts.php:60
+msgid "∞ Unlimited"
+msgstr "∞ Απεριόριστα"
+
+#: templates/tiered-pricing-table.php:14
+msgid "Quantity Discounts Available"
+msgstr "Διαθέσιμες Εκπτώσεις Ποσότητας"
+
+#: templates/tiered-pricing-table.php:18
+msgid "Quantity"
+msgstr "Ποσότητα"
+
+#: templates/tiered-pricing-table.php:39
+msgid "off"
+msgstr "έκπτωση"
+
+#: templates/tiered-pricing-table.php:41
+msgid "each"
+msgstr "έκαστο"
+
+#: templates/tiered-pricing-table.php:51
+msgid "*Discount applies to entire cart quantity"
+msgstr "*Η έκπτωση εφαρμόζεται σε ολόκληρη την ποσότητα του καλαθιού"
+
+#: admin/views/examples.php:17
+msgid "Rules Examples & Use Cases"
+msgstr "Παραδείγματα Κανόνων & Περιπτώσεις Χρήσης"
+
+#: admin/views/examples.php:18
+msgid "Click any example below to see detailed setup instructions for common promotional scenarios"
+msgstr "Κάντε κλικ σε οποιοδήποτε παράδειγμα παρακάτω για να δείτε λεπτομερείς οδηγίες ρύθμισης για συνηθισμένα προωθητικά σενάρια"
+
+#: admin/views/examples.php:28
+msgid "Flash Sale - 24 Hour Deal"
+msgstr "Flash Προσφορά - 24ωρη Προσφορά"
+
+#: admin/views/examples.php:59
+msgid "Buy 2 Get 1 Free"
+msgstr "Αγόρασε 2 Πάρε 1 Δωρεάν"
+
+#: admin/views/examples.php:87
+msgid "VIP Customer 20% Discount"
+msgstr "VIP Έκπτωση 20% για Πελάτες"
+
+#: admin/views/examples.php:117
+msgid "Weekend Sale - Saturday & Sunday"
+msgstr "Σαββατοκύριακο Προσφορά - Σάββατο & Κυριακή"
+
+#: admin/views/examples.php:147
+msgid "Free Shipping Over $100"
+msgstr "Δωρεάν Αποστολή Άνω των $100"
+
+#: admin/views/examples.php:176
+msgid "Bulk Discount - Buy More, Save More"
+msgstr "Χονδρική Έκπτωση - Αγόρασε Περισσότερα, Εξοικονόμησε Περισσότερα"
+
+#: admin/views/examples.php:205
+msgid "Birthday Month Special Gift"
+msgstr "Ειδικό Δώρο Μήνα Γενεθλίων"
+
+#: admin/views/examples.php:235
+msgid "Clearance - Fixed Price $9.99"
+msgstr "Ξεπούλημα - Σταθερή Τιμή $9.99"
+
+#: admin/views/examples.php:264
+msgid "Student Discount - 10% Off"
+msgstr "Φοιτητική Έκπτωση - 10% Έκπτωση"
+
+#: admin/views/examples.php:294
+msgid "Happy Hour - 3PM to 6PM Daily"
+msgstr "Happy Hour - 3μμ έως 6μμ Καθημερινά"
+
+#: admin/views/examples.php:325
+msgid "First Order - 15% Welcome Discount"
+msgstr "Πρώτη Παραγγελία - 15% Έκπτωση Καλωσορίσματος"
+
+#: admin/views/examples.php:354
+msgid "Winter Collection - 40% Off"
+msgstr "Χειμερινή Συλλογή - 40% Έκπτωση"
+
+#: admin/views/examples.php:384
+msgid "Buy Laptop, Get Free Mouse"
+msgstr "Αγόρασε Laptop, Πάρε Δωρεάν Ποντίκι"
+
+#: admin/views/examples.php:413
+msgid "Spend $200, Save $20"
+msgstr "Ξοδέψτε $200, Κερδίστε $20"
+
+#: admin/views/examples.php:442
+msgid "Buy 3 Books, Get 50% Off"
+msgstr "Αγόρασε 3 Βιβλία, Πάρε 50% Έκπτωση"
+
+#: admin/views/examples.php:470
+msgid "BOGO - Buy One Get One 50% Off"
+msgstr "BOGO - Αγόρασε Ένα Πάρε Ένα 50% Έκπτωση"
+
+#: admin/views/examples.php:498
+msgid "Members Only - Special Pricing"
+msgstr "Μόνο για Μέλη - Ειδική Τιμολόγηση"
+
+#: admin/views/examples.php:528
+msgid "Early Bird - 6AM to 10AM"
+msgstr "Early Bird - 6πμ έως 10πμ"
+
+#: admin/views/examples.php:558
+msgid "Christmas Sale - December Special"
+msgstr "Χριστουγεννιάτικη Προσφορά - Ειδική Δεκεμβρίου"
+
+#: admin/views/examples.php:588
+msgid "Free Sample with Every Order"
+msgstr "Δωρεάν Δείγμα με Κάθε Παραγγελία"
+
+#: admin/views/examples.php:617
+msgid "Loyalty Tiers - Spend More, Save More"
+msgstr "Βαθμίδες Πιστότητας - Ξοδέψτε Περισσότερα, Εξοικονομήστε Περισσότερα"
+
+#: admin/views/examples.php:645
+msgid "Combo Deal - Phone + Case = 20% Off"
+msgstr "Combo Προσφορά - Τηλέφωνο + Θήκη = 20% Έκπτωση"

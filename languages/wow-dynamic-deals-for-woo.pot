@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Wow Dynamic Deals for Woo plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Wow Dynamic Deals for Woo 1.0.0\n"
+"Project-Id-Version: Wow Dynamic Deals for Woo 1.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/TheoSfak/wow-dynamic-deals-for-woo/issues\n"
-"POT-Creation-Date: 2025-12-22 10:43+0000\n"
+"POT-Creation-Date: 2025-12-22 12:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,351 +15,1407 @@ msgstr ""
 "X-Generator: Manual\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: woo-dynamic-deals.php:41
-msgid "Woo Dynamic Deals"
+#: includes/engines/class-gift-engine.php
+msgid " AND "
 msgstr ""
 
-#: woo-dynamic-deals.php:42
-msgid "requires WooCommerce to be installed and activated."
+#: includes/engines/class-gift-engine.php
+msgid " OR "
 msgstr ""
 
-#: woo-dynamic-deals.php:59
-msgid "requires PHP 8.0 or higher. Your current PHP version is"
+#: includes/engines/class-cart-discount-engine.php
+msgid "%1$s (%2$s discount)"
 msgstr ""
 
-#: woo-dynamic-deals.php:102
-msgid "Plugin activation failed. Please check the requirements."
+#: includes/class-frontend-display.php
+msgid "%1$s (%2$s%%)"
 msgstr ""
 
-#: woo-dynamic-deals.php:103
-msgid "Plugin Activation Error"
-msgstr ""
-
-#: admin/views/dashboard.php:23
-msgid "Dynamic Deals for WooCommerce"
-msgstr ""
-
-#: admin/views/price-rules.php:20
-msgid "Price Rules"
-msgstr ""
-
-#: admin/views/price-rules.php:21
-msgid "Create dynamic pricing rules to adjust product prices based on conditions"
-msgstr ""
-
-#: admin/views/price-rules.php:24
-msgid "Add Price Rule"
-msgstr ""
-
-#: admin/views/price-rules.php:32
-msgid "No Price Rules Yet"
-msgstr ""
-
-#: admin/views/price-rules.php:33
-msgid "Create your first price rule to start offering dynamic pricing to your customers!"
-msgstr ""
-
-#: admin/views/price-rules.php:35
-msgid "Create Your First Rule"
-msgstr ""
-
-#: admin/views/price-rules.php:43
-#: admin/views/tiered-pricing.php:43
-#: admin/views/cart-discounts.php:43
-#: admin/views/gifts.php:43
-msgid "Priority"
-msgstr ""
-
-#: admin/views/price-rules.php:44
-#: admin/views/tiered-pricing.php:44
-#: admin/views/cart-discounts.php:44
-#: admin/views/gifts.php:44
-msgid "Title"
-msgstr ""
-
-#: admin/views/price-rules.php:45
-msgid "Type"
-msgstr ""
-
-#: admin/views/price-rules.php:46
-msgid "Value"
-msgstr ""
-
-#: admin/views/price-rules.php:47
-#: admin/views/tiered-pricing.php:47
-#: admin/views/cart-discounts.php:47
-#: admin/views/gifts.php:47
-msgid "Status"
-msgstr ""
-
-#: admin/views/price-rules.php:48
-#: admin/views/tiered-pricing.php:48
-#: admin/views/cart-discounts.php:48
-#: admin/views/gifts.php:48
-msgid "Schedule"
-msgstr ""
-
-#: admin/views/price-rules.php:49
-#: admin/views/tiered-pricing.php:49
-#: admin/views/cart-discounts.php:49
-#: admin/views/gifts.php:49
-msgid "Actions"
-msgstr ""
-
-#: admin/views/price-rules.php:73
-#: admin/views/tiered-pricing.php:68
-#: admin/views/cart-discounts.php:68
-#: admin/views/gifts.php:65
-msgid "Active"
-msgstr ""
-
-#: admin/views/price-rules.php:75
-#: admin/views/tiered-pricing.php:70
-#: admin/views/cart-discounts.php:70
-#: admin/views/gifts.php:67
-msgid "Inactive"
-msgstr ""
-
-#: admin/views/price-rules.php:90
-#: admin/views/tiered-pricing.php:85
-#: admin/views/cart-discounts.php:85
-#: admin/views/gifts.php:82
-msgid "Always Active"
-msgstr ""
-
-#: admin/views/price-rules.php:97
-#: admin/views/tiered-pricing.php:92
-#: admin/views/cart-discounts.php:92
-#: admin/views/gifts.php:89
-msgid "Edit"
-msgstr ""
-
-#: admin/views/price-rules.php:100
-#: admin/views/tiered-pricing.php:95
-#: admin/views/cart-discounts.php:95
-#: admin/views/gifts.php:92
-msgid "Copy"
-msgstr ""
-
-#: admin/views/price-rules.php:103
-#: admin/views/tiered-pricing.php:98
-#: admin/views/cart-discounts.php:98
-#: admin/views/gifts.php:95
-msgid "Delete"
-msgstr ""
-
-#: admin/views/tiered-pricing.php:20
-msgid "Tiered Pricing Rules"
-msgstr ""
-
-#: admin/views/tiered-pricing.php:21
-msgid "Offer quantity-based discounts to encourage bulk purchases"
-msgstr ""
-
-#: admin/views/tiered-pricing.php:24
-msgid "Add Tiered Pricing"
-msgstr ""
-
-#: admin/views/tiered-pricing.php:32
-msgid "No Tiered Pricing Rules Yet"
-msgstr ""
-
-#: admin/views/tiered-pricing.php:33
-msgid "Create tiered pricing to reward customers who buy in bulk!"
-msgstr ""
-
-#: admin/views/tiered-pricing.php:35
-msgid "Create Your First Tier"
-msgstr ""
-
-#: admin/views/tiered-pricing.php:45
-msgid "Mode"
-msgstr ""
-
-#: admin/views/tiered-pricing.php:46
-msgid "Tiers"
-msgstr ""
-
-#: admin/views/cart-discounts.php:20
-msgid "Cart Discount Rules"
-msgstr ""
-
-#: admin/views/cart-discounts.php:21
-msgid "Apply automatic discounts and free shipping based on cart conditions"
-msgstr ""
-
-#: admin/views/cart-discounts.php:24
-msgid "Add Cart Discount"
-msgstr ""
-
-#: admin/views/cart-discounts.php:32
-msgid "No Cart Discount Rules Yet"
-msgstr ""
-
-#: admin/views/cart-discounts.php:33
-msgid "Boost conversions with smart cart-level discounts!"
-msgstr ""
-
-#: admin/views/cart-discounts.php:35
-msgid "Create Your First Discount"
-msgstr ""
-
-#: admin/views/cart-discounts.php:45
-msgid "Discount"
-msgstr ""
-
-#: admin/views/cart-discounts.php:46
-msgid "Min Amount"
-msgstr ""
-
-#: admin/views/gifts.php:20
-msgid "Free Gift Rules"
-msgstr ""
-
-#: admin/views/gifts.php:21
-msgid "Delight customers with automatic free gifts based on purchase conditions"
-msgstr ""
-
-#: admin/views/gifts.php:24
-msgid "Add Gift Rule"
-msgstr ""
-
-#: admin/views/gifts.php:32
-msgid "No Gift Rules Yet"
-msgstr ""
-
-#: admin/views/gifts.php:33
-msgid "Surprise your customers with free gifts to increase satisfaction and loyalty!"
-msgstr ""
-
-#: admin/views/gifts.php:35
-msgid "Create Your First Gift Rule"
-msgstr ""
-
-#: admin/views/gifts.php:45
-msgid "Trigger"
-msgstr ""
-
-#: admin/views/gifts.php:46
-msgid "Max Gifts"
-msgstr ""
-
-#: admin/views/gifts.php:60
-msgid "∞ Unlimited"
-msgstr ""
-
-#: templates/tiered-pricing-table.php:14
-msgid "Quantity Discounts Available"
-msgstr ""
-
-#: templates/tiered-pricing-table.php:18
-msgid "Quantity"
-msgstr ""
-
-#: templates/tiered-pricing-table.php:39
-msgid "off"
-msgstr ""
-
-#: templates/tiered-pricing-table.php:41
-msgid "each"
-msgstr ""
-
-#: templates/tiered-pricing-table.php:51
+#: templates/tiered-pricing-table.php
 msgid "*Discount applies to entire cart quantity"
 msgstr ""
 
-#: admin/views/examples.php:17
-msgid "Rules Examples & Use Cases"
+#: admin/views/cart-discounts.php
+#: admin/views/gifts.php
+#: admin/views/price-rules.php
+#: admin/views/tiered-pricing.php
+msgid "Actions"
 msgstr ""
 
-#: admin/views/examples.php:18
-msgid "Click any example below to see detailed setup instructions for common promotional scenarios"
+#: admin/views/cart-discounts.php
+#: admin/views/gifts.php
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+#: admin/views/price-rules.php
+#: admin/views/tiered-pricing.php
+msgid "Active"
 msgstr ""
 
-#: admin/views/examples.php:28
-msgid "Flash Sale - 24 Hour Deal"
+#: admin/views/modals/gift-edit-modal.php
+msgid "Add Additional Trigger Condition"
 msgstr ""
 
-#: admin/views/examples.php:59
-msgid "Buy 2 Get 1 Free"
+#: admin/views/cart-discounts.php
+#: admin/views/modals/cart-edit-modal.php
+#: includes/class-plugin.php
+msgid "Add Cart Discount"
 msgstr ""
 
-#: admin/views/examples.php:87
-msgid "VIP Customer 20% Discount"
+#: admin/views/gifts.php
+#: admin/views/modals/gift-edit-modal.php
+#: includes/class-plugin.php
+msgid "Add Gift Rule"
 msgstr ""
 
-#: admin/views/examples.php:117
-msgid "Weekend Sale - Saturday & Sunday"
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/price-rules.php
+#: includes/class-plugin.php
+msgid "Add Price Rule"
 msgstr ""
 
-#: admin/views/examples.php:147
-msgid "Free Shipping Over $100"
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Add Tier"
 msgstr ""
 
-#: admin/views/examples.php:176
-msgid "Bulk Discount - Buy More, Save More"
+#: admin/views/modals/tiered-edit-modal.php
+#: admin/views/tiered-pricing.php
+#: includes/class-plugin.php
+msgid "Add Tiered Pricing"
 msgstr ""
 
-#: admin/views/examples.php:205
-msgid "Birthday Month Special Gift"
+#: admin/views/modals/gift-edit-modal.php
+msgid "Add multiple conditions and choose AND (all must match) or OR (any can match)"
 msgstr ""
 
-#: admin/views/examples.php:235
-msgid "Clearance - Fixed Price $9.99"
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Additional Options"
 msgstr ""
 
-#: admin/views/examples.php:264
-msgid "Student Discount - 10% Off"
+#: admin/views/modals/rule-edit-modal.php
+msgid "Adjustment Type"
 msgstr ""
 
-#: admin/views/examples.php:294
-msgid "Happy Hour - 3PM to 6PM Daily"
+#: admin/views/settings.php
+msgid "Allow Multiple Discounts to Stack"
 msgstr ""
 
-#: admin/views/examples.php:325
-msgid "First Order - 15% Welcome Discount"
+#: admin/views/settings.php
+msgid "Allow Stacking with WooCommerce Coupons"
 msgstr ""
 
-#: admin/views/examples.php:354
-msgid "Winter Collection - 40% Off"
+#: admin/views/cart-discounts.php
+#: admin/views/gifts.php
+#: admin/views/price-rules.php
+#: admin/views/tiered-pricing.php
+msgid "Always Active"
 msgstr ""
 
-#: admin/views/examples.php:384
-msgid "Buy Laptop, Get Free Mouse"
+#: includes/class-plugin.php
+msgid "An error occurred"
 msgstr ""
 
-#: admin/views/examples.php:413
-msgid "Spend $200, Save $20"
+#: admin/views/settings.php
+#: includes/class-plugin.php
+msgid "An error occurred. Please try again."
 msgstr ""
 
-#: admin/views/examples.php:442
-msgid "Buy 3 Books, Get 50% Off"
+#: templates/savings-summary.php
+msgid "Applied discounts:"
 msgstr ""
 
-#: admin/views/examples.php:470
+#: admin/views/modals/rule-edit-modal.php
+msgid "Apply To"
+msgstr ""
+
+#: admin/views/cart-discounts.php
+msgid "Apply automatic discounts and free shipping based on cart conditions"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+msgid "Apply free shipping when this rule is active"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+msgid "Apply only to first order (new customers)"
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Are you sure you want to delete this rule?"
+msgstr ""
+
+#: admin/views/examples.php
 msgid "BOGO - Buy One Get One 50% Off"
 msgstr ""
 
-#: admin/views/examples.php:498
-msgid "Members Only - Special Pricing"
+#: admin/views/settings.php
+msgid "Badge Text"
 msgstr ""
 
-#: admin/views/examples.php:528
-msgid "Early Bird - 6AM to 10AM"
+#: admin/views/examples.php
+msgid "Birthday Month Special Gift"
 msgstr ""
 
-#: admin/views/examples.php:558
+#: admin/views/settings.php
+msgid "Bold"
+msgstr ""
+
+#: admin/views/cart-discounts.php
+msgid "Boost conversions with smart cart-level discounts!"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+msgid "Both"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Bulk Discount - Buy More, Save More"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Buy 2 Get 1 Free"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Buy 3 Books, Get 50% Off"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Buy Laptop, Get Free Mouse"
+msgstr ""
+
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Calculate tiers for each cart line separately"
+msgstr ""
+
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Calculation Mode"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Cancel"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Cart & Checkout Display"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+msgid "Cart Conditions"
+msgstr ""
+
+#: includes/class-frontend-display.php
+msgid "Cart Discount"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Cart Discount Display Customization"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Cart Discount Fee Color"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Cart Discount Label"
+msgstr ""
+
+#: admin/views/cart-discounts.php
+msgid "Cart Discount Rules"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Cart Discounts"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Choose how to display original vs discounted prices on product pages."
+msgstr ""
+
+#: admin/views/examples.php
 msgid "Christmas Sale - December Special"
 msgstr ""
 
-#: admin/views/examples.php:588
+#: admin/views/examples.php
+msgid "Clearance - Fixed Price $9.99"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Click any example below to see detailed setup instructions for common promotional scenarios"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Click to download and install the latest version from GitHub. Your settings and rules will be preserved."
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Color for cart discount fee labels in cart totals"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Color for discounted price"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Color for free shipping fee label"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Color for savings message"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Color for strikethrough price"
+msgstr ""
+
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Combined Quantity"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Combo Deal - Phone + Case = 20% Off"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Configure plugin behavior and enable/disable modules"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Control how multiple discounts interact and set safety limits."
+msgstr ""
+
+#: admin/views/cart-discounts.php
+#: admin/views/gifts.php
+#: admin/views/price-rules.php
+#: admin/views/tiered-pricing.php
+msgid "Copy"
+msgstr ""
+
+#: admin/views/cart-discounts.php
+msgid "Create Your First Discount"
+msgstr ""
+
+#: admin/views/gifts.php
+msgid "Create Your First Gift Rule"
+msgstr ""
+
+#: admin/views/price-rules.php
+msgid "Create Your First Rule"
+msgstr ""
+
+#: admin/views/tiered-pricing.php
+msgid "Create Your First Tier"
+msgstr ""
+
+#: admin/views/price-rules.php
+msgid "Create dynamic pricing rules to adjust product prices based on conditions"
+msgstr ""
+
+#: admin/views/tiered-pricing.php
+msgid "Create tiered pricing to reward customers who buy in bulk!"
+msgstr ""
+
+#: admin/views/price-rules.php
+msgid "Create your first price rule to start offering dynamic pricing to your customers!"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Customize how cart discount fees and free shipping appear in the cart totals section."
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Customize how discounts and promotions are displayed to customers on the frontend."
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Customize how discounts appear in the shopping cart and checkout."
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Data Management"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Days of Week"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Debug & Developer Options"
+msgstr ""
+
+#: admin/views/cart-discounts.php
+#: admin/views/gifts.php
+#: admin/views/price-rules.php
+#: admin/views/tiered-pricing.php
+#: includes/class-plugin.php
+msgid "Delete"
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Deleting..."
+msgstr ""
+
+#: admin/views/gifts.php
+msgid "Delight customers with automatic free gifts based on purchase conditions"
+msgstr ""
+
+#: admin/views/cart-discounts.php
+#: includes/class-frontend-display.php
+#: templates/tiered-pricing-table.php
+msgid "Discount"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Discount Label Color"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+msgid "Discount Settings"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Discount Stacking & Priority"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Discount Type"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+msgid "Discount Value"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+msgid "Discount will only apply if customer has never placed an order before. Works for both logged-in users and guest email addresses."
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Display & Frontend Settings"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Display a customizable badge on products with active discount rules."
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Duplicate"
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Duplicating..."
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "Dynamic Deals"
+msgstr ""
+
+#: admin/views/dashboard.php
+msgid "Dynamic Deals for WooCommerce"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Early Bird - 6AM to 10AM"
+msgstr ""
+
+#: admin/views/cart-discounts.php
+#: admin/views/gifts.php
+#: admin/views/price-rules.php
+#: admin/views/tiered-pricing.php
+msgid "Edit"
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Edit Cart Discount"
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Edit Gift Rule"
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Edit Price Rule"
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Edit Tiered Pricing"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Enable Debug Mode"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Enable or disable specific modules. Disabled modules will be hidden from navigation and will not process on the frontend, improving performance."
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "End Date"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+msgid "End Time"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "Extracted folder not found."
+msgstr ""
+
+#: includes/engines/class-gift-engine.php
+msgid "FREE"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "Failed to delete file: %s"
+msgstr ""
+
+#: includes/admin/class-ajax-handler.php
+msgid "Failed to delete rule"
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Failed to delete rule."
+msgstr ""
+
+#: includes/admin/class-ajax-handler.php
+msgid "Failed to duplicate rule"
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Failed to duplicate rule."
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Failed to load rule."
+msgstr ""
+
+#: includes/admin/class-ajax-handler.php
+msgid "Failed to save rule"
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Failed to save rule."
+msgstr ""
+
+#: admin/views/examples.php
+msgid "First Order - 15% Welcome Discount"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Fixed Amount"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+msgid "Fixed Discount"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+msgid "Fixed Increase"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Fixed Price"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Flash Sale - 24 Hour Deal"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Font Size (px)"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Font Weight"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Font size for discount text (10-24px)"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Font weight for discount text"
+msgstr ""
+
+#: admin/views/gifts.php
+msgid "Free Gift Rules"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Free Gifts"
+msgstr ""
+
+#: includes/class-frontend-display.php
+msgid "Free Gifts in Your Cart!"
+msgstr ""
+
+#: admin/views/examples.php
 msgid "Free Sample with Every Order"
 msgstr ""
 
-#: admin/views/examples.php:617
+#: admin/views/cart-discounts.php
+msgid "Free Shipping"
+msgstr ""
+
+#: includes/engines/class-cart-discount-engine.php
+msgid "Free Shipping (Discount Applied)"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Free Shipping Color"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Free Shipping Label"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Free Shipping Over $100"
+msgstr ""
+
+#: templates/gift-message.php
+msgid "Free gift: %1$s × %2$d"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Friday"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Gift Products"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Gift will be added when any of these products are in cart"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Gift will be added when cart has this many items"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Gift will be added when cart total reaches this amount"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Gift will be added when products from these categories are in cart"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Happy Hour - 3PM to 6PM Daily"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+msgid "Higher numbers have higher priority"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "If unchecked, all rules, settings, and database tables will be permanently deleted when you uninstall the plugin."
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Important:"
+msgstr ""
+
+#: admin/views/cart-discounts.php
+#: admin/views/gifts.php
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+#: admin/views/price-rules.php
+#: admin/views/tiered-pricing.php
+msgid "Inactive"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "Insufficient permissions."
+msgstr ""
+
+#: includes/class-import-export.php
+msgid "Invalid JSON format"
+msgstr ""
+
+#: includes/class-import-export.php
+msgid "Invalid data structure"
+msgstr ""
+
+#: includes/admin/class-ajax-handler.php
+msgid "Invalid parameters"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Keep Data on Uninstall"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Label for discounts in cart totals"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Leave empty to apply to all products"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+msgid "Leave unchecked for all days"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+msgid "Leave unchecked for all users"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Limit the total number of gift items per order. For example: Set to 1 to give only one free gift even if customer qualifies multiple times. Set to 2 to allow maximum 2 free gifts per order. Leave at 1 for standard promotions."
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Logs detailed rule evaluation information to wp-content/debug.log (requires WP_DEBUG_LOG to be enabled)."
+msgstr ""
+
+#: admin/views/examples.php
 msgid "Loyalty Tiers - Spend More, Save More"
 msgstr ""
 
-#: admin/views/examples.php:645
-msgid "Combo Deal - Phone + Case = 20% Off"
+#: admin/views/modals/gift-edit-modal.php
+msgid "Main Trigger Condition"
 msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+msgid "Max Cart Quantity"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+msgid "Max Cart Total"
+msgstr ""
+
+#: admin/views/gifts.php
+msgid "Max Gifts"
+msgstr ""
+
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Max Qty"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Maximum Gifts per Order"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Maximum Total Discount (%)"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Medium"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Members Only - Special Pricing"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+msgid "Min Cart Quantity"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+msgid "Min Cart Total"
+msgstr ""
+
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Min Qty"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Minimum Cart Quantity"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Minimum Cart Total"
+msgstr ""
+
+#: admin/views/tiered-pricing.php
+msgid "Mode"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Module Controls"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Monday"
+msgstr ""
+
+#: admin/views/cart-discounts.php
+msgid "No Cart Discount Rules Yet"
+msgstr ""
+
+#: admin/views/gifts.php
+msgid "No Gift Rules Yet"
+msgstr ""
+
+#: admin/views/price-rules.php
+msgid "No Price Rules Yet"
+msgstr ""
+
+#: admin/views/tiered-pricing.php
+msgid "No Tiered Pricing Rules Yet"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "No files found in downloaded package."
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "No rules found."
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Normal"
+msgstr ""
+
+#: admin/views/tiered-pricing.php
+msgid "Offer quantity-based discounts to encourage bulk purchases"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Original Price Color"
+msgstr ""
+
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Per Line Item"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Percentage"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+msgid "Percentage Discount"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+msgid "Percentage Increase"
+msgstr ""
+
+#: woo-dynamic-deals.php
+msgid "Plugin Activation Error"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Plugin Settings"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Plugin Updates"
+msgstr ""
+
+#: woo-dynamic-deals.php
+msgid "Plugin activation failed. Please check the requirements."
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "Plugin directory is not writable. Check file permissions."
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "Plugin directory not found: %s"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "Plugin updated but failed to reactivate: "
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "Plugin updated successfully from GitHub!"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Preview:"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Price Display Customization"
+msgstr ""
+
+#: includes/class-frontend-display.php
+msgid "Price Per Unit"
+msgstr ""
+
+#: admin/views/price-rules.php
+#: admin/views/settings.php
+msgid "Price Rules"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Pricing Display Format"
+msgstr ""
+
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Pricing Tiers"
+msgstr ""
+
+#: admin/views/cart-discounts.php
+#: admin/views/gifts.php
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+#: admin/views/price-rules.php
+#: admin/views/tiered-pricing.php
+msgid "Priority"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Product Categories"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Product Selection"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Products from Categories in Cart"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Products to Give as Gifts"
+msgstr ""
+
+#: includes/class-frontend-display.php
+msgid "Qty: %1$d × %2$s → %3$s"
+msgstr ""
+
+#: includes/class-frontend-display.php
+#: templates/tiered-pricing-table.php
+msgid "Quantity"
+msgstr ""
+
+#: includes/engines/class-tiered-pricing-engine.php
+msgid "Quantity Discount Applied"
+msgstr ""
+
+#: includes/class-frontend-display.php
+msgid "Quantity Discount Breakdown"
+msgstr ""
+
+#: includes/class-frontend-display.php
+msgid "Quantity Discounts"
+msgstr ""
+
+#: templates/tiered-pricing-table.php
+msgid "Quantity Discounts Available"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+msgid "Regular Price"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Rule Title"
+msgstr ""
+
+#: includes/admin/class-ajax-handler.php
+msgid "Rule deleted successfully"
+msgstr ""
+
+#: includes/admin/class-ajax-handler.php
+msgid "Rule duplicated successfully"
+msgstr ""
+
+#: includes/admin/class-ajax-handler.php
+msgid "Rule not found"
+msgstr ""
+
+#: includes/admin/class-ajax-handler.php
+#: includes/class-plugin.php
+msgid "Rule saved successfully"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Rules Examples & Use Cases"
+msgstr ""
+
+#: includes/class-frontend-display.php
+msgid "SALE!"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+msgid "Sale Price"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Sale Price Color"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Sale Price Only"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Saturday"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: includes/class-plugin.php
+msgid "Save Cart Discount"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+#: includes/class-plugin.php
+msgid "Save Gift Rule"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+#: includes/class-plugin.php
+msgid "Save Rule"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Save Settings"
+msgstr ""
+
+#: admin/views/modals/tiered-edit-modal.php
+#: includes/class-plugin.php
+msgid "Save Tiered Pricing"
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Saving..."
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Savings Text"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Savings Text Color"
+msgstr ""
+
+#: admin/views/cart-discounts.php
+#: admin/views/gifts.php
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+#: admin/views/price-rules.php
+#: admin/views/tiered-pricing.php
+msgid "Schedule"
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Search for products..."
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Search for users..."
+msgstr ""
+
+#: includes/admin/class-ajax-handler.php
+msgid "Security check failed"
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Select categories..."
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Select trigger..."
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+msgid "Select type..."
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Semi-Bold"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Set a safety cap on the maximum discount percentage. Enter 0 for no limit. Example: 50 = no product can be discounted more than 50%."
+msgstr ""
+
+#: includes/class-hooks.php
+msgid "Settings"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Settings saved successfully!"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Show Both (Strikethrough + Sale Price)"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Show Discount Percentage in Cart/Checkout"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Show Quantity Pricing Table on Products"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Show Sale Badge on Discounted Products"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Show Total Savings in Cart"
+msgstr ""
+
+#: includes/class-import-export.php
+msgid "Skipped rule without title in %s"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "Some files failed to copy: "
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Specific Products"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Specific Products in Cart"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Specific Users"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Spend $200, Save $20"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Start Date"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+msgid "Start Time"
+msgstr ""
+
+#: admin/views/cart-discounts.php
+#: admin/views/gifts.php
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+#: admin/views/price-rules.php
+#: admin/views/tiered-pricing.php
+msgid "Status"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Stop processing further rules after this one"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Strikethrough Original Price"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Student Discount - 10% Off"
+msgstr ""
+
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Sum quantities of all matching products"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Sunday"
+msgstr ""
+
+#: admin/views/gifts.php
+msgid "Surprise your customers with free gifts to increase satisfaction and loyalty!"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Text & Font Customization"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Text before savings amount in cart/checkout"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Text color for discount labels"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Text for free shipping discount in cart totals"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "These products will be added to cart automatically at $0 price"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "This will update the plugin from GitHub. Your settings and rules will be preserved. Continue?"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Thursday"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Tiered Pricing"
+msgstr ""
+
+#: admin/views/tiered-pricing.php
+msgid "Tiered Pricing Rules"
+msgstr ""
+
+#: admin/views/tiered-pricing.php
+msgid "Tiers"
+msgstr ""
+
+#: admin/views/cart-discounts.php
+#: admin/views/gifts.php
+#: admin/views/price-rules.php
+#: admin/views/tiered-pricing.php
+msgid "Title"
+msgstr ""
+
+#: admin/views/gifts.php
+msgid "Trigger"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Trigger Categories"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Trigger Conditions"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Trigger Products"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "Trigger Type"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Tuesday"
+msgstr ""
+
+#: admin/views/price-rules.php
+msgid "Type"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Uninstalling with data deletion is permanent and cannot be undone. Make sure to backup your rules before uninstalling if you plan to reinstall later."
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Unlimited"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Update Plugin from GitHub"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Update the plugin directly from GitHub repository."
+msgstr ""
+
+#: admin/views/settings.php
+msgid "Updating from GitHub..."
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "User Restrictions"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "User Roles"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "VIP Customer 20% Discount"
+msgstr ""
+
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+#: admin/views/price-rules.php
+msgid "Value"
+msgstr ""
+
+#: admin/views/modals/cart-edit-modal.php
+#: admin/views/modals/gift-edit-modal.php
+#: admin/views/modals/rule-edit-modal.php
+#: admin/views/modals/tiered-edit-modal.php
+msgid "Wednesday"
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Weekend Sale - Saturday & Sunday"
+msgstr ""
+
+#: admin/views/settings.php
+msgid "When enabled, customers can use coupon codes in addition to automatic dynamic discounts."
+msgstr ""
+
+#: admin/views/settings.php
+msgid "When enabled, multiple discount rules can apply to the same product/cart. When disabled, only the best discount applies."
+msgstr ""
+
+#: admin/views/examples.php
+msgid "Winter Collection - 40% Off"
+msgstr ""
+
+#: woo-dynamic-deals.php
+msgid "Woo Dynamic Deals"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "Wow Dynamic Deals for Woo"
+msgstr ""
+
+#: includes/class-frontend-display.php
+msgid "You Save"
+msgstr ""
+
+#: templates/savings-summary.php
+msgid "You saved:"
+msgstr ""
+
+#: includes/engines/class-gift-engine.php
+msgid "and more"
+msgstr ""
+
+#: includes/engines/class-gift-engine.php
+msgid "buying %d or more items"
+msgstr ""
+
+#: includes/engines/class-gift-engine.php
+msgid "cart total over %s"
+msgstr ""
+
+#: templates/tiered-pricing-table.php
+msgid "each"
+msgstr ""
+
+#: includes/class-frontend-display.php
+#: templates/tiered-pricing-table.php
+msgid "off"
+msgstr ""
+
+#: includes/engines/class-gift-engine.php
+msgid "purchasing from: %s"
+msgstr ""
+
+#: includes/engines/class-gift-engine.php
+msgid "purchasing: %s"
+msgstr ""
+
+#: woo-dynamic-deals.php
+msgid "requires PHP 8.0 or higher. Your current PHP version is"
+msgstr ""
+
+#: woo-dynamic-deals.php
+msgid "requires WooCommerce to be installed and activated."
+msgstr ""
+
+#: admin/views/gifts.php
+msgid "∞ Unlimited"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "⚙️ Settings"
+msgstr ""
+
+#: admin/views/modals/gift-edit-modal.php
+msgid "⚡ Trigger Logic"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "❤️ Please Donate"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "🎁 Free Gifts"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "🏠 Home"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "💰 Price Rules"
+msgstr ""
+
+#: includes/class-frontend-display.php
+msgid "💰 Total Saved (%s)!"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "📊 Tiered Pricing"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "📚 Rules Examples"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php
+msgid "🛒 Cart Discounts"
+msgstr ""
+

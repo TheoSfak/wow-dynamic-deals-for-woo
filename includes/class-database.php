@@ -251,12 +251,14 @@ class Database {
 			foreach ( $tables as $table ) {
 				$wpdb->query( "DROP TABLE IF EXISTS $table" ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 			}
+		}
 
 		delete_option( self::DB_VERSION_OPTION );
 		delete_option( 'wdd_settings' );
 		delete_option( 'wdd_keep_data_on_uninstall' );
 	}
-}	/**
+
+	/**
 	 * Set default plugin options
 	 */
 	private static function set_default_options() {

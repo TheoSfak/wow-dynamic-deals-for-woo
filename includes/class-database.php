@@ -249,13 +249,25 @@ class Database {
 			);
 
 			foreach ( $tables as $table ) {
-				$wpdb->query( "DROP TABLE IF EXISTS $table" ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+				// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+				$wpdb->query( "DROP TABLE IF EXISTS {$table}" );
 			}
 		}
 
+		// Delete options
 		delete_option( self::DB_VERSION_OPTION );
 		delete_option( 'wdd_settings' );
 		delete_option( 'wdd_keep_data_on_uninstall' );
+		
+		// Delete transients
+		delete_transient( 'wdd_pricing_rules' );
+		delete_transient( 'wdd_tiered_pricing' );
+		delete_transient( 'wdd_cart_discounts' );
+		delete_transient( 'wdd_gift_rules' );
+		delete_transient( 'wdd_activation_redirect' );
+		
+		// Clear scheduled hooks
+		wp_clear_scheduled_hook( 'wdd_cleanup_expired_rules' );
 	}
 
 	/**

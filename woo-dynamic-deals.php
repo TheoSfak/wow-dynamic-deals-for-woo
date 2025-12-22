@@ -125,12 +125,23 @@ register_activation_hook( __FILE__, 'wdd_activate' );
  * Plugin deactivation hook
  */
 function wdd_deactivate() {
-	require_once WDD_PLUGIN_DIR . 'includes/class-autoloader.php';
-	WDD\Autoloader::register();
+	try {
+		require_once WDD_PLUGIN_DIR . 'includes/class-autoloader.php';
+		WDD\Autoloader::register();
 
-	WDD\Database::deactivate();
+		WDD\Database::deactivate();
 
-	wp_clear_scheduled_hook( 'wdd_cleanup_expired_rules' );
+		wp_clear_scheduled_hook( 'wdd_cleanup_expired_rules' );
+		
+		// Clear all transients
+		delete_transient( 'wdd_pricing_rules' );
+		delete_transient( 'wdd_tiered_pricing' );
+		delete_transient( 'wdd_cart_discounts' );
+		delete_transient( 'wdd_gift_rules' );
+		delete_transient( 'wdd_activation_redirect' );
+	} catch ( Exception $e ) {
+		error_log( 'WDD Deactivation Error: ' . $e->getMessage() );
+	}
 }
 register_deactivation_hook( __FILE__, 'wdd_deactivate' );
 

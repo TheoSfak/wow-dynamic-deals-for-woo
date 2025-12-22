@@ -78,6 +78,16 @@ function wdd_load_textdomain() {
 		error_log( 'WDD: File exists: ' . ( file_exists( $mofile ) ? 'YES' : 'NO' ) );
 	}
 	
+	// Try to load the MO file directly first
+	$loaded = false;
+	if ( file_exists( $mofile ) ) {
+		$loaded = load_textdomain( 'wow-dynamic-deals-for-woo', $mofile );
+		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+			error_log( 'WDD: Direct load result: ' . ( $loaded ? 'SUCCESS' : 'FAILED' ) );
+		}
+	}
+	
+	// Also call the standard function as fallback
 	load_plugin_textdomain( 'wow-dynamic-deals-for-woo', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 add_action( 'plugins_loaded', 'wdd_load_textdomain', 1 );

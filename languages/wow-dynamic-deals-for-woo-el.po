@@ -1332,11 +1332,11 @@ msgstr ""
 
 #: includes/class-frontend-display.php
 msgid "You Save"
-msgstr ""
+msgstr "Εξοικονομείτε"
 
 #: templates/savings-summary.php
 msgid "You saved:"
-msgstr ""
+msgstr "Εξοικονομήσατε:"
 
 #: includes/engines/class-gift-engine.php
 msgid "and more"

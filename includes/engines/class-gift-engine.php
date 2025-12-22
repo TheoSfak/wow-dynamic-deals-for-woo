@@ -70,6 +70,13 @@ class GiftEngine extends RuleEngine {
 			return;
 		}
 
+		// Set gift prices to zero
+		foreach ( $cart->get_cart() as $cart_item_key => $cart_item ) {
+			if ( ! empty( $cart_item[ self::GIFT_META_KEY ] ) ) {
+				$cart_item['data']->set_price( 0 );
+			}
+		}
+
 		$this->remove_all_gifts( $cart );
 
 		$rules = $this->get_applicable_gift_rules();

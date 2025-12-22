@@ -65,6 +65,14 @@ function wdd_check_php_version() {
 }
 
 /**
+ * Load plugin textdomain for translations
+ */
+function wdd_load_textdomain() {
+	load_plugin_textdomain( 'wow-dynamic-deals-for-woo', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+}
+add_action( 'init', 'wdd_load_textdomain', 0 );
+
+/**
  * Initialize the plugin
  */
 function wdd_init() {
@@ -72,9 +80,6 @@ function wdd_init() {
 	if ( ! wdd_check_php_version() || ! wdd_check_woocommerce() ) {
 		return;
 	}
-
-	// Load plugin textdomain for translations
-	load_plugin_textdomain( 'wow-dynamic-deals-for-woo', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 	WDD\Autoloader::register();
 

@@ -5,7 +5,7 @@ Tags: woocommerce, dynamic pricing, discounts, tiered pricing, free gifts
 Requires at least: 5.8
 Tested up to: 6.9
 Requires PHP: 8.0
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,13 @@ Yes, fully compatible with High-Performance Order Storage.
 
 == Changelog ==
 
+= 1.1.0 - 2025-12-22 =
+* Added: Greek product search with character normalization for better search results
+* Added: Multilingual support with bundled Greek translations
+* Fixed: Plugin uninstall syntax error that caused deletion to hang
+* Fixed: Product search now works correctly with Greek accented characters (ά, έ, ή, ί, ό, ύ, ώ)
+* Enhanced: Translation-ready with POT template and Greek PO/MO files included
+
 = 1.0.0 - 2024-12-10 =
 * Initial release
 * Price Rules engine with 5 adjustment types
@@ -114,6 +121,9 @@ Yes, fully compatible with High-Performance Order Storage.
 * Import/Export functionality
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+Greek search improvements, multilingual support, and bug fixes for plugin deletion.
 
 = 1.0.0 =
 Initial release of Woo Dynamic Deals.

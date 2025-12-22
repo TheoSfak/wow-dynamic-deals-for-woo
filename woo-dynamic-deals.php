@@ -3,7 +3,7 @@
  * Plugin Name: Wow Dynamic Deals for Woo
  * Plugin URI: https://github.com/TheoSfak/wow-dynamic-deals-for-woo
  * Description: Advanced dynamic pricing, tiered discounts, cart-level promotions, and free gift management for WooCommerce
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Theodore Sfakianakis
  * Author URI: https://www.paypal.com/paypalme/TheodoreSfakianakis
  * Text Domain: wow-dynamic-deals-for-woo
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-define( 'WDD_VERSION', '1.0.0' );
+define( 'WDD_VERSION', '1.1.0' );
 define( 'WDD_PLUGIN_FILE', __FILE__ );
 define( 'WDD_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WDD_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -73,6 +73,8 @@ function wdd_init() {
 		return;
 	}
 
+	// Load plugin textdomain for translations
+	load_plugin_textdomain( 'wow-dynamic-deals-for-woo', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 	WDD\Autoloader::register();
 

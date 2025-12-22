@@ -1,0 +1,365 @@
+# Copyright (C) 2025 Theodore Sfakianakis
+# This file is distributed under the same license as the Wow Dynamic Deals for Woo plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wow Dynamic Deals for Woo 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/TheoSfak/wow-dynamic-deals-for-woo/issues\n"
+"POT-Creation-Date: 2025-12-22 10:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Manual\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: woo-dynamic-deals.php:41
+msgid "Woo Dynamic Deals"
+msgstr ""
+
+#: woo-dynamic-deals.php:42
+msgid "requires WooCommerce to be installed and activated."
+msgstr ""
+
+#: woo-dynamic-deals.php:59
+msgid "requires PHP 8.0 or higher. Your current PHP version is"
+msgstr ""
+
+#: woo-dynamic-deals.php:102
+msgid "Plugin activation failed. Please check the requirements."
+msgstr ""
+
+#: woo-dynamic-deals.php:103
+msgid "Plugin Activation Error"
+msgstr ""
+
+#: admin/views/dashboard.php:23
+msgid "Dynamic Deals for WooCommerce"
+msgstr ""
+
+#: admin/views/price-rules.php:20
+msgid "Price Rules"
+msgstr ""
+
+#: admin/views/price-rules.php:21
+msgid "Create dynamic pricing rules to adjust product prices based on conditions"
+msgstr ""
+
+#: admin/views/price-rules.php:24
+msgid "Add Price Rule"
+msgstr ""
+
+#: admin/views/price-rules.php:32
+msgid "No Price Rules Yet"
+msgstr ""
+
+#: admin/views/price-rules.php:33
+msgid "Create your first price rule to start offering dynamic pricing to your customers!"
+msgstr ""
+
+#: admin/views/price-rules.php:35
+msgid "Create Your First Rule"
+msgstr ""
+
+#: admin/views/price-rules.php:43
+#: admin/views/tiered-pricing.php:43
+#: admin/views/cart-discounts.php:43
+#: admin/views/gifts.php:43
+msgid "Priority"
+msgstr ""
+
+#: admin/views/price-rules.php:44
+#: admin/views/tiered-pricing.php:44
+#: admin/views/cart-discounts.php:44
+#: admin/views/gifts.php:44
+msgid "Title"
+msgstr ""
+
+#: admin/views/price-rules.php:45
+msgid "Type"
+msgstr ""
+
+#: admin/views/price-rules.php:46
+msgid "Value"
+msgstr ""
+
+#: admin/views/price-rules.php:47
+#: admin/views/tiered-pricing.php:47
+#: admin/views/cart-discounts.php:47
+#: admin/views/gifts.php:47
+msgid "Status"
+msgstr ""
+
+#: admin/views/price-rules.php:48
+#: admin/views/tiered-pricing.php:48
+#: admin/views/cart-discounts.php:48
+#: admin/views/gifts.php:48
+msgid "Schedule"
+msgstr ""
+
+#: admin/views/price-rules.php:49
+#: admin/views/tiered-pricing.php:49
+#: admin/views/cart-discounts.php:49
+#: admin/views/gifts.php:49
+msgid "Actions"
+msgstr ""
+
+#: admin/views/price-rules.php:73
+#: admin/views/tiered-pricing.php:68
+#: admin/views/cart-discounts.php:68
+#: admin/views/gifts.php:65
+msgid "Active"
+msgstr ""
+
+#: admin/views/price-rules.php:75
+#: admin/views/tiered-pricing.php:70
+#: admin/views/cart-discounts.php:70
+#: admin/views/gifts.php:67
+msgid "Inactive"
+msgstr ""
+
+#: admin/views/price-rules.php:90
+#: admin/views/tiered-pricing.php:85
+#: admin/views/cart-discounts.php:85
+#: admin/views/gifts.php:82
+msgid "Always Active"
+msgstr ""
+
+#: admin/views/price-rules.php:97
+#: admin/views/tiered-pricing.php:92
+#: admin/views/cart-discounts.php:92
+#: admin/views/gifts.php:89
+msgid "Edit"
+msgstr ""
+
+#: admin/views/price-rules.php:100
+#: admin/views/tiered-pricing.php:95
+#: admin/views/cart-discounts.php:95
+#: admin/views/gifts.php:92
+msgid "Copy"
+msgstr ""
+
+#: admin/views/price-rules.php:103
+#: admin/views/tiered-pricing.php:98
+#: admin/views/cart-discounts.php:98
+#: admin/views/gifts.php:95
+msgid "Delete"
+msgstr ""
+
+#: admin/views/tiered-pricing.php:20
+msgid "Tiered Pricing Rules"
+msgstr ""
+
+#: admin/views/tiered-pricing.php:21
+msgid "Offer quantity-based discounts to encourage bulk purchases"
+msgstr ""
+
+#: admin/views/tiered-pricing.php:24
+msgid "Add Tiered Pricing"
+msgstr ""
+
+#: admin/views/tiered-pricing.php:32
+msgid "No Tiered Pricing Rules Yet"
+msgstr ""
+
+#: admin/views/tiered-pricing.php:33
+msgid "Create tiered pricing to reward customers who buy in bulk!"
+msgstr ""
+
+#: admin/views/tiered-pricing.php:35
+msgid "Create Your First Tier"
+msgstr ""
+
+#: admin/views/tiered-pricing.php:45
+msgid "Mode"
+msgstr ""
+
+#: admin/views/tiered-pricing.php:46
+msgid "Tiers"
+msgstr ""
+
+#: admin/views/cart-discounts.php:20
+msgid "Cart Discount Rules"
+msgstr ""
+
+#: admin/views/cart-discounts.php:21
+msgid "Apply automatic discounts and free shipping based on cart conditions"
+msgstr ""
+
+#: admin/views/cart-discounts.php:24
+msgid "Add Cart Discount"
+msgstr ""
+
+#: admin/views/cart-discounts.php:32
+msgid "No Cart Discount Rules Yet"
+msgstr ""
+
+#: admin/views/cart-discounts.php:33
+msgid "Boost conversions with smart cart-level discounts!"
+msgstr ""
+
+#: admin/views/cart-discounts.php:35
+msgid "Create Your First Discount"
+msgstr ""
+
+#: admin/views/cart-discounts.php:45
+msgid "Discount"
+msgstr ""
+
+#: admin/views/cart-discounts.php:46
+msgid "Min Amount"
+msgstr ""
+
+#: admin/views/gifts.php:20
+msgid "Free Gift Rules"
+msgstr ""
+
+#: admin/views/gifts.php:21
+msgid "Delight customers with automatic free gifts based on purchase conditions"
+msgstr ""
+
+#: admin/views/gifts.php:24
+msgid "Add Gift Rule"
+msgstr ""
+
+#: admin/views/gifts.php:32
+msgid "No Gift Rules Yet"
+msgstr ""
+
+#: admin/views/gifts.php:33
+msgid "Surprise your customers with free gifts to increase satisfaction and loyalty!"
+msgstr ""
+
+#: admin/views/gifts.php:35
+msgid "Create Your First Gift Rule"
+msgstr ""
+
+#: admin/views/gifts.php:45
+msgid "Trigger"
+msgstr ""
+
+#: admin/views/gifts.php:46
+msgid "Max Gifts"
+msgstr ""
+
+#: admin/views/gifts.php:60
+msgid "∞ Unlimited"
+msgstr ""
+
+#: templates/tiered-pricing-table.php:14
+msgid "Quantity Discounts Available"
+msgstr ""
+
+#: templates/tiered-pricing-table.php:18
+msgid "Quantity"
+msgstr ""
+
+#: templates/tiered-pricing-table.php:39
+msgid "off"
+msgstr ""
+
+#: templates/tiered-pricing-table.php:41
+msgid "each"
+msgstr ""
+
+#: templates/tiered-pricing-table.php:51
+msgid "*Discount applies to entire cart quantity"
+msgstr ""
+
+#: admin/views/examples.php:17
+msgid "Rules Examples & Use Cases"
+msgstr ""
+
+#: admin/views/examples.php:18
+msgid "Click any example below to see detailed setup instructions for common promotional scenarios"
+msgstr ""
+
+#: admin/views/examples.php:28
+msgid "Flash Sale - 24 Hour Deal"
+msgstr ""
+
+#: admin/views/examples.php:59
+msgid "Buy 2 Get 1 Free"
+msgstr ""
+
+#: admin/views/examples.php:87
+msgid "VIP Customer 20% Discount"
+msgstr ""
+
+#: admin/views/examples.php:117
+msgid "Weekend Sale - Saturday & Sunday"
+msgstr ""
+
+#: admin/views/examples.php:147
+msgid "Free Shipping Over $100"
+msgstr ""
+
+#: admin/views/examples.php:176
+msgid "Bulk Discount - Buy More, Save More"
+msgstr ""
+
+#: admin/views/examples.php:205
+msgid "Birthday Month Special Gift"
+msgstr ""
+
+#: admin/views/examples.php:235
+msgid "Clearance - Fixed Price $9.99"
+msgstr ""
+
+#: admin/views/examples.php:264
+msgid "Student Discount - 10% Off"
+msgstr ""
+
+#: admin/views/examples.php:294
+msgid "Happy Hour - 3PM to 6PM Daily"
+msgstr ""
+
+#: admin/views/examples.php:325
+msgid "First Order - 15% Welcome Discount"
+msgstr ""
+
+#: admin/views/examples.php:354
+msgid "Winter Collection - 40% Off"
+msgstr ""
+
+#: admin/views/examples.php:384
+msgid "Buy Laptop, Get Free Mouse"
+msgstr ""
+
+#: admin/views/examples.php:413
+msgid "Spend $200, Save $20"
+msgstr ""
+
+#: admin/views/examples.php:442
+msgid "Buy 3 Books, Get 50% Off"
+msgstr ""
+
+#: admin/views/examples.php:470
+msgid "BOGO - Buy One Get One 50% Off"
+msgstr ""
+
+#: admin/views/examples.php:498
+msgid "Members Only - Special Pricing"
+msgstr ""
+
+#: admin/views/examples.php:528
+msgid "Early Bird - 6AM to 10AM"
+msgstr ""
+
+#: admin/views/examples.php:558
+msgid "Christmas Sale - December Special"
+msgstr ""
+
+#: admin/views/examples.php:588
+msgid "Free Sample with Every Order"
+msgstr ""
+
+#: admin/views/examples.php:617
+msgid "Loyalty Tiers - Spend More, Save More"
+msgstr ""
+
+#: admin/views/examples.php:645
+msgid "Combo Deal - Phone + Case = 20% Off"
+msgstr ""
